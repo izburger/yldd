@@ -1,12 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://0uhq0addd2wu"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_r2luu"]
+[ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://assets/sprites/player/player.tscn" id="1_jq4yq"]
 
 [node name="Testscene" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("CircleShape2D_r2luu")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Player" parent="." instance=ExtResource("1_jq4yq")]
