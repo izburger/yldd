@@ -49,7 +49,7 @@ theme_override_fonts/font = ExtResource("2_k25ab")
 theme_override_font_sizes/font_size = 40
 text = " "
 
-[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+[node name="MainText" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
