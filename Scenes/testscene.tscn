@@ -1,7 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://0uhq0addd2wu"]
+[gd_scene load_steps=5 format=3 uid="uid://0uhq0addd2wu"]
 
-[ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://assets/sprites/player/player.tscn" id="1_jq4yq"]
+[ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://Assets/Sprites/player/player.tscn" id="1_jq4yq"]
+[ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="2_eou0i"]
+[ext_resource type="Texture2D" uid="uid://btnm34m3pk7gb" path="res://Assets/Sprites/Items/box.png" id="3_xpjx1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayiw1"]
+size = Vector2(243, 201)
 
 [node name="Testscene" type="Node2D"]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(770, 338)
+scale = Vector2(0.154535, 0.154535)
+texture = ExtResource("3_xpjx1")
+
 [node name="Player" parent="." instance=ExtResource("1_jq4yq")]
+position = Vector2(254, 241)
+scale = Vector2(2.12, 2.12)
+
+[node name="DialogAreaBox" parent="." instance=ExtResource("2_eou0i")]
+position = Vector2(766, 334)
+dialog_key = "boxTest"
+
+[node name="CollisionShape2D" parent="DialogAreaBox" index="0"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_ayiw1")
+
+[editable path="DialogAreaBox"]

@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://hm4sct6i8l81"]
+
+[ext_resource type="Texture2D" uid="uid://btnm34m3pk7gb" path="res://Assets/Sprites/Items/box.png" id="1_hbia7"]
+[ext_resource type="Script" path="res://UI/dialog_player.gd" id="1_vv8hu"]
+[ext_resource type="FontFile" uid="uid://n1vgut48570n" path="res://Assets/Fonts/Retro Gaming.ttf" id="2_k25ab"]
+
+[node name="DialogPlayer" type="CanvasLayer"]
+script = ExtResource("1_vv8hu")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -193.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 30
+
+[node name="Background" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_hbia7")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Panel" type="Panel" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="First" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(7, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_k25ab")
+theme_override_font_sizes/font_size = 40
+text = " "
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_k25ab")
+theme_override_font_sizes/font_size = 45
+text = "Textsdfghjkgjfhdgsfghjkhjkgfhddsghjghgjfgdhfjgkhg"
+autowrap_mode = 1
+clip_text = true
+
+[node name="Last" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(7, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_k25ab")
+theme_override_font_sizes/font_size = 40
+text = " "
