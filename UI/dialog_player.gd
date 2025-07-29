@@ -1,15 +1,53 @@
 extends CanvasLayer
 
-@export (String, FILE, "*json") var scene_text_file
+@export_file("*.json") var scene_text_file: String
 
 var scene_text = {}
 var selected_text = []
 var in_progress = false
 
-onready var background = $Background
-onready var text_label = $MainText
+@onready var background = $MarginContainer
+@onready var text_label = $MarginContainer/MarginContainer/HBoxContainer/MainText
 
 func _ready():
 	background.visible = false
-	scene_text = load_scene_text()
-	SignalBus.connect("display_dialog", self, "on_display_dialog")
+	scene_text = JSON.parse_string(FileAccess.open(scene_text_file, FileAccess.READ).get_as_text())
+	SignalBus.connect("display_dialog", Callable(self, "on_display_dialog"))
+
+##func load_scene_text() -> Dictionary:
+#	var file := FileAccess.open(scene_text_file, FileAccess.READ)
+#	if file:
+#		var text := file.get_as_text()
+#		var result = JSON.parse_string(text) as Dictionary
+#		if result["error"] == OK:
+#			return result["result"]
+#		else:
+#			push_error("JSON parse error: %s" % result["error_string"])
+#	else:
+#		push_error("Could not open file: %s" % scene_text_file)
+#	return {}
+
+func show_text():
+	text_label.text = selected_text.pop_front()
+
+func next_line():
+	if selected_text.size() > 0:
+		show_text()
+	else:
+		finish()
+
+func finish():
+	text_label.text = ""
+	background.visible = false
+	in_progress = false
+	get_tree().paused = false
+
+func on_display_dialog(dialog_key: String):
+	if in_progress:
+		next_line()
+	else:
+		get_tree().paused = true
+		background.visible = true
+		in_progress = true
+		selected_text = scene_text[dialog_key].duplicate()
+		show_text() 
