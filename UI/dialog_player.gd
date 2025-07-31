@@ -49,5 +49,16 @@ func on_display_dialog(dialog_key: String):
 		get_tree().paused = true
 		background.visible = true
 		in_progress = true
-		selected_text = scene_text[dialog_key].duplicate()
+		selected_text = get_nested_value(scene_text, dialog_key.split(".")).duplicate()
 		show_text() 
+
+
+func get_nested_value(data: Dictionary, keys: Array) -> Variant:
+	var current = data
+	for key in keys:
+		if current.has(key):
+			current = current[key]
+		else:
+			push_error("Key not found in JSON: %s" % key)
+			return []
+	return current
