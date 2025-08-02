@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://hm4sct6i8l81"]
 
-[ext_resource type="Texture2D" uid="uid://btnm34m3pk7gb" path="res://Assets/Sprites/Items/box.png" id="1_hbia7"]
-[ext_resource type="Script" path="res://UI/dialog_player.gd" id="1_vv8hu"]
-[ext_resource type="FontFile" uid="uid://n1vgut48570n" path="res://Assets/Fonts/Retro Gaming.ttf" id="2_k25ab"]
+[ext_resource type="Texture2D" uid="uid://btnm34m3pk7gb" path="res://assets/sprites/Items/box.png" id="1_hbia7"]
+[ext_resource type="Script" uid="uid://c4x6aq8fqecll" path="res://UI/dialog_player.gd" id="1_vv8hu"]
+[ext_resource type="FontFile" uid="uid://n1vgut48570n" path="res://assets/Fonts/Retro Gaming.ttf" id="2_k25ab"]
 
 [node name="DialogPlayer" type="CanvasLayer"]
 script = ExtResource("1_vv8hu")
