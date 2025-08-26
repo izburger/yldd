@@ -30,4 +30,6 @@ shape = SubResource("RectangleShape2D_ayiw1")
 [node name="DialogPlayer" parent="." instance=ExtResource("4_ftcq8")]
 scene_text_file = "res://Assets/Json/world_interaction_dialog.json"
 
+[node name="Node2D" type="Node2D" parent="."]
+
 [editable path="DialogAreaBox"]
