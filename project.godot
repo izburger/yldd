@@ -22,6 +22,14 @@ SignalBus="*res://Globals/SignalBus.gd"
 
 window/stretch/mode="viewport"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/inkgd/plugin.cfg")
+
+[inkgd]
+
+register_templates=true
+
 [input]
 
 up={
