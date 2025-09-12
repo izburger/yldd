@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmu0o63s6q2j0"]
+
+[ext_resource type="FontFile" uid="uid://n1vgut48570n" path="res://Assets/Fonts/Retro Gaming.ttf" id="1_3qxp6"]
+
+[node name="Button" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_3qxp6")
+theme_override_font_sizes/font_size = 45
+text = "test"
