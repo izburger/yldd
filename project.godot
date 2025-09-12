@@ -17,6 +17,7 @@ config/icon="res://Assets/Sprites/Items/icon.svg"
 [autoload]
 
 SignalBus="*res://Globals/SignalBus.gd"
+__InkRuntime="*res://addons/inkgd/ink_runtime.gd"
 
 [display]
 

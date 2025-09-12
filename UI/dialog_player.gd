@@ -7,10 +7,12 @@ var selected_text = []
 var in_progress = false
 
 @onready var background = $MarginContainer
+@onready var choicebackground = $MarginContainer
 @onready var text_label = $MarginContainer/MarginContainer/HBoxContainer/MainText
 
 func _ready():
 	background.visible = false
+	choicebackground.visible = false
 	scene_text = JSON.parse_string(FileAccess.open(scene_text_file, FileAccess.READ).get_as_text())
 	SignalBus.connect("display_dialog", Callable(self, "on_display_dialog"))
 
@@ -39,6 +41,7 @@ func next_line():
 func finish():
 	text_label.text = ""
 	background.visible = false
+	choicebackground.visible = false
 	in_progress = false
 	get_tree().paused = false
 
