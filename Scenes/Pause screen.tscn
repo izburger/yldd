@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdrll58mksqql"]
+[gd_scene load_steps=6 format=3 uid="uid://cdrll58mksqql"]
 
 [ext_resource type="Shader" uid="uid://dd78k1750kqha" path="res://Scenes/Pause screen.gdshader" id="1_awk8a"]
+[ext_resource type="Script" uid="uid://c4evqi3aiu8ik" path="res://Scenes/pause_screen.gd" id="1_p11n1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p11n1"]
 shader = ExtResource("1_awk8a")
+shader_parameter/lod = 0.0
 
 [sub_resource type="Animation" id="Animation_hixvx"]
 resource_name = "blur"
@@ -22,6 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_p11n1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_p11n1")
@@ -61,3 +64,7 @@ text = "Quit"
 libraries = {
 &"": SubResource("AnimationLibrary_x7dre")
 }
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/restart day" to="." method="_on_restart_day_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
