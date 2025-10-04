@@ -21,7 +21,7 @@ scale = Vector2(2.12, 2.12)
 
 [node name="DialogAreaBox" parent="." instance=ExtResource("2_eou0i")]
 position = Vector2(766, 334)
-dialog_key = "boxTest"
+dialog_key = "week1.mcOffice.boxTest"
 
 [node name="CollisionShape2D" parent="DialogAreaBox" index="0"]
 position = Vector2(1.5, 7.5)
@@ -29,5 +29,7 @@ shape = SubResource("RectangleShape2D_ayiw1")
 
 [node name="DialogPlayer" parent="." instance=ExtResource("4_ftcq8")]
 scene_text_file = "res://Assets/Json/world_interaction_dialog.json"
+
+[node name="Node2D" type="Node2D" parent="."]
 
 [editable path="DialogAreaBox"]

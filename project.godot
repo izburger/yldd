@@ -17,10 +17,19 @@ config/icon="res://Assets/Sprites/Items/icon.svg"
 [autoload]
 
 SignalBus="*res://Globals/SignalBus.gd"
+__InkRuntime="*res://addons/inkgd/ink_runtime.gd"
 
 [display]
 
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/inkgd/plugin.cfg")
+
+[inkgd]
+
+register_templates=true
 
 [input]
 
