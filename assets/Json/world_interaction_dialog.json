@@ -1,4 +1,27 @@
 {
+    "week1":{
+        "mcOffice":{
+            "boxTest": [
+                "This is the first bit",
+                "This is the second"
+            ],
+            "boxTest2": [
+             "This is the first bit",
+                "This is the second"
+            ],
+            "lucyPhoto":[
+                "A photo of you and your best friend Lucy"
+            ],
+            "officeBoxes":[
+                "Boxes you still need to unpack."
+            ]
+        },
+        "bossOffice":{
+            "officeBoxes":[
+                "He has a lot of boxes"
+            ]
+        }
+    }
 	"boxTest": [
 		"This is the first bit",
 		"This is the second"
