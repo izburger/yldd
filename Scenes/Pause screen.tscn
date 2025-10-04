@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdrll58mksqql"]
+
+[ext_resource type="Shader" uid="uid://dd78k1750kqha" path="res://Scenes/Pause screen.gdshader" id="1_awk8a"]
+[ext_resource type="Script" uid="uid://c4evqi3aiu8ik" path="res://Scenes/pause_screen.gd" id="1_p11n1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p11n1"]
+shader = ExtResource("1_awk8a")
+shader_parameter/lod = 0.0
+
+[sub_resource type="Animation" id="Animation_hixvx"]
+resource_name = "blur"
+length = 0.3
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x7dre"]
+_data = {
+&"blur": SubResource("Animation_hixvx")
+}
+
+[node name="PauseScreen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p11n1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_p11n1")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 1156.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="resume" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume
+"
+
+[node name="restart day" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart day
+"
+
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_x7dre")
+}
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/restart day" to="." method="_on_restart_day_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
