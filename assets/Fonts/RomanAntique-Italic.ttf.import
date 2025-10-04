@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://n1vgut48570n"
-path="res://.godot/imported/Retro Gaming.ttf-53ae8ce411e52966ebd205a91dbcc5e9.fontdata"
+uid="uid://devs1yf5aydp5"
+path="res://.godot/imported/RomanAntique-Italic.ttf-e4a163fe54d7894b1dff04d0cb2c7492.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/Retro Gaming.ttf"
-dest_files=["res://.godot/imported/Retro Gaming.ttf-53ae8ce411e52966ebd205a91dbcc5e9.fontdata"]
+source_file="res://assets/Fonts/RomanAntique-Italic.ttf"
+dest_files=["res://.godot/imported/RomanAntique-Italic.ttf-e4a163fe54d7894b1dff04d0cb2c7492.fontdata"]
 
 [params]
 
@@ -22,7 +22,7 @@ msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
 hinting=1
-subpixel_positioning=1
+subpixel_positioning=4
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null

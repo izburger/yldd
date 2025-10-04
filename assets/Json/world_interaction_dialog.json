@@ -22,4 +22,13 @@
             ]
         }
     }
+	"boxTest": [
+		"This is the first bit",
+		"This is the second"
+	],
+
+	"boxTest2": [
+		"This is the first bit",
+		"This is the second"
+	]
 }
