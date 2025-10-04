@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://0uhq0addd2wu"]
 
-[ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://assets/sprites/player/player.tscn" id="1_jq4yq"]
+[ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://Assets/Sprites/player/player.tscn" id="1_jq4yq"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="2_eou0i"]
-[ext_resource type="Texture2D" uid="uid://btnm34m3pk7gb" path="res://assets/sprites/Items/box.png" id="3_xpjx1"]
+[ext_resource type="Texture2D" uid="uid://btnm34m3pk7gb" path="res://Assets/Sprites/Items/box.png" id="3_xpjx1"]
 [ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="4_ftcq8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayiw1"]
@@ -21,14 +21,14 @@ scale = Vector2(2.12, 2.12)
 
 [node name="DialogAreaBox" parent="." instance=ExtResource("2_eou0i")]
 position = Vector2(766, 334)
-dialog_key = "week1.mcOffice.boxTest"
+dialog_key = "bossWeek1.bossOffice"
 
 [node name="CollisionShape2D" parent="DialogAreaBox" index="0"]
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_ayiw1")
 
 [node name="DialogPlayer" parent="." instance=ExtResource("4_ftcq8")]
-scene_text_file = "res://Assets/Json/world_interaction_dialog.json"
+scene_text_file = "res://Assets/Ink/Main.ink.json"
 
 [node name="Node2D" type="Node2D" parent="."]
 

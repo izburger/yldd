@@ -1,6 +1,8 @@
 extends CanvasLayer
 
 @export_file("*.json") var scene_text_file: String
+#@export_file("*.json") var ink_file_path: String
+var ink_story: InkStory
 
 var scene_text = {}
 var selected_text = []
@@ -13,7 +15,17 @@ var in_progress = false
 func _ready():
 	background.visible = false
 	choicebackground.visible = false
-	scene_text = JSON.parse_string(FileAccess.open(scene_text_file, FileAccess.READ).get_as_text())
+
+	var file := FileAccess.open(scene_text_file, FileAccess.READ)
+	if file:
+		var json_text := file.get_as_text()
+		ink_story = InkStory.new(json_text)
+		print("Ink story loaded!")
+	else:
+		push_error("Failed to open Ink file: %s" % scene_text_file)
+
+
+	##scene_text = JSON.parse_string(FileAccess.open(scene_text_file, FileAccess.READ).get_as_text())
 	SignalBus.connect("display_dialog", Callable(self, "on_display_dialog"))
 
 ##func load_scene_text() -> Dictionary:
@@ -29,14 +41,37 @@ func _ready():
 #		push_error("Could not open file: %s" % scene_text_file)
 #	return {}
 
-func show_text():
-	text_label.text = selected_text.pop_front()
+##func show_text():
+#	text_label.text = selected_text.pop_front()
 
-func next_line():
-	if selected_text.size() > 0:
-		show_text()
+##func next_line():
+#	if selected_text.size() > 0:
+#		show_text()
+#	else:
+#		finish()
+
+func continue_story():
+	if ink_story.can_continue:
+		text_label.text = ink_story.continue_story()
 	else:
-		finish()
+		if ink_story.current_choices.size() > 0:
+			show_choices()
+		else:
+			finish()
+
+
+func show_choices():
+	choicebackground.visible = true
+	for i in ink_story.current_choices.size():
+		var choice_text = ink_story.current_choices[i]["text"]
+		#TODO:Create a Button for each choice and connect it
+		print("Choice %d: %s" % [i, choice_text])
+
+
+func choose(index: int):
+	ink_story.choose_choice_index(index)
+	choicebackground.visible = false
+	continue_story()
 
 func finish():
 	text_label.text = ""
@@ -47,13 +82,14 @@ func finish():
 
 func on_display_dialog(dialog_key: String):
 	if in_progress:
-		next_line()
+		continue_story()
 	else:
 		get_tree().paused = true
 		background.visible = true
 		in_progress = true
-		selected_text = get_nested_value(scene_text, dialog_key.split(".")).duplicate()
-		show_text() 
+		ink_story.choose_path_string(dialog_key)
+		continue_story()
+		#show_text() 
 
 
 func get_nested_value(data: Dictionary, keys: Array) -> Variant:
