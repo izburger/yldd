@@ -8,6 +8,8 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_18wmf")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
