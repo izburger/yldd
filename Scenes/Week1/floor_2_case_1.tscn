@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=3 uid="uid://btv3bac8oosqd"]
+
+[ext_resource type="Texture2D" uid="uid://brwvv1knf6hle" path="res://Assets/Backgrounds/Floors/floor2.png" id="1_yoo3e"]
+[ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://Assets/Sprites/player/player.tscn" id="2_721t7"]
+[ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_va07x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xokq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kl21w"]
+
+[node name="Floor2_Case1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.997965, 1)
+texture = ExtResource("1_yoo3e")
+centered = false
+
+[node name="Player" parent="." instance=ExtResource("2_721t7")]
+position = Vector2(1489, 510)
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+visible = false
+position = Vector2(950, 170)
+scale = Vector2(97.1366, 17.5758)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+shape = SubResource("RectangleShape2D_2xokq")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
+visible = false
+position = Vector2(373, 1014)
+scale = Vector2(43.3933, 5.38167)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
+shape = SubResource("RectangleShape2D_2xokq")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
+visible = false
+position = Vector2(1544, 1014)
+scale = Vector2(43.3933, 6.58167)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
+shape = SubResource("RectangleShape2D_2xokq")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
+visible = false
+position = Vector2(69.9999, 443)
+scale = Vector2(-5.9222, 54.8124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
+shape = SubResource("RectangleShape2D_2xokq")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Walls"]
+visible = false
+position = Vector2(1850, 501)
+scale = Vector2(-5.9222, 54.8124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D5"]
+shape = SubResource("RectangleShape2D_2xokq")
+
+[node name="Interactables" type="Node" parent="."]
+
+[node name="BookShelf" parent="Interactables" instance=ExtResource("3_va07x")]
+visible = false
+position = Vector2(294, 168)
+scale = Vector2(13.9693, 16.42)
+
+[node name="Sprite2D" parent="Interactables/BookShelf" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Interactables/BookShelf" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_kl21w")
+
+[node name="BookShelf2" parent="Interactables" instance=ExtResource("3_va07x")]
+visible = false
+position = Vector2(1576, 164)
+scale = Vector2(13.9693, 16.42)
+
+[node name="Sprite2D" parent="Interactables/BookShelf2" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Interactables/BookShelf2" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_kl21w")
+
+[node name="PhotoFrame" parent="Interactables" instance=ExtResource("3_va07x")]
+visible = false
+position = Vector2(1118, 487)
+scale = Vector2(8.16975, 4.32641)
+
+[node name="Sprite2D" parent="Interactables/PhotoFrame" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Interactables/PhotoFrame" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_kl21w")
+
+[node name="Boxes" parent="Interactables" instance=ExtResource("3_va07x")]
+visible = false
+position = Vector2(471, 939)
+scale = Vector2(29.7698, -7.11118)
+
+[node name="Sprite2D" parent="Interactables/Boxes" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Interactables/Boxes" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_kl21w")
+
+[editable path="Interactables/BookShelf"]
+[editable path="Interactables/BookShelf2"]
+[editable path="Interactables/PhotoFrame"]
+[editable path="Interactables/Boxes"]

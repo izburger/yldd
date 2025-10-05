@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhb2hdn3pgipp"]
+
+[ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="1_shnwh"]
+
+[node name="NPC" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="DialogAreaBox" parent="." instance=ExtResource("1_shnwh")]
+position = Vector2(766, 334)
+
+[node name="Sprite2D" parent="DialogAreaBox" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="DialogAreaBox" index="1"]
+position = Vector2(1.5, 7.5)
+
+[editable path="DialogAreaBox"]
