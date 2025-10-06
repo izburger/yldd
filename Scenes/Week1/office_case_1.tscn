@@ -32,9 +32,6 @@ texture = ExtResource("4_1vrt3")
 [node name="CollisionShape2D" parent="NPC" index="2"]
 visible = true
 
-[node name="Sprite2D" parent="NPC/DialogAreaBox" index="0"]
-scale = Vector2(0.147237, 0.147237)
-
 [node name="Walls" type="Node" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
@@ -182,6 +179,8 @@ shape = SubResource("RectangleShape2D_nxw0m")
 [node name="DialogPlayer" parent="." instance=ExtResource("4_lvti4")]
 visible = false
 scene_text_file = "res://Assets/Ink/Main.ink.json"
+
+[node name="Player2" parent="." instance=ExtResource("2_q6p3d")]
 
 [connection signal="area_entered" from="Interactables/RoomLeave" to="Player" method="_on_room_leave_area_entered"]
 
