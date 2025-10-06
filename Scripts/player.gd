@@ -1,6 +1,6 @@
 class_name player extends CharacterBody2D
 
-var move_speed : float = 300.0
+var move_speed : float = 500.0
 
 
 # Called when the node enters the scene tree for the first time.
