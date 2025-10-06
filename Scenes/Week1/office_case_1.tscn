@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bru00mm5cu3vc"]
+[gd_scene load_steps=7 format=3 uid="uid://bru00mm5cu3vc"]
 
 [ext_resource type="Texture2D" uid="uid://cd4tpnsv4qonk" path="res://Assets/Backgrounds/Offices/office.png" id="1_5up7p"]
 [ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://Assets/Sprites/player/player.tscn" id="2_q6p3d"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_xyope"]
+[ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="4_lvti4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgkpj"]
 
@@ -55,11 +56,40 @@ scale = Vector2(-5.9222, 54.8124)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D5"]
 shape = SubResource("RectangleShape2D_vgkpj")
 
+[node name="StaticBody2D6" type="StaticBody2D" parent="Walls"]
+position = Vector2(971, 604)
+scale = Vector2(-27.0639, -11.0845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D6"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Walls"]
+position = Vector2(1304, 656)
+scale = Vector2(-5.12998, 5.82739)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D7"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Walls"]
+position = Vector2(193, 763)
+scale = Vector2(-8.44998, 19.1874)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D8"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Walls"]
+position = Vector2(1776, 773)
+scale = Vector2(-8.44998, 23.7874)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D9"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
 [node name="Interactables" type="Node" parent="."]
 
 [node name="BookShelf" parent="Interactables" instance=ExtResource("3_xyope")]
 position = Vector2(294, 168)
 scale = Vector2(13.9693, 16.42)
+dialog_key = "mcInteractables.boxes"
 
 [node name="Sprite2D" parent="Interactables/BookShelf" index="0"]
 scale = Vector2(0.147237, 0.147237)
@@ -71,6 +101,7 @@ shape = SubResource("RectangleShape2D_nueae")
 [node name="BookShelf2" parent="Interactables" instance=ExtResource("3_xyope")]
 position = Vector2(1576, 164)
 scale = Vector2(13.9693, 16.42)
+dialog_key = "mcInteractables.boxes"
 
 [node name="Sprite2D" parent="Interactables/BookShelf2" index="0"]
 scale = Vector2(0.147237, 0.147237)
@@ -80,8 +111,9 @@ position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
 [node name="PhotoFrame" parent="Interactables" instance=ExtResource("3_xyope")]
-position = Vector2(1118, 487)
-scale = Vector2(8.16975, 4.32641)
+position = Vector2(921, 466)
+scale = Vector2(28.5648, 6.06972)
+dialog_key = "mcInteractables.photoFrame"
 
 [node name="Sprite2D" parent="Interactables/PhotoFrame" index="0"]
 scale = Vector2(0.147237, 0.147237)
@@ -93,6 +125,7 @@ shape = SubResource("RectangleShape2D_nueae")
 [node name="Boxes" parent="Interactables" instance=ExtResource("3_xyope")]
 position = Vector2(471, 939)
 scale = Vector2(29.7698, -7.11118)
+dialog_key = "mcInteractables.boxes"
 
 [node name="Sprite2D" parent="Interactables/Boxes" index="0"]
 scale = Vector2(0.147237, 0.147237)
@@ -100,6 +133,9 @@ scale = Vector2(0.147237, 0.147237)
 [node name="CollisionShape2D" parent="Interactables/Boxes" index="1"]
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
+
+[node name="DialogPlayer" parent="." instance=ExtResource("4_lvti4")]
+scene_text_file = "res://Assets/Ink/Main.ink.json"
 
 [editable path="Interactables/BookShelf"]
 [editable path="Interactables/BookShelf2"]
