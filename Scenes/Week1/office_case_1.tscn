@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://bru00mm5cu3vc"]
+[gd_scene load_steps=10 format=3 uid="uid://bru00mm5cu3vc"]
 
 [ext_resource type="Texture2D" uid="uid://cd4tpnsv4qonk" path="res://Assets/Backgrounds/Offices/office.png" id="1_5up7p"]
 [ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://Assets/Sprites/player/player.tscn" id="2_q6p3d"]
+[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://Assets/Sprites/npc/npc.tscn" id="3_ugo4v"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_xyope"]
+[ext_resource type="Texture2D" uid="uid://dod7n5l61dvft" path="res://Assets/Sprites/npc/boss/boss.png" id="4_1vrt3"]
 [ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="4_lvti4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgkpj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nueae"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxw0m"]
 
 [node name="Office_Case1" type="Node2D"]
 
@@ -19,6 +23,18 @@ centered = false
 [node name="Player" parent="." instance=ExtResource("2_q6p3d")]
 position = Vector2(1489, 510)
 
+[node name="NPC" parent="." instance=ExtResource("3_ugo4v")]
+position = Vector2(947, 1429)
+
+[node name="Sprite2D" parent="NPC" index="0"]
+texture = ExtResource("4_1vrt3")
+
+[node name="CollisionShape2D" parent="NPC" index="2"]
+visible = true
+
+[node name="Sprite2D" parent="NPC/DialogAreaBox" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
 [node name="Walls" type="Node" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
@@ -29,15 +45,16 @@ scale = Vector2(97.1366, 17.5758)
 shape = SubResource("RectangleShape2D_vgkpj")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
-position = Vector2(373, 1014)
-scale = Vector2(43.3933, 5.38167)
+position = Vector2(368, 1141)
+scale = Vector2(43.3933, 18.4617)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vgkpj")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
-position = Vector2(1544, 1014)
-scale = Vector2(43.3933, 6.58167)
+position = Vector2(1542, 1148)
+scale = Vector2(43.3933, 19.7817)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
 shape = SubResource("RectangleShape2D_vgkpj")
@@ -134,10 +151,44 @@ scale = Vector2(0.147237, 0.147237)
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
+[node name="Boss" type="Area2D" parent="Interactables"]
+position = Vector2(954, 1101)
+scale = Vector2(14.953, -3.55118)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Boss"]
+shape = SubResource("RectangleShape2D_nxw0m")
+
+[node name="BossDialogue" parent="Interactables/Boss" instance=ExtResource("3_xyope")]
+visible = false
+position = Vector2(21.7347, 38.0155)
+scale = Vector2(0.541011, 1.70962)
+dialog_key = "bossWeek1.bossOffice"
+
+[node name="Sprite2D" parent="Interactables/Boss/BossDialogue" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Interactables/Boss/BossDialogue" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_nueae")
+
+[node name="RoomLeave" type="Area2D" parent="Interactables"]
+position = Vector2(954, 1283)
+scale = Vector2(14.953, -3.55118)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/RoomLeave"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_nxw0m")
+
 [node name="DialogPlayer" parent="." instance=ExtResource("4_lvti4")]
+visible = false
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
+[connection signal="area_entered" from="Interactables/RoomLeave" to="Player" method="_on_room_leave_area_entered"]
+
+[editable path="NPC"]
+[editable path="NPC/DialogAreaBox"]
 [editable path="Interactables/BookShelf"]
 [editable path="Interactables/BookShelf2"]
 [editable path="Interactables/PhotoFrame"]
 [editable path="Interactables/Boxes"]
+[editable path="Interactables/Boss/BossDialogue"]

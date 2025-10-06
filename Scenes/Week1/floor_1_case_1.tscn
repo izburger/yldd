@@ -16,6 +16,7 @@ texture = ExtResource("1_5c6kb")
 centered = false
 
 [node name="Player" parent="." instance=ExtResource("2_0xfx1")]
+visible = false
 position = Vector2(1489, 510)
 
 [node name="Walls" type="Node" parent="."]
