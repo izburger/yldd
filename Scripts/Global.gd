@@ -61,12 +61,12 @@ var selected_hair = ""
 var selected_outfit = ""
 
 #big for character creation
-var selected_body_BIG = ""
-var selected_hair_BIG = ""
-var selected_outfit_BIG = ""
+var selected_body_BIG := "01"
+var selected_hair_BIG := "none"
+var selected_outfit_BIG := "01"
 
-var selected_body_colour_BIG = ""
-var selected_hair_colour_BIG = ""
+var selected_body_colour_BIG = body_colour_options[0]
+var selected_hair_colour_BIG = hair_colour_options[0]
 
 ######
 
