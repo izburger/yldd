@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://chfs0odslc5jb"
-path="res://.godot/imported/STAMPWRITER-KIT.ttf-4a95c0aed69666dac335a8445f410430.fontdata"
+path="res://.godot/imported/STAMPWRITER-KIT.ttf-04a425162e02aad246707ae178b51921.fontdata"
 
 [deps]
 
-source_file="res://Assets/STAMPWRITER-KIT.ttf"
-dest_files=["res://.godot/imported/STAMPWRITER-KIT.ttf-4a95c0aed69666dac335a8445f410430.fontdata"]
+source_file="res://assets/STAMPWRITER-KIT.ttf"
+dest_files=["res://.godot/imported/STAMPWRITER-KIT.ttf-04a425162e02aad246707ae178b51921.fontdata"]
 
 [params]
 

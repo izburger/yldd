@@ -76,18 +76,35 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
-func initialize_player():
+
 	
-		# body and colour
-	body.texture = Global.bodies_collection_BIG[Global.selected_body_BIG]
+func initialize_player():
+	# BODY
+	if Global.bodies_collection_BIG.has(Global.selected_body_BIG):
+		body.texture = Global.bodies_collection_BIG[Global.selected_body_BIG]
+	else:
+		print("Warning: invalid body key, using default '01'")
+		body.texture = Global.bodies_collection_BIG["01"]
+	
 	body.modulate = Global.selected_body_colour_BIG
 
-	# hair and colour
-	hair.texture = Global.hair_collection_BIG[Global.selected_hair_BIG]
-	hair.modulate = Global.selected_hair_colour
+	# HAIR
+	if Global.hair_collection_BIG.has(Global.selected_hair_BIG):
+		hair.texture = Global.hair_collection_BIG[Global.selected_hair_BIG]
+	else:
+		print("Warning: invalid hair key, using 'none'")
+		hair.texture = null
 	
-	# outfit 
-	outfit.texture = Global.outfit_collection_BIG[Global.selected_outfit_BIG]
+	hair.modulate = Global.selected_hair_colour_BIG
+
+	# OUTFIT
+	if Global.outfit_collection_BIG.has(Global.selected_outfit_BIG):
+		outfit.texture = Global.outfit_collection_BIG[Global.selected_outfit_BIG]
+	else:
+		print("Warning: invalid outfit key, using default '01'")
+		outfit.texture = Global.outfit_collection_BIG["01"]
+		
+
 
 # helper to flip horizontally
 func set_flip(should_flip: bool):

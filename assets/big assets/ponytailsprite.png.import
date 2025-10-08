@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgr0leht3a41o"
-path="res://.godot/imported/ponytailsprite.png-d0a99f8fc1dd6da0bea791ae8fa36230.ctex"
+path="res://.godot/imported/ponytailsprite.png-d68d72dea7861284625d452179392fba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/big assets/ponytailsprite.png"
-dest_files=["res://.godot/imported/ponytailsprite.png-d0a99f8fc1dd6da0bea791ae8fa36230.ctex"]
+source_file="res://assets/big assets/ponytailsprite.png"
+dest_files=["res://.godot/imported/ponytailsprite.png-d68d72dea7861284625d452179392fba.ctex"]
 
 [params]
 

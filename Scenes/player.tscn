@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://c21h8rdpnhpu8"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_2s5x7"]
-[ext_resource type="Texture2D" uid="uid://dmapbh0wwgjhy" path="res://Assets/big assets/basespritesheet.png" id="5_g64b5"]
-[ext_resource type="Texture2D" uid="uid://bjjxck1i1otyf" path="res://Assets/big assets/dressspritesheet.png" id="6_xsop4"]
-[ext_resource type="Texture2D" uid="uid://bt6suaom8ymtj" path="res://Assets/big assets/hairspritesheet.png" id="7_wwixg"]
+[ext_resource type="Texture2D" uid="uid://dmapbh0wwgjhy" path="res://assets/big assets/basespritesheet.png" id="5_g64b5"]
+[ext_resource type="Texture2D" uid="uid://bjjxck1i1otyf" path="res://assets/big assets/dressspritesheet.png" id="6_xsop4"]
+[ext_resource type="Texture2D" uid="uid://bt6suaom8ymtj" path="res://assets/big assets/hairspritesheet.png" id="7_wwixg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lybci"]
 
