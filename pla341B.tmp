@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c21h8rdpnhpu8"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_2s5x7"]
+[ext_resource type="Texture2D" uid="uid://c3y3ggqvp0lrc" path="res://Assets/body.png" id="2_2kxps"]
+[ext_resource type="Texture2D" uid="uid://hrurujh7gsoe" path="res://Assets/hair.png" id="3_wr3lq"]
+[ext_resource type="Texture2D" uid="uid://bgnl3fdflntfk" path="res://Assets/outfitdress.png" id="4_6dv3t"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_2s5x7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Skeleton" type="Node2D" parent="."]
+
+[node name="body" type="Sprite2D" parent="Skeleton"]
+texture = ExtResource("2_2kxps")
+hframes = 9
+vframes = 8
+
+[node name="hair" type="Sprite2D" parent="Skeleton"]
+texture = ExtResource("3_wr3lq")
+hframes = 9
+vframes = 8
+
+[node name="outfit" type="Sprite2D" parent="Skeleton"]
+texture = ExtResource("4_6dv3t")
+hframes = 9
+vframes = 8
