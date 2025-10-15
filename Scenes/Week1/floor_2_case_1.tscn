@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://Assets/Sprites/player/player.tscn" id="2_721t7"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_va07x"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xokq"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kl21w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r62oy"]
 
 [node name="Floor2_Case1" type="Node2D"]
 
@@ -17,48 +17,6 @@ centered = false
 
 [node name="Player" parent="." instance=ExtResource("2_721t7")]
 position = Vector2(1489, 510)
-
-[node name="Walls" type="Node" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
-visible = false
-position = Vector2(950, 170)
-scale = Vector2(97.1366, 17.5758)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
-shape = SubResource("RectangleShape2D_2xokq")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
-visible = false
-position = Vector2(373, 1014)
-scale = Vector2(43.3933, 5.38167)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
-shape = SubResource("RectangleShape2D_2xokq")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
-visible = false
-position = Vector2(1544, 1014)
-scale = Vector2(43.3933, 6.58167)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
-shape = SubResource("RectangleShape2D_2xokq")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
-visible = false
-position = Vector2(69.9999, 443)
-scale = Vector2(-5.9222, 54.8124)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
-shape = SubResource("RectangleShape2D_2xokq")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="Walls"]
-visible = false
-position = Vector2(1850, 501)
-scale = Vector2(-5.9222, 54.8124)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D5"]
-shape = SubResource("RectangleShape2D_2xokq")
 
 [node name="Interactables" type="Node" parent="."]
 
@@ -109,6 +67,87 @@ scale = Vector2(0.147237, 0.147237)
 [node name="CollisionShape2D" parent="Interactables/Boxes" index="1"]
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_kl21w")
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+position = Vector2(1867, 208)
+scale = Vector2(-9.81, 12.9445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Walls"]
+position = Vector2(976, 203)
+scale = Vector2(-13.1073, 13.6245)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D10"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Walls"]
+position = Vector2(1452, 211)
+scale = Vector2(-10.17, 16.3845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D7"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Walls"]
+position = Vector2(44, 208)
+scale = Vector2(-9.81, 13.1045)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D8"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Walls"]
+position = Vector2(491, 232)
+scale = Vector2(-12.17, 13.9445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D9"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
+visible = false
+position = Vector2(525, 467)
+scale = Vector2(52.0845, 12.0752)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
+position = Vector2(1014, 1072)
+scale = Vector2(104.873, 4.42167)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="Walls"]
+position = Vector2(980, 48)
+scale = Vector2(104.873, 4.42167)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D11"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
+position = Vector2(-10, 561)
+scale = Vector2(-5.9222, 57.7324)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Walls"]
+position = Vector2(1914, 539)
+scale = Vector2(-5.9222, 54.8124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D5"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Walls"]
+visible = false
+position = Vector2(1679, 443)
+scale = Vector2(26.4445, 11.5552)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D6"]
+shape = SubResource("RectangleShape2D_r62oy")
 
 [editable path="Interactables/BookShelf"]
 [editable path="Interactables/BookShelf2"]

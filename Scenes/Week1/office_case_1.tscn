@@ -46,7 +46,6 @@ position = Vector2(368, 1141)
 scale = Vector2(43.3933, 18.4617)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vgkpj")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
@@ -102,8 +101,9 @@ shape = SubResource("RectangleShape2D_vgkpj")
 
 [node name="BookShelf" parent="Interactables" instance=ExtResource("3_xyope")]
 position = Vector2(294, 168)
+rotation = -0.00169
 scale = Vector2(13.9693, 16.42)
-dialog_key = "mcInteractables.boxes"
+dialog_key = "reillyWeek1.w1reillyOptions"
 
 [node name="Sprite2D" parent="Interactables/BookShelf" index="0"]
 scale = Vector2(0.147237, 0.147237)
@@ -114,6 +114,7 @@ shape = SubResource("RectangleShape2D_nueae")
 
 [node name="BookShelf2" parent="Interactables" instance=ExtResource("3_xyope")]
 position = Vector2(1576, 164)
+rotation = -0.0714717
 scale = Vector2(13.9693, 16.42)
 dialog_key = "mcInteractables.boxes"
 
@@ -173,14 +174,16 @@ position = Vector2(954, 1283)
 scale = Vector2(14.953, -3.55118)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/RoomLeave"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nxw0m")
 
 [node name="DialogPlayer" parent="." instance=ExtResource("4_lvti4")]
-visible = false
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
-[node name="Player2" parent="." instance=ExtResource("2_q6p3d")]
+[node name="PlayerChoice" parent="DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
+visible = false
+
+[node name="Button" parent="DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice/HBoxContainer/MarginContainer" index="2"]
+visible = false
 
 [connection signal="area_entered" from="Interactables/RoomLeave" to="Player" method="_on_room_leave_area_entered"]
 
@@ -191,3 +194,5 @@ scene_text_file = "res://Assets/Ink/Main.ink.json"
 [editable path="Interactables/PhotoFrame"]
 [editable path="Interactables/Boxes"]
 [editable path="Interactables/Boss/BossDialogue"]
+[editable path="DialogPlayer"]
+[editable path="DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice"]
