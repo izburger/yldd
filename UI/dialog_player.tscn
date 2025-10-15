@@ -1,11 +1,76 @@
-[gd_scene load_steps=4 format=3 uid="uid://hm4sct6i8l81"]
+[gd_scene load_steps=6 format=3 uid="uid://hm4sct6i8l81"]
 
 [ext_resource type="Texture2D" uid="uid://btnm34m3pk7gb" path="res://Assets/Sprites/Items/box.png" id="1_hbia7"]
 [ext_resource type="Script" path="res://UI/dialog_player.gd" id="1_vv8hu"]
+[ext_resource type="PackedScene" uid="uid://ddyijyvvravwl" path="res://Scenes/player_choice.tscn" id="2_cquq4"]
 [ext_resource type="FontFile" uid="uid://n1vgut48570n" path="res://Assets/Fonts/Retro Gaming.ttf" id="2_k25ab"]
+[ext_resource type="FontFile" uid="uid://dta20egsllsdw" path="res://Assets/Fonts/Main/American Typewriter Regular.ttf" id="4_qitpg"]
 
 [node name="DialogPlayer" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_vv8hu")
+
+[node name="ChoiceContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="ChoiceContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="PlayerChoice" parent="ChoiceContainer/VBoxContainer3" instance=ExtResource("2_cquq4")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ChoiceContainer/VBoxContainer3"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChoiceContainer/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Background" type="TextureRect" parent="ChoiceContainer/VBoxContainer3/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_hbia7")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="ChoiceContainer/VBoxContainer3/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ChoiceContainer/VBoxContainer3/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Panel" type="Panel" parent="ChoiceContainer/VBoxContainer3/VBoxContainer2/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChoiceContainer/VBoxContainer3/VBoxContainer2/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ChoiceContainer/VBoxContainer3/VBoxContainer2/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(700, 2.08165e-12)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qitpg")
+theme_override_font_sizes/font_size = 37
+text = "This is button"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 12
@@ -54,7 +119,7 @@ text = " "
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_fonts/font = ExtResource("2_k25ab")
+theme_override_fonts/font = ExtResource("4_qitpg")
 theme_override_font_sizes/font_size = 37
 text = "Textsdfghjkgjfhdgsfghjkhjkgfhddsghjghgjfgdhfjgkhg"
 autowrap_mode = 2
@@ -68,40 +133,4 @@ theme_override_fonts/font = ExtResource("2_k25ab")
 theme_override_font_sizes/font_size = 40
 text = " "
 
-[node name="ChoiceContainer" type="MarginContainer" parent="."]
-visible = false
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -92.0
-offset_bottom = 29.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 30
-
-[node name="Background" type="TextureRect" parent="ChoiceContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("1_hbia7")
-expand_mode = 1
-
-[node name="Panel" type="Panel" parent="ChoiceContainer"]
-visible = false
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="ChoiceContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="Panel" type="Panel" parent="ChoiceContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ChoiceContainer/MarginContainer"]
-layout_mode = 2
+[editable path="ChoiceContainer/VBoxContainer3/PlayerChoice"]
