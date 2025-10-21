@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://r5e8h3whwu6l"
+path="res://.godot/imported/Door Locked.mp3-c13d9e0eec57f9424438a276bdeee370.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/Door Locked.mp3"
+dest_files=["res://.godot/imported/Door Locked.mp3-c13d9e0eec57f9424438a276bdeee370.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

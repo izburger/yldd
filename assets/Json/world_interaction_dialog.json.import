@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://cupxy8k2q7nn1"
+path="res://.godot/imported/world_interaction_dialog.json-f25c05c32d87c4b2830f0f55b5ae2138.res"
+
+[deps]
+
+source_file="res://assets/Json/world_interaction_dialog.json"
+dest_files=["res://.godot/imported/world_interaction_dialog.json-f25c05c32d87c4b2830f0f55b5ae2138.res"]
+
+[params]
+
+compress=true

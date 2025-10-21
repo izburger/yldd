@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsvp762utpuce"
+path="res://.godot/imported/Page Flip.mp3-44d0e4980459d5f1b998644c66aca38b.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/Page Flip.mp3"
+dest_files=["res://.godot/imported/Page Flip.mp3-44d0e4980459d5f1b998644c66aca38b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
