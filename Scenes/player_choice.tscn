@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddyijyvvravwl"]
+
+[ext_resource type="Texture2D" uid="uid://btnm34m3pk7gb" path="res://Assets/Sprites/Items/box.png" id="1_gw3kb"]
+[ext_resource type="FontFile" uid="uid://dta20egsllsdw" path="res://Assets/Fonts/Main/American Typewriter Regular.ttf" id="2_vfxkl"]
+
+[node name="PlayerChoice" type="VBoxContainer"]
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Background" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_gw3kb")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ChoiceList" type="HBoxContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(700, 2.08165e-12)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vfxkl")
+theme_override_font_sizes/font_size = 37
+text = "This is button"

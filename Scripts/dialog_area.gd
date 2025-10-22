@@ -3,6 +3,9 @@ extends Area2D
 @export var dialog_key = ""
 var area_active = false
 
+func _ready():
+	set_process_input(true)
+
 func _input(event):
 	if area_active and event.is_action_pressed("interact"):
 		SignalBus.emit_signal("display_dialog", dialog_key)
