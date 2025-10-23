@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bmes7ut085qpf"]
 
-[ext_resource type="Script" uid="uid://cnsvhtp1uo4c2" path="res://Scripts/badge_scene.gd" id="1_v6gy2"]
+[ext_resource type="Script" path="res://Scripts/badge_scene.gd" id="1_v6gy2"]
 [ext_resource type="Texture2D" uid="uid://bc2aaria5qnph" path="res://assets/colour palet.png" id="2_ooj67"]
 [ext_resource type="Texture2D" uid="uid://hc8uv6puwy4v" path="res://assets/background-char.png" id="2_s17b3"]
 [ext_resource type="FontFile" uid="uid://chfs0odslc5jb" path="res://assets/STAMPWRITER-KIT.ttf" id="3_6j46q"]
@@ -55,8 +55,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2lmbb"]
 _data = {
-&"RESET": SubResource("Animation_68aow"),
-&"fade_out_daniel": SubResource("Animation_8cfh7")
+"RESET": SubResource("Animation_68aow"),
+"fade_out_daniel": SubResource("Animation_8cfh7")
 }
 
 [sub_resource type="Animation" id="Animation_bts7m"]
@@ -91,8 +91,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l3tq1"]
 _data = {
-&"RESET": SubResource("Animation_bts7m"),
-&"text": SubResource("Animation_feo3d")
+"RESET": SubResource("Animation_bts7m"),
+"text": SubResource("Animation_feo3d")
 }
 
 [node name="badge scene" type="Node2D"]
