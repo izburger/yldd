@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://badcm6unmfp41"]
 
-[ext_resource type="Script" path="res://examples/scenes/common/story_player.gd" id="1"]
-[ext_resource type="FontFile" uid="uid://dgr3p2yr23j6g" path="res://examples/fonts/Poppins-Medium.ttf" id="2"]
-[ext_resource type="Texture2D" uid="uid://y67ay27gvf0f" path="res://examples/images/spinner.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://1rrpgplbcgqn" path="res://examples/images/transparent.png" id="5"]
+[ext_resource type="Script" uid="uid://c3cev5mb8q068" path="res://examples/scenes/common/story_player.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://c2ye71yeaaoah" path="res://examples/fonts/Poppins-Medium.ttf" id="2"]
+[ext_resource type="Texture2D" uid="uid://b547sve0my1ir" path="res://examples/images/spinner.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://brs6smndsgq8s" path="res://examples/images/transparent.png" id="5"]
 
 [sub_resource type="StyleBoxFlat" id="1"]
 bg_color = Color(0, 0, 0, 1)
@@ -46,14 +46,14 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jbitm"]
 _data = {
-"LoadingAnimation": SubResource("7")
+&"LoadingAnimation": SubResource("7")
 }
 
 [sub_resource type="FontFile" id="9"]
+fallbacks = Array[Font]([ExtResource("2")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
-fallbacks = Array[Font]([ExtResource("2")])
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0

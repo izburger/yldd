@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c1qprq266tj7v" path="res://examples/images/buttons/button_pressed.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://tet0534l62f2" path="res://examples/images/buttons/button_disabled.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://pbm0m38a62ph" path="res://examples/images/inkgd.png" id="6"]
-[ext_resource type="Script" path="res://examples/scenes/main.gd" id="7"]
+[ext_resource type="Script" uid="uid://ctcvy8ejejjuf" path="res://examples/scenes/main.gd" id="7"]
 [ext_resource type="FontFile" path="res://examples/fonts/Poppins-Medium.tres" id="8"]
 
 [sub_resource type="FontFile" id="7"]
