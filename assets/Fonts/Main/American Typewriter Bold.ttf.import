@@ -3,18 +3,19 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bsblej0iv5c7j"
-path="res://.godot/imported/American Typewriter Bold.ttf-5d3c206185f6d1e1c80532e428d49a54.fontdata"
+path="res://.godot/imported/American Typewriter Bold.ttf-4453224090673658f14e5ee55c6df558.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/Main/American Typewriter Bold.ttf"
-dest_files=["res://.godot/imported/American Typewriter Bold.ttf-5d3c206185f6d1e1c80532e428d49a54.fontdata"]
+source_file="res://assets/Fonts/Main/American Typewriter Bold.ttf"
+dest_files=["res://.godot/imported/American Typewriter Bold.ttf-4453224090673658f14e5ee55c6df558.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48
@@ -22,6 +23,7 @@ allow_system_fallback=true
 force_autohinter=false
 hinting=1
 subpixel_positioning=1
+keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]

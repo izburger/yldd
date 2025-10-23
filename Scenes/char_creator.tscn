@@ -1,21 +1,21 @@
 [gd_scene load_steps=29 format=3 uid="uid://djegue42moo0j"]
 
-[ext_resource type="Script" path="res://Scripts/char_creator.gd" id="1_ivb2j"]
-[ext_resource type="Script" path="res://Scripts/body.gd" id="2_0ml2j"]
-[ext_resource type="FontFile" uid="uid://chfs0odslc5jb" path="res://Assets/STAMPWRITER-KIT.ttf" id="2_f3pqy"]
-[ext_resource type="Texture2D" uid="uid://hc8uv6puwy4v" path="res://Assets/background-char.png" id="3_alodn"]
-[ext_resource type="Texture2D" uid="uid://c3y3ggqvp0lrc" path="res://Assets/body.png" id="3_kxquo"]
-[ext_resource type="Script" path="res://Scripts/hair.gd" id="4_dfwav"]
-[ext_resource type="Texture2D" uid="uid://hrurujh7gsoe" path="res://Assets/hair.png" id="5_0lkl7"]
-[ext_resource type="Script" path="res://Scripts/outfit.gd" id="6_5vjv2"]
-[ext_resource type="Texture2D" uid="uid://bgnl3fdflntfk" path="res://Assets/outfitdress.png" id="7_kdmg5"]
-[ext_resource type="Texture2D" uid="uid://dmapbh0wwgjhy" path="res://Assets/big assets/basespritesheet.png" id="8_lwjiv"]
-[ext_resource type="Script" path="res://Scripts/scriptsforbig/bodybig.gd" id="8_r30tn"]
-[ext_resource type="Script" path="res://Scripts/scriptsforbig/hairbig.gd" id="10_1y2bg"]
-[ext_resource type="Script" path="res://Scripts/scriptsforbig/outfitbig.gd" id="11_mwjmd"]
-[ext_resource type="Texture2D" uid="uid://bt6suaom8ymtj" path="res://Assets/big assets/hairspritesheet.png" id="11_y2mm4"]
-[ext_resource type="Texture2D" uid="uid://bjjxck1i1otyf" path="res://Assets/big assets/dressspritesheet.png" id="13_0pk8g"]
-[ext_resource type="Texture2D" uid="uid://bc2aaria5qnph" path="res://Assets/colour palet.png" id="14_7xfm5"]
+[ext_resource type="Script" uid="uid://c71uwidwnckkc" path="res://Scripts/char_creator.gd" id="1_ivb2j"]
+[ext_resource type="Script" uid="uid://bybncrow58t5s" path="res://Scripts/body.gd" id="2_0ml2j"]
+[ext_resource type="FontFile" uid="uid://chfs0odslc5jb" path="res://assets/STAMPWRITER-KIT.ttf" id="2_f3pqy"]
+[ext_resource type="Texture2D" uid="uid://hc8uv6puwy4v" path="res://assets/background-char.png" id="3_alodn"]
+[ext_resource type="Texture2D" uid="uid://c3y3ggqvp0lrc" path="res://assets/body.png" id="3_kxquo"]
+[ext_resource type="Script" uid="uid://3va655q2fdgu" path="res://Scripts/hair.gd" id="4_dfwav"]
+[ext_resource type="Texture2D" uid="uid://hrurujh7gsoe" path="res://assets/hair.png" id="5_0lkl7"]
+[ext_resource type="Script" uid="uid://cjyqyx7663t35" path="res://Scripts/outfit.gd" id="6_5vjv2"]
+[ext_resource type="Texture2D" uid="uid://bgnl3fdflntfk" path="res://assets/outfitdress.png" id="7_kdmg5"]
+[ext_resource type="Texture2D" uid="uid://dmapbh0wwgjhy" path="res://assets/big assets/basespritesheet.png" id="8_lwjiv"]
+[ext_resource type="Script" uid="uid://duhsk5b5aqdky" path="res://Scripts/scriptsforbig/bodybig.gd" id="8_r30tn"]
+[ext_resource type="Script" uid="uid://uf4wp0dy6sw1" path="res://Scripts/scriptsforbig/hairbig.gd" id="10_1y2bg"]
+[ext_resource type="Script" uid="uid://bykxdrpq7j0vj" path="res://Scripts/scriptsforbig/outfitbig.gd" id="11_mwjmd"]
+[ext_resource type="Texture2D" uid="uid://bt6suaom8ymtj" path="res://assets/big assets/hairspritesheet.png" id="11_y2mm4"]
+[ext_resource type="Texture2D" uid="uid://bjjxck1i1otyf" path="res://assets/big assets/dressspritesheet.png" id="13_0pk8g"]
+[ext_resource type="Texture2D" uid="uid://bc2aaria5qnph" path="res://assets/colour palet.png" id="14_7xfm5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gni40"]
 bg_color = Color(0.254902, 0.121569, 0.0588235, 0.4)
@@ -114,9 +114,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oiy7a"]
 _data = {
-"RESET": SubResource("Animation_nlclw"),
-"fade_in": SubResource("Animation_cv4ph"),
-"fade_out": SubResource("Animation_v1kth")
+&"RESET": SubResource("Animation_nlclw"),
+&"fade_in": SubResource("Animation_cv4ph"),
+&"fade_out": SubResource("Animation_v1kth")
 }
 
 [sub_resource type="Animation" id="Animation_8hs3m"]
@@ -152,8 +152,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yllr0"]
 _data = {
-"RESET": SubResource("Animation_8hs3m"),
-"show": SubResource("Animation_oqls1")
+&"RESET": SubResource("Animation_8hs3m"),
+&"show": SubResource("Animation_oqls1")
 }
 
 [node name="char creator" type="Node2D"]
@@ -285,7 +285,7 @@ text = "DONE
 [node name="Transition" type="AnimationPlayer" parent="creatorscreen/ColorRect"]
 root_node = NodePath("../../..")
 libraries = {
-"": SubResource("AnimationLibrary_oiy7a")
+&"": SubResource("AnimationLibrary_oiy7a")
 }
 
 [node name="ColorRect" type="ColorRect" parent="creatorscreen/ColorRect/Transition"]
@@ -298,7 +298,7 @@ color = Color(0, 0, 0, 1)
 [node name="TextPopUp" type="AnimationPlayer" parent="creatorscreen"]
 root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_yllr0")
+&"": SubResource("AnimationLibrary_yllr0")
 }
 
 [node name="Label" type="Label" parent="creatorscreen/TextPopUp"]

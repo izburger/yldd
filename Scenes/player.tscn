@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://c21h8rdpnhpu8"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_2s5x7"]
+[ext_resource type="Script" uid="uid://nq1ghn8erwc" path="res://Scripts/player.gd" id="1_2s5x7"]
 [ext_resource type="Texture2D" uid="uid://dmapbh0wwgjhy" path="res://assets/big assets/basespritesheet.png" id="5_g64b5"]
 [ext_resource type="Texture2D" uid="uid://bjjxck1i1otyf" path="res://assets/big assets/dressspritesheet.png" id="6_xsop4"]
 [ext_resource type="Texture2D" uid="uid://bt6suaom8ymtj" path="res://assets/big assets/hairspritesheet.png" id="7_wwixg"]
@@ -369,15 +369,15 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bwe2h"]
 _data = {
-"RESET": SubResource("Animation_fkg1v"),
-"idle_down": SubResource("Animation_abjat"),
-"idle_left": SubResource("Animation_vapfr"),
-"idle_right": SubResource("Animation_ets5c"),
-"idle_up": SubResource("Animation_22aug"),
-"walk_down": SubResource("Animation_ac7wp"),
-"walk_left": SubResource("Animation_jg5ax"),
-"walk_right": SubResource("Animation_ff4hs"),
-"walk_up": SubResource("Animation_6nu54")
+&"RESET": SubResource("Animation_fkg1v"),
+&"idle_down": SubResource("Animation_abjat"),
+&"idle_left": SubResource("Animation_vapfr"),
+&"idle_right": SubResource("Animation_ets5c"),
+&"idle_up": SubResource("Animation_22aug"),
+&"walk_down": SubResource("Animation_ac7wp"),
+&"walk_left": SubResource("Animation_jg5ax"),
+&"walk_right": SubResource("Animation_ff4hs"),
+&"walk_up": SubResource("Animation_6nu54")
 }
 
 [node name="Player" type="CharacterBody2D"]

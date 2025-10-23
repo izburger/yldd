@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5e4amjqyslq4"]
 
-[ext_resource type="Script" path="res://Scripts/dialog_area.gd" id="1_18wmf"]
+[ext_resource type="Script" uid="uid://on5dj2qho1ke" path="res://Scripts/dialog_area.gd" id="1_18wmf"]
 
 [node name="DialogArea" type="Area2D"]
 process_mode = 3

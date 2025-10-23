@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cnkhk1mgmqe6l"]
 
-[ext_resource type="Script" path="res://Scripts/main.gd" id="1_2uirx"]
+[ext_resource type="Script" uid="uid://dlvvqvyg5jikm" path="res://Scripts/main.gd" id="1_2uirx"]
 [ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="1_5wsl2"]
-[ext_resource type="Texture2D" uid="uid://cib711qvh7fe7" path="res://Assets/office.png" id="2_s1uha"]
+[ext_resource type="Texture2D" uid="uid://cib711qvh7fe7" path="res://assets/office.png" id="2_s1uha"]
 
 [sub_resource type="Animation" id="Animation_t6sxh"]
 length = 0.001
@@ -48,8 +48,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s05um"]
 _data = {
-"RESET": SubResource("Animation_t6sxh"),
-"fade_in": SubResource("Animation_08y0g")
+&"RESET": SubResource("Animation_t6sxh"),
+&"fade_in": SubResource("Animation_08y0g")
 }
 
 [node name="Main" type="Node2D"]
