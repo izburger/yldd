@@ -1,8 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4nnxhu0kneq8"]
+[gd_scene load_steps=11 format=3 uid="uid://b4nnxhu0kneq8"]
 
 [ext_resource type="Texture2D" uid="uid://clomnynfsceji" path="res://Assets/Backgrounds/Floors/floor1.png" id="1_5c6kb"]
 [ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://Assets/Sprites/player/player.tscn" id="2_0xfx1"]
+[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://Assets/Sprites/npc/npc.tscn" id="3_o2mcs"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_xkmp7"]
+[ext_resource type="Texture2D" uid="uid://b3lt0k00hjlhy" path="res://Assets/Sprites/npc/reilly/Reiliy.png" id="4_t8iuu"]
+[ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="6_flu5p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13mk3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rbg8w"]
+height = 32.3223
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wv67"]
 
@@ -15,11 +23,40 @@ scale = Vector2(0.997965, 1)
 texture = ExtResource("1_5c6kb")
 centered = false
 
+[node name="NPC" parent="." instance=ExtResource("3_o2mcs")]
+position = Vector2(1606, 767)
+
+[node name="Sprite2D" parent="NPC" index="0"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_t8iuu")
+hframes = 1
+
+[node name="CollisionShape2D" parent="NPC" index="2"]
+visible = true
+position = Vector2(0, 96)
+scale = Vector2(5, 2.4)
+shape = SubResource("RectangleShape2D_13mk3")
+
+[node name="DialogAreaBox" parent="NPC" index="3"]
+dialog_key = "reillyWeek1.reillyDeskw1"
+
+[node name="CollisionShape2D" parent="NPC/DialogAreaBox" index="1"]
+position = Vector2(-873, -305)
+scale = Vector2(21.0807, -14.2936)
+shape = SubResource("CapsuleShape2D_rbg8w")
+debug_color = Color(0.975667, 0, 0.417685, 0.42)
+
 [node name="Player" parent="." instance=ExtResource("2_0xfx1")]
-visible = false
 position = Vector2(1489, 510)
 
 [node name="Walls" type="Node" parent="."]
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="Walls"]
+position = Vector2(-16025.4, 1442.19)
+scale = Vector2(96.2361, 57.5243)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D12"]
+shape = SubResource("RectangleShape2D_6wv67")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
 position = Vector2(1819, 168)
@@ -98,6 +135,13 @@ scale = Vector2(26.4445, 11.5552)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D6"]
 shape = SubResource("RectangleShape2D_6wv67")
 
+[node name="StaticBody2D13" type="StaticBody2D" parent="Walls"]
+position = Vector2(1466, 886)
+scale = Vector2(-5.09, 23.9045)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D13"]
+shape = SubResource("RectangleShape2D_6wv67")
+
 [node name="Interactables" type="Node" parent="."]
 
 [node name="BookShelf" parent="Interactables" instance=ExtResource("3_xkmp7")]
@@ -109,6 +153,18 @@ scale = Vector2(13.9693, 16.42)
 scale = Vector2(0.147237, 0.147237)
 
 [node name="CollisionShape2D" parent="Interactables/BookShelf" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_mifym")
+
+[node name="Starting" parent="Interactables" instance=ExtResource("3_xkmp7")]
+position = Vector2(350, 252)
+scale = Vector2(7.4493, 2.86)
+dialog_key = "mcWeek1.mcJanitor"
+
+[node name="Sprite2D" parent="Interactables/Starting" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Interactables/Starting" index="1"]
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_mifym")
 
@@ -148,7 +204,13 @@ scale = Vector2(0.147237, 0.147237)
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_mifym")
 
+[node name="DialogPlayer" parent="." instance=ExtResource("6_flu5p")]
+scene_text_file = "res://Assets/Ink/Main.ink.json"
+
+[editable path="NPC"]
+[editable path="NPC/DialogAreaBox"]
 [editable path="Interactables/BookShelf"]
+[editable path="Interactables/Starting"]
 [editable path="Interactables/BookShelf2"]
 [editable path="Interactables/PhotoFrame"]
 [editable path="Interactables/Boxes"]
