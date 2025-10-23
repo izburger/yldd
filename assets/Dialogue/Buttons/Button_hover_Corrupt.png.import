@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dylhagtt0om5n"
-path="res://.godot/imported/Button_hover_Corrupt.png-6b512ab8f16fd67f45315287e65a9fda.ctex"
+path="res://.godot/imported/Button_hover_Corrupt.png-0a0b06d6ee9ff266c283afe689cefa35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dialogue/Buttons/Button_hover_Corrupt.png"
-dest_files=["res://.godot/imported/Button_hover_Corrupt.png-6b512ab8f16fd67f45315287e65a9fda.ctex"]
+source_file="res://assets/Dialogue/Buttons/Button_hover_Corrupt.png"
+dest_files=["res://.godot/imported/Button_hover_Corrupt.png-0a0b06d6ee9ff266c283afe689cefa35.ctex"]
 
 [params]
 

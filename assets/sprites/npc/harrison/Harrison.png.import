@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwhrovc5hded7"
-path="res://.godot/imported/Harrison.png-ef6afb5d18a59806495667265df89749.ctex"
+uid="uid://dwwejmnmugpok"
+path="res://.godot/imported/Harrison.png-9b575cdbdd47e088fee0ab67b78da7c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/npc/harrison/Harrison.png"
-dest_files=["res://.godot/imported/Harrison.png-ef6afb5d18a59806495667265df89749.ctex"]
+source_file="res://assets/sprites/npc/harrison/Harrison.png"
+dest_files=["res://.godot/imported/Harrison.png-9b575cdbdd47e088fee0ab67b78da7c4.ctex"]
 
 [params]
 

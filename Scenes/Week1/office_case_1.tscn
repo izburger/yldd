@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://bru00mm5cu3vc"]
 
-[ext_resource type="Texture2D" uid="uid://cd4tpnsv4qonk" path="res://Assets/Backgrounds/Offices/office.png" id="1_5up7p"]
-[ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://Assets/Sprites/player/player.tscn" id="2_q6p3d"]
-[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://Assets/Sprites/npc/npc.tscn" id="3_ugo4v"]
+[ext_resource type="Texture2D" uid="uid://cd4tpnsv4qonk" path="res://assets/Backgrounds/Offices/office.png" id="1_5up7p"]
+[ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://assets/sprites/player/player.tscn" id="2_q6p3d"]
+[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="3_ugo4v"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_xyope"]
-[ext_resource type="Texture2D" uid="uid://dod7n5l61dvft" path="res://Assets/Sprites/npc/boss/boss.png" id="4_1vrt3"]
+[ext_resource type="Texture2D" uid="uid://dod7n5l61dvft" path="res://assets/sprites/npc/boss/boss.png" id="4_1vrt3"]
 [ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="4_lvti4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgkpj"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3lt0k00hjlhy"
-path="res://.godot/imported/Reiliy.png-84a9366e0b3e1e2a2cfa2b08a3f34ae6.ctex"
+uid="uid://dqsk80h0j3opn"
+path="res://.godot/imported/Reiliy.png-d9daa60df1bb9ccb1a02c58e9ba2a4ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/npc/reilly/Reiliy.png"
-dest_files=["res://.godot/imported/Reiliy.png-84a9366e0b3e1e2a2cfa2b08a3f34ae6.ctex"]
+source_file="res://assets/sprites/npc/reilly/Reiliy.png"
+dest_files=["res://.godot/imported/Reiliy.png-d9daa60df1bb9ccb1a02c58e9ba2a4ed.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://g347gbv380fe"
-path="res://.godot/imported/wallndoors.png-f43f4152f9db30293be1a89197f3daf7.ctex"
+path="res://.godot/imported/wallndoors.png-507d0e711196d879603729f25c7fe47c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Backgrounds/Other/wallndoors.png"
-dest_files=["res://.godot/imported/wallndoors.png-f43f4152f9db30293be1a89197f3daf7.ctex"]
+source_file="res://assets/Backgrounds/Other/wallndoors.png"
+dest_files=["res://.godot/imported/wallndoors.png-507d0e711196d879603729f25c7fe47c.ctex"]
 
 [params]
 

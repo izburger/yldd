@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddyijyvvravwl"]
 
-[ext_resource type="Texture2D" uid="uid://btnm34m3pk7gb" path="res://Assets/Sprites/Items/box.png" id="1_gw3kb"]
-[ext_resource type="FontFile" uid="uid://dta20egsllsdw" path="res://Assets/Fonts/Main/American Typewriter Regular.ttf" id="2_vfxkl"]
+[ext_resource type="Texture2D" uid="uid://btnm34m3pk7gb" path="res://assets/sprites/Items/box.png" id="1_gw3kb"]
+[ext_resource type="FontFile" uid="uid://dta20egsllsdw" path="res://assets/Fonts/Main/American Typewriter Regular.ttf" id="2_vfxkl"]
 
 [node name="PlayerChoice" type="VBoxContainer"]
 alignment = 1

@@ -3,18 +3,19 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://8us3r8f2284s"
-path="res://.godot/imported/STAMPWRITER-KIT.ttf-7371ed96a51a4079ab7e6e02bd6ad425.fontdata"
+path="res://.godot/imported/STAMPWRITER-KIT.ttf-d6a3433443d3bf55cad8676ad5394613.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/Title/STAMPWRITER-KIT.ttf"
-dest_files=["res://.godot/imported/STAMPWRITER-KIT.ttf-7371ed96a51a4079ab7e6e02bd6ad425.fontdata"]
+source_file="res://assets/Fonts/Title/STAMPWRITER-KIT.ttf"
+dest_files=["res://.godot/imported/STAMPWRITER-KIT.ttf-d6a3433443d3bf55cad8676ad5394613.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48
@@ -22,6 +23,7 @@ allow_system_fallback=true
 force_autohinter=false
 hinting=1
 subpixel_positioning=1
+keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]

@@ -2,13 +2,12 @@
 
 importer="inkgd.ink.json"
 type="Resource"
-uid="uid://caxo4rrikpg1a"
-path="res://.godot/imported/world_interaction_dialog.json-4179d66e5e695feaca6c66b5d5494b21.res"
+uid="uid://c36yveoras5gn"
+path="res://.godot/imported/world_interaction_dialog.json-f25c05c32d87c4b2830f0f55b5ae2138.res"
 
 [deps]
 
-source_file="res://Assets/Json/world_interaction_dialog.json"
-dest_files=["res://.godot/imported/world_interaction_dialog.json-4179d66e5e695feaca6c66b5d5494b21.res"]
+source_file="res://assets/Json/world_interaction_dialog.json"
 
 [params]
 
