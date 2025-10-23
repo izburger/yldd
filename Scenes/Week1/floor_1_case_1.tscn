@@ -20,7 +20,7 @@ height = 19.6588
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13mk3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rbg8w"]
-radius = 7.83567
+radius = 7.83565
 height = 15.6713
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lly86"]
