@@ -1,18 +1,30 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4nnxhu0kneq8"]
+[gd_scene load_steps=18 format=3 uid="uid://b4nnxhu0kneq8"]
 
 [ext_resource type="Texture2D" uid="uid://clomnynfsceji" path="res://assets/Backgrounds/Floors/floor1.png" id="1_5c6kb"]
-[ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://assets/sprites/player/player.tscn" id="2_0xfx1"]
-[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://Assets/Sprites/npc/npc.tscn" id="3_o2mcs"]
-
+[ext_resource type="Texture2D" uid="uid://cqwaymerg03bn" path="res://assets/sprites/player/test1.png" id="3_25kmd"]
+[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="3_o2mcs"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_xkmp7"]
-[ext_resource type="Texture2D" uid="uid://b3lt0k00hjlhy" path="res://Assets/Sprites/npc/reilly/Reiliy.png" id="4_t8iuu"]
+[ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="4_0t21d"]
+[ext_resource type="Texture2D" uid="uid://ciie2mardiso1" path="res://assets/sprites/npc/cat/Cat.png" id="4_1vspd"]
+[ext_resource type="Texture2D" uid="uid://dqsk80h0j3opn" path="res://assets/sprites/npc/reilly/Reiliy.png" id="4_t8iuu"]
 [ext_resource type="PackedScene" uid="uid://c7iuh8ppjmke0" path="res://Scenes/forced_dialogue.tscn" id="6_6ur2a"]
 [ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="6_flu5p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dieq7"]
+size = Vector2(15.6746, 30.2066)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n15w0"]
+radius = 8.94078
+height = 19.6588
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13mk3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rbg8w"]
-height = 24.2067
+radius = 7.83567
+height = 15.6713
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lly86"]
+size = Vector2(13.1874, 10.0744)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wv67"]
 
@@ -28,31 +40,95 @@ scale = Vector2(0.997965, 1)
 texture = ExtResource("1_5c6kb")
 centered = false
 
-[node name="NPC" parent="." instance=ExtResource("3_o2mcs")]
-position = Vector2(1606, 767)
+[node name="Marina" parent="." instance=ExtResource("3_o2mcs")]
+position = Vector2(871, 725)
 
-[node name="Sprite2D" parent="NPC" index="0"]
+[node name="Sprite2D" parent="Marina" index="0"]
+texture = ExtResource("3_25kmd")
+
+[node name="CollisionShape2D" parent="Marina" index="2"]
+visible = true
+position = Vector2(29.9999, 31.9)
+shape = SubResource("RectangleShape2D_dieq7")
+
+[node name="DialogAreaBox" parent="Marina" index="3"]
+dialog_key = "ranNPCw1.marina"
+
+[node name="CollisionShape2D" parent="Marina/DialogAreaBox" index="1"]
+position = Vector2(-754, -286)
+scale = Vector2(9.73069, 7.32496)
+shape = SubResource("CapsuleShape2D_n15w0")
+debug_color = Color(0.84907, 0.253096, 0.692025, 0.42)
+
+[node name="Oliver" parent="." instance=ExtResource("3_o2mcs")]
+position = Vector2(387, 727)
+
+[node name="Sprite2D" parent="Oliver" index="0"]
+texture = ExtResource("3_25kmd")
+
+[node name="CollisionShape2D" parent="Oliver" index="2"]
+visible = true
+position = Vector2(29.9999, 31.9)
+shape = SubResource("RectangleShape2D_dieq7")
+
+[node name="DialogAreaBox" parent="Oliver" index="3"]
+dialog_key = "ranNPCw1.oliver"
+
+[node name="CollisionShape2D" parent="Oliver/DialogAreaBox" index="1"]
+position = Vector2(-754, -286)
+scale = Vector2(9.73069, 9.88495)
+shape = SubResource("CapsuleShape2D_n15w0")
+debug_color = Color(0.84907, 0.253096, 0.692025, 0.42)
+
+[node name="Reilly" parent="." instance=ExtResource("3_o2mcs")]
+position = Vector2(1579, 734)
+
+[node name="Sprite2D" parent="Reilly" index="0"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_t8iuu")
 hframes = 1
 
-[node name="CollisionShape2D" parent="NPC" index="2"]
+[node name="CollisionShape2D" parent="Reilly" index="2"]
 visible = true
 position = Vector2(0, 96)
 scale = Vector2(5, 2.4)
 shape = SubResource("RectangleShape2D_13mk3")
 
-[node name="DialogAreaBox" parent="NPC" index="3"]
+[node name="DialogAreaBox" parent="Reilly" index="3"]
 dialog_key = "reillyWeek1.reillyDeskw1"
 
-[node name="CollisionShape2D" parent="NPC/DialogAreaBox" index="1"]
-position = Vector2(-873, -305)
-scale = Vector2(21.0807, -14.2936)
+[node name="CollisionShape2D" parent="Reilly/DialogAreaBox" index="1"]
+position = Vector2(-853, -259)
+scale = Vector2(25.0407, -5.7736)
 shape = SubResource("CapsuleShape2D_rbg8w")
 debug_color = Color(0.975667, 0, 0.417685, 0.42)
 
-[node name="Player" parent="." instance=ExtResource("2_0xfx1")]
-position = Vector2(354, 140)
+[node name="Cat" parent="." instance=ExtResource("3_o2mcs")]
+position = Vector2(1466, 895)
+
+[node name="Sprite2D" parent="Cat" index="0"]
+position = Vector2(16, 26)
+texture = ExtResource("4_1vspd")
+hframes = 1
+
+[node name="CollisionShape2D" parent="Cat" index="2"]
+visible = true
+position = Vector2(0, 96)
+scale = Vector2(5, 2.4)
+shape = SubResource("RectangleShape2D_13mk3")
+
+[node name="DialogAreaBox" parent="Cat" index="3"]
+dialog_key = "ranBuildingInteractablesw1.cat"
+
+[node name="CollisionShape2D" parent="Cat/DialogAreaBox" index="1"]
+position = Vector2(-762, -296)
+scale = Vector2(21.0807, -14.2936)
+shape = SubResource("RectangleShape2D_lly86")
+debug_color = Color(0.975667, 0, 0.417685, 0.42)
+
+[node name="Player" parent="." instance=ExtResource("4_0t21d")]
+position = Vector2(364, 141)
+scale = Vector2(0.5, 0.5)
 
 [node name="Walls" type="Node" parent="."]
 
@@ -68,6 +144,20 @@ position = Vector2(1819, 168)
 scale = Vector2(-9.81, 7.58448)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+shape = SubResource("RectangleShape2D_6wv67")
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="Walls"]
+position = Vector2(652, 768)
+scale = Vector2(-11.89, 6.70449)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D14"]
+shape = SubResource("RectangleShape2D_6wv67")
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="Walls"]
+position = Vector2(1837, 986)
+scale = Vector2(-6.21001, 6.70449)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D15"]
 shape = SubResource("RectangleShape2D_6wv67")
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="Walls"]
@@ -149,52 +239,39 @@ shape = SubResource("RectangleShape2D_6wv67")
 
 [node name="Interactables" type="Node" parent="."]
 
-[node name="BookShelf" parent="Interactables" instance=ExtResource("3_xkmp7")]
-visible = false
-position = Vector2(294, 168)
+[node name="LogBook" parent="Interactables" instance=ExtResource("3_xkmp7")]
+position = Vector2(1593, 413)
+scale = Vector2(25.1693, 10.74)
+dialog_key = "ranBuildingInteractablesw1.logBookMorningw1"
+
+[node name="Sprite2D" parent="Interactables/LogBook" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Interactables/LogBook" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_mifym")
+
+[node name="InteractionZone" parent="Interactables" instance=ExtResource("3_xkmp7")]
+position = Vector2(338, 52)
 scale = Vector2(13.9693, 16.42)
 
-[node name="Sprite2D" parent="Interactables/BookShelf" index="0"]
+[node name="Sprite2D" parent="Interactables/InteractionZone" index="0"]
 scale = Vector2(0.147237, 0.147237)
 
-[node name="CollisionShape2D" parent="Interactables/BookShelf" index="1"]
+[node name="CollisionShape2D" parent="Interactables/InteractionZone" index="1"]
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_mifym")
 
-[node name="BookShelf2" parent="Interactables" instance=ExtResource("3_xkmp7")]
-visible = false
-position = Vector2(1576, 164)
-scale = Vector2(13.9693, 16.42)
+[node name="Coin" parent="Interactables" instance=ExtResource("3_xkmp7")]
+position = Vector2(653, 755)
+scale = Vector2(4.00975, 4.32641)
+dialog_key = "ranNPCw1.coin"
 
-[node name="Sprite2D" parent="Interactables/BookShelf2" index="0"]
+[node name="Sprite2D" parent="Interactables/Coin" index="0"]
 scale = Vector2(0.147237, 0.147237)
 
-[node name="CollisionShape2D" parent="Interactables/BookShelf2" index="1"]
-position = Vector2(1.5, 7.5)
-shape = SubResource("RectangleShape2D_mifym")
-
-[node name="PhotoFrame" parent="Interactables" instance=ExtResource("3_xkmp7")]
-visible = false
-position = Vector2(1118, 487)
-scale = Vector2(8.16975, 4.32641)
-
-[node name="Sprite2D" parent="Interactables/PhotoFrame" index="0"]
-scale = Vector2(0.147237, 0.147237)
-
-[node name="CollisionShape2D" parent="Interactables/PhotoFrame" index="1"]
-position = Vector2(1.5, 7.5)
-shape = SubResource("RectangleShape2D_mifym")
-
-[node name="Boxes" parent="Interactables" instance=ExtResource("3_xkmp7")]
-visible = false
-position = Vector2(471, 939)
-scale = Vector2(29.7698, -7.11118)
-
-[node name="Sprite2D" parent="Interactables/Boxes" index="0"]
-scale = Vector2(0.147237, 0.147237)
-
-[node name="CollisionShape2D" parent="Interactables/Boxes" index="1"]
-position = Vector2(1.5, 7.5)
+[node name="CollisionShape2D" parent="Interactables/Coin" index="1"]
+position = Vector2(1.24695, 8.32099)
 shape = SubResource("RectangleShape2D_mifym")
 
 [node name="ForcedDialogue" parent="Interactables" instance=ExtResource("6_6ur2a")]
@@ -209,10 +286,15 @@ shape = SubResource("RectangleShape2D_w05bj")
 [node name="DialogPlayer" parent="." instance=ExtResource("6_flu5p")]
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
-[editable path="NPC"]
-[editable path="NPC/DialogAreaBox"]
-[editable path="Interactables/BookShelf"]
-[editable path="Interactables/BookShelf2"]
-[editable path="Interactables/PhotoFrame"]
-[editable path="Interactables/Boxes"]
+[editable path="Marina"]
+[editable path="Marina/DialogAreaBox"]
+[editable path="Oliver"]
+[editable path="Oliver/DialogAreaBox"]
+[editable path="Reilly"]
+[editable path="Reilly/DialogAreaBox"]
+[editable path="Cat"]
+[editable path="Cat/DialogAreaBox"]
+[editable path="Interactables/LogBook"]
+[editable path="Interactables/InteractionZone"]
+[editable path="Interactables/Coin"]
 [editable path="Interactables/ForcedDialogue"]
