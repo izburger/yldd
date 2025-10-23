@@ -182,9 +182,6 @@ scene_text_file = "res://Assets/Ink/Main.ink.json"
 [node name="PlayerChoice" parent="DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
 visible = false
 
-[node name="Button" parent="DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice/HBoxContainer/MarginContainer" index="2"]
-visible = false
-
 [connection signal="area_entered" from="Interactables/RoomLeave" to="Player" method="_on_room_leave_area_entered"]
 
 [editable path="NPC"]
