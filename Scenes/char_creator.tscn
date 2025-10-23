@@ -382,7 +382,7 @@ texture = ExtResource("14_7xfm5")
 [connection signal="pressed" from="creatorscreen/ColorRect/hair/HairButton" to="skeleton big/hairbig" method="_on_hair_button_pressed"]
 [connection signal="pressed" from="creatorscreen/ColorRect/hair/ColourButton" to="skeleton/hair" method="_on_colour_button_pressed"]
 [connection signal="pressed" from="creatorscreen/ColorRect/hair/ColourButton" to="skeleton big/hairbig" method="_on_colour_button_pressed"]
-[connection signal="pressed" from="creatorscreen/ColorRect/outfit/CollectionButton" to="skeleton/outfit" method="_on_collection_button_pressed"]
 [connection signal="pressed" from="creatorscreen/ColorRect/outfit/CollectionButton" to="skeleton/outfit" method="_on_colour_button_pressed"]
+[connection signal="pressed" from="creatorscreen/ColorRect/outfit/CollectionButton" to="skeleton/outfit" method="_on_collection_button_pressed"]
 [connection signal="pressed" from="creatorscreen/ColorRect/outfit/CollectionButton" to="skeleton big/outfitbig" method="_on_collection_button_pressed"]
 [connection signal="pressed" from="creatorscreen/ColorRect/Confirm" to="." method="_on_confirm_pressed"]

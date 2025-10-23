@@ -13,6 +13,7 @@ const speed = 200
 
 func _ready():
 	initialize_player()
+	
 
 func _physics_process(delta):
 	var direction = Vector2.ZERO
