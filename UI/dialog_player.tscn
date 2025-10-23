@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://hm4sct6i8l81"]
+[gd_scene load_steps=8 format=3 uid="uid://hm4sct6i8l81"]
 
 [ext_resource type="Texture2D" uid="uid://btnm34m3pk7gb" path="res://Assets/Sprites/Items/box.png" id="1_hbia7"]
 [ext_resource type="Script" path="res://UI/dialog_player.gd" id="1_vv8hu"]
 [ext_resource type="PackedScene" uid="uid://ddyijyvvravwl" path="res://Scenes/player_choice.tscn" id="2_cquq4"]
 [ext_resource type="FontFile" uid="uid://n1vgut48570n" path="res://Assets/Fonts/Retro Gaming.ttf" id="2_k25ab"]
 [ext_resource type="FontFile" uid="uid://dta20egsllsdw" path="res://Assets/Fonts/Main/American Typewriter Regular.ttf" id="4_qitpg"]
+[ext_resource type="Texture2D" uid="uid://h6bj42o5pom1" path="res://Assets/Dialogue/Box/Dialogue_normal.png" id="5_oc2r4"]
+[ext_resource type="FontFile" uid="uid://nolf7v1npyhe" path="res://Assets/Fonts/RomanAntique.ttf" id="7_s3pt0"]
 
 [node name="DialogPlayer" type="CanvasLayer"]
 process_mode = 3
@@ -25,7 +27,6 @@ theme_override_constants/margin_bottom = 30
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="ChoiceContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 alignment = 1
 
@@ -34,6 +35,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 0
+
+[node name="Button" parent="ChoiceContainer/VBoxContainer3/PlayerChoice/HBoxContainer/MarginContainer" index="2"]
+visible = false
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ChoiceContainer/VBoxContainer3"]
 visible = false
@@ -88,10 +92,11 @@ theme_override_constants/margin_bottom = 30
 
 [node name="Background" type="TextureRect" parent="MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_hbia7")
+texture = ExtResource("5_oc2r4")
 expand_mode = 1
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
@@ -102,6 +107,7 @@ theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
 [node name="Panel" type="Panel" parent="MarginContainer/MarginContainer"]
+visible = false
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
@@ -119,7 +125,8 @@ text = " "
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_fonts/font = ExtResource("4_qitpg")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_s3pt0")
 theme_override_font_sizes/font_size = 37
 text = "Textsdfghjkgjfhdgsfghjkhjkgfhddsghjghgjfgdhfjgkhg"
 autowrap_mode = 2

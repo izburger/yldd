@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7iuh8ppjmke0"]
+
+[ext_resource type="Script" path="res://Scripts/forced_dialog_area.gd" id="1_cdagr"]
+
+[node name="ForcedDialogArea" type="Area2D"]
+process_mode = 3
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_cdagr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="ForcedDialogue" type="Node2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
