@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bru00mm5cu3vc"]
+[gd_scene load_steps=13 format=3 uid="uid://bru00mm5cu3vc"]
 
 [ext_resource type="Texture2D" uid="uid://cd4tpnsv4qonk" path="res://assets/Backgrounds/Offices/office.png" id="1_5up7p"]
-[ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://assets/sprites/player/player.tscn" id="2_q6p3d"]
+[ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="2_mqucq"]
 [ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="3_ugo4v"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_xyope"]
 [ext_resource type="Texture2D" uid="uid://dod7n5l61dvft" path="res://assets/sprites/npc/boss/boss.png" id="4_1vrt3"]
@@ -13,6 +13,54 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxw0m"]
 
+[sub_resource type="Animation" id="Animation_t6sxh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeIn/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_08y0g"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeIn/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeIn/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s05um"]
+_data = {
+"RESET": SubResource("Animation_t6sxh"),
+"fade_in": SubResource("Animation_08y0g")
+}
+
 [node name="Office_Case1" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,8 +68,9 @@ scale = Vector2(0.997965, 1)
 texture = ExtResource("1_5up7p")
 centered = false
 
-[node name="Player" parent="." instance=ExtResource("2_q6p3d")]
-position = Vector2(1489, 510)
+[node name="Player" parent="." instance=ExtResource("2_mqucq")]
+position = Vector2(1488, 550)
+scale = Vector2(0.5, 0.5)
 
 [node name="NPC" parent="." instance=ExtResource("3_ugo4v")]
 position = Vector2(947, 1429)
@@ -182,7 +231,18 @@ scene_text_file = "res://Assets/Ink/Main.ink.json"
 [node name="PlayerChoice" parent="DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
 visible = false
 
-[connection signal="area_entered" from="Interactables/RoomLeave" to="Player" method="_on_room_leave_area_entered"]
+[node name="FadeIn" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s05um")
+}
+
+[node name="ColorRect" type="ColorRect" parent="FadeIn"]
+self_modulate = Color(0, 0, 0, 0)
+offset_left = -45.0
+offset_top = -18.0
+offset_right = 1875.0
+offset_bottom = 1062.0
+color = Color(0, 0, 0, 1)
 
 [editable path="NPC"]
 [editable path="NPC/DialogAreaBox"]

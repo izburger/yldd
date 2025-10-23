@@ -15,4 +15,4 @@ func _on_confirm_pressed():
 	$creatorscreen/TextPopUp/Label.text = "Wonderful, you look lovely " + Global.player_name + "."
 	textpopup.play("show")
 	await get_tree().create_timer(4.0).timeout
-	get_tree().change_scene_to_file("res://Scenes/main.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Week1/office_case_1.tscn")
