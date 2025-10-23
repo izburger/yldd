@@ -3,18 +3,19 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dta20egsllsdw"
-path="res://.godot/imported/American Typewriter Regular.ttf-65cc20eda7a8a708124ebb3a3faeda14.fontdata"
+path="res://.godot/imported/American Typewriter Regular.ttf-3a5ae49338b5e686ff32cf32aedb2d17.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/Main/American Typewriter Regular.ttf"
-dest_files=["res://.godot/imported/American Typewriter Regular.ttf-65cc20eda7a8a708124ebb3a3faeda14.fontdata"]
+source_file="res://assets/Fonts/Main/American Typewriter Regular.ttf"
+dest_files=["res://.godot/imported/American Typewriter Regular.ttf-3a5ae49338b5e686ff32cf32aedb2d17.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48
@@ -22,6 +23,7 @@ allow_system_fallback=true
 force_autohinter=false
 hinting=1
 subpixel_positioning=1
+keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]
