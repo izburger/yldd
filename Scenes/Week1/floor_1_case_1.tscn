@@ -1,20 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://b4nnxhu0kneq8"]
+[gd_scene load_steps=13 format=3 uid="uid://b4nnxhu0kneq8"]
 
 [ext_resource type="Texture2D" uid="uid://clomnynfsceji" path="res://Assets/Backgrounds/Floors/floor1.png" id="1_5c6kb"]
 [ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://Assets/Sprites/player/player.tscn" id="2_0xfx1"]
 [ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://Assets/Sprites/npc/npc.tscn" id="3_o2mcs"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_xkmp7"]
 [ext_resource type="Texture2D" uid="uid://b3lt0k00hjlhy" path="res://Assets/Sprites/npc/reilly/Reiliy.png" id="4_t8iuu"]
+[ext_resource type="PackedScene" uid="uid://c7iuh8ppjmke0" path="res://Scenes/forced_dialogue.tscn" id="6_6ur2a"]
 [ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="6_flu5p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13mk3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rbg8w"]
-height = 32.3223
+height = 24.2067
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wv67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mifym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w05bj"]
+size = Vector2(20, 77)
 
 [node name="Floor1_Case1" type="Node2D"]
 
@@ -47,7 +51,7 @@ shape = SubResource("CapsuleShape2D_rbg8w")
 debug_color = Color(0.975667, 0, 0.417685, 0.42)
 
 [node name="Player" parent="." instance=ExtResource("2_0xfx1")]
-position = Vector2(1489, 510)
+position = Vector2(354, 140)
 
 [node name="Walls" type="Node" parent="."]
 
@@ -156,18 +160,6 @@ scale = Vector2(0.147237, 0.147237)
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_mifym")
 
-[node name="Starting" parent="Interactables" instance=ExtResource("3_xkmp7")]
-position = Vector2(350, 252)
-scale = Vector2(7.4493, 2.86)
-dialog_key = "mcWeek1.mcJanitor"
-
-[node name="Sprite2D" parent="Interactables/Starting" index="0"]
-scale = Vector2(0.147237, 0.147237)
-
-[node name="CollisionShape2D" parent="Interactables/Starting" index="1"]
-position = Vector2(1.5, 7.5)
-shape = SubResource("RectangleShape2D_mifym")
-
 [node name="BookShelf2" parent="Interactables" instance=ExtResource("3_xkmp7")]
 visible = false
 position = Vector2(1576, 164)
@@ -204,13 +196,22 @@ scale = Vector2(0.147237, 0.147237)
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_mifym")
 
+[node name="ForcedDialogue" parent="Interactables" instance=ExtResource("6_6ur2a")]
+position = Vector2(353, 273)
+dialog_key = "mcWeek1.mcJanitor"
+
+[node name="CollisionShape2D" parent="Interactables/ForcedDialogue" index="1"]
+position = Vector2(14, 4)
+scale = Vector2(7.44, 1)
+shape = SubResource("RectangleShape2D_w05bj")
+
 [node name="DialogPlayer" parent="." instance=ExtResource("6_flu5p")]
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
 [editable path="NPC"]
 [editable path="NPC/DialogAreaBox"]
 [editable path="Interactables/BookShelf"]
-[editable path="Interactables/Starting"]
 [editable path="Interactables/BookShelf2"]
 [editable path="Interactables/PhotoFrame"]
 [editable path="Interactables/Boxes"]
+[editable path="Interactables/ForcedDialogue"]
