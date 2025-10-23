@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var animation_player = $AnimationPlayer
 
 var last_direction = Vector2.ZERO
-const speed = 200
+const speed = 400
 
 func _ready():
 	initialize_player()
