@@ -1,11 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://c21h8rdpnhpu8"]
+[gd_scene load_steps=17 format=3 uid="uid://c21h8rdpnhpu8"]
 
-[ext_resource type="Script" uid="uid://nq1ghn8erwc" path="res://Scripts/player.gd" id="1_2s5x7"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_2s5x7"]
 [ext_resource type="Texture2D" uid="uid://dmapbh0wwgjhy" path="res://assets/big assets/basespritesheet.png" id="5_g64b5"]
 [ext_resource type="Texture2D" uid="uid://bjjxck1i1otyf" path="res://assets/big assets/dressspritesheet.png" id="6_xsop4"]
 [ext_resource type="Texture2D" uid="uid://bt6suaom8ymtj" path="res://assets/big assets/hairspritesheet.png" id="7_wwixg"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_lybci"]
 
 [sub_resource type="Animation" id="Animation_fkg1v"]
 length = 0.001
@@ -369,23 +367,25 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bwe2h"]
 _data = {
-&"RESET": SubResource("Animation_fkg1v"),
-&"idle_down": SubResource("Animation_abjat"),
-&"idle_left": SubResource("Animation_vapfr"),
-&"idle_right": SubResource("Animation_ets5c"),
-&"idle_up": SubResource("Animation_22aug"),
-&"walk_down": SubResource("Animation_ac7wp"),
-&"walk_left": SubResource("Animation_jg5ax"),
-&"walk_right": SubResource("Animation_ff4hs"),
-&"walk_up": SubResource("Animation_6nu54")
+"RESET": SubResource("Animation_fkg1v"),
+"idle_down": SubResource("Animation_abjat"),
+"idle_left": SubResource("Animation_vapfr"),
+"idle_right": SubResource("Animation_ets5c"),
+"idle_up": SubResource("Animation_22aug"),
+"walk_down": SubResource("Animation_ac7wp"),
+"walk_left": SubResource("Animation_jg5ax"),
+"walk_right": SubResource("Animation_ff4hs"),
+"walk_up": SubResource("Animation_6nu54")
 }
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2dpi"]
+radius = 11.1641
+height = 152.464
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d4jj8"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_2s5x7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(30, 30)
-shape = SubResource("CircleShape2D_lybci")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 enabled = false
@@ -409,3 +409,19 @@ hframes = 9
 libraries = {
 "": SubResource("AnimationLibrary_bwe2h")
 }
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 165)
+scale = Vector2(10.5885, 0.736595)
+shape = SubResource("CapsuleShape2D_u2dpi")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+position = Vector2(-5.96046e-08, 132)
+scale = Vector2(6.03932, 15.8867)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(3.50892, 1.49567)
+shape = SubResource("CapsuleShape2D_d4jj8")
