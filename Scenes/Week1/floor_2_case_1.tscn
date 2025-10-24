@@ -262,7 +262,6 @@ scale = Vector2(-5.9222, 54.8124)
 shape = SubResource("RectangleShape2D_r62oy")
 
 [node name="DialogPlayer" parent="." instance=ExtResource("7_kvb3u")]
-visible = false
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
 [node name="PlayerChoice" parent="DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
