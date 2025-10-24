@@ -378,11 +378,12 @@ _data = {
 "walk_up": SubResource("Animation_6nu54")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2dpi"]
-radius = 11.1641
-height = 152.464
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1u8v"]
+size = Vector2(22.005, 160.197)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d4jj8"]
+radius = 1.29548
+height = 24.9977
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_2s5x7")
@@ -411,9 +412,9 @@ libraries = {
 }
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 165)
+position = Vector2(-2.50001, 168)
 scale = Vector2(10.5885, 0.736595)
-shape = SubResource("CapsuleShape2D_u2dpi")
+shape = SubResource("RectangleShape2D_i1u8v")
 
 [node name="InteractionArea" type="Area2D" parent="."]
 position = Vector2(-5.96046e-08, 132)
@@ -422,6 +423,6 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(3.50892, 1.49567)
+position = Vector2(-0.496745, 2.07721)
+scale = Vector2(14.9543, 0.282023)
 shape = SubResource("CapsuleShape2D_d4jj8")

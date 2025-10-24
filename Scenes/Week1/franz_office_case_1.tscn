@@ -110,8 +110,8 @@ shape = SubResource("RectangleShape2D_vgkpj")
 [node name="Interactables" type="Node" parent="Office_Case1"]
 
 [node name="CleanDesk" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
-position = Vector2(887, 656)
-scale = Vector2(25.6898, -7.11118)
+position = Vector2(873, 717)
+scale = Vector2(27.8431, -16.0004)
 dialog_key = "franzOfficeInteractables.franzCleanDesk"
 
 [node name="Sprite2D" parent="Office_Case1/Interactables/CleanDesk" index="0"]
@@ -122,8 +122,8 @@ position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
 [node name="Rubbish" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
-position = Vector2(1331, 693)
-scale = Vector2(7.1298, -7.11118)
+position = Vector2(1332, 724)
+scale = Vector2(7.1298, -8.49242)
 dialog_key = "franzOfficeInteractables.franzBlood"
 
 [node name="Sprite2D" parent="Office_Case1/Interactables/Rubbish" index="0"]
@@ -153,7 +153,7 @@ scale = Vector2(14.953, -3.55118)
 shape = SubResource("RectangleShape2D_nxw0m")
 
 [node name="InteractionZone" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
-position = Vector2(931, 934)
+position = Vector2(931, 873)
 rotation = -0.00169
 scale = Vector2(22.535, 4.38026)
 
@@ -165,7 +165,7 @@ position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_5tgt1")
 
 [node name="ForcedDialogue" parent="Office_Case1/Interactables" instance=ExtResource("6_i8c7f")]
-position = Vector2(923, 843)
+position = Vector2(923, 861)
 scale = Vector2(3.04, 1)
 dialog_key = "franzWeek1.franzOffice"
 
