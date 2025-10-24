@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://bw51eeietit1f"]
 
-[ext_resource type="Texture2D" uid="uid://clomnynfsceji" path="res://Assets/Backgrounds/Floors/floor1.png" id="1_r7eyt"]
-[ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://Assets/Sprites/player/player.tscn" id="2_r0wd6"]
-[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://Assets/Sprites/npc/npc.tscn" id="3_dcnbp"]
+[ext_resource type="Texture2D" uid="uid://clomnynfsceji" path="res://assets/Backgrounds/Floors/floor1.png" id="1_r7eyt"]
+[ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://assets/sprites/player/player.tscn" id="2_r0wd6"]
+[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="3_dcnbp"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_guhx5"]
-[ext_resource type="Texture2D" uid="uid://b3lt0k00hjlhy" path="res://Assets/Sprites/npc/reilly/Reiliy.png" id="4_rvlut"]
+[ext_resource type="Texture2D" uid="uid://dqsk80h0j3opn" path="res://Assets/Sprites/npc/reilly/Reiliy.png" id="4_rvlut"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wv67"]
 
