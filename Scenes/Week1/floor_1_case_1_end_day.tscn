@@ -77,7 +77,7 @@ scale = Vector2(5, 2.4)
 shape = SubResource("RectangleShape2D_41jgb")
 
 [node name="DialogAreaBox" parent="Floor1_Case1/Reilly" index="3"]
-dialog_key = "reillyWeek1.reillyDeskw1"
+dialog_key = "reillyWeek1.w1reillyOptionsLunch"
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Reilly/DialogAreaBox" index="1"]
 position = Vector2(-853, -259)
