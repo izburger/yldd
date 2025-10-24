@@ -1,0 +1,293 @@
+[gd_scene load_steps=18 format=3 uid="uid://cdd2im5ycbc5o"]
+
+[ext_resource type="Texture2D" uid="uid://cd4tpnsv4qonk" path="res://assets/Backgrounds/Offices/office.png" id="1_wsyc1"]
+[ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="2_lhsgs"]
+[ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_4enqf"]
+[ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="4_b1ur1"]
+[ext_resource type="PackedScene" uid="uid://c7iuh8ppjmke0" path="res://Scenes/forced_dialogue.tscn" id="4_nx55f"]
+[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="5_vomff"]
+[ext_resource type="Texture2D" uid="uid://cqwaymerg03bn" path="res://assets/sprites/player/test1.png" id="6_soxi8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7p5y"]
+size = Vector2(15.6746, 30.2066)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_enrxv"]
+radius = 8.94078
+height = 19.6588
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgkpj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nueae"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxw0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jid1"]
+size = Vector2(20, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilgqd"]
+
+[sub_resource type="Animation" id="Animation_t6sxh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeIn/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_08y0g"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeIn/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeIn/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s05um"]
+_data = {
+"RESET": SubResource("Animation_t6sxh"),
+"fade_in": SubResource("Animation_08y0g")
+}
+
+[node name="Office1_Case_1_Lunch" type="Node2D"]
+
+[node name="Office_Case1" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Office_Case1"]
+scale = Vector2(0.997965, 1)
+texture = ExtResource("1_wsyc1")
+centered = false
+
+[node name="Alex" parent="Office_Case1" instance=ExtResource("5_vomff")]
+position = Vector2(524, 600)
+
+[node name="Sprite2D" parent="Office_Case1/Alex" index="0"]
+texture = ExtResource("6_soxi8")
+
+[node name="CollisionShape2D" parent="Office_Case1/Alex" index="2"]
+visible = true
+position = Vector2(16, 75)
+scale = Vector2(-7.68509, 2.23219)
+shape = SubResource("RectangleShape2D_v7p5y")
+
+[node name="DialogAreaBox" parent="Office_Case1/Alex" index="3"]
+dialog_key = "ranNPCw1.marina"
+
+[node name="CollisionShape2D" parent="Office_Case1/Alex/DialogAreaBox" index="1"]
+position = Vector2(-754, -286)
+scale = Vector2(9.73069, 7.32496)
+debug_color = Color(0.84907, 0.253096, 0.692025, 0.42)
+
+[node name="Lucie" parent="Office_Case1" instance=ExtResource("5_vomff")]
+position = Vector2(387, 727)
+
+[node name="Sprite2D" parent="Office_Case1/Lucie" index="0"]
+texture = ExtResource("6_soxi8")
+
+[node name="CollisionShape2D" parent="Office_Case1/Lucie" index="2"]
+visible = true
+position = Vector2(14, 75)
+scale = Vector2(-9.26214, 2.59367)
+shape = SubResource("RectangleShape2D_v7p5y")
+
+[node name="DialogAreaBox" parent="Office_Case1/Lucie" index="3"]
+dialog_key = "friendsWeek1.friendsOptions"
+
+[node name="CollisionShape2D" parent="Office_Case1/Lucie/DialogAreaBox" index="1"]
+position = Vector2(-686, -361)
+scale = Vector2(21.9884, 21.371)
+shape = SubResource("CapsuleShape2D_enrxv")
+debug_color = Color(0.84907, 0.253096, 0.692025, 0.42)
+
+[node name="Player" parent="Office_Case1" instance=ExtResource("2_lhsgs")]
+position = Vector2(725, 736)
+scale = Vector2(0.5, 0.5)
+
+[node name="Walls" type="Node" parent="Office_Case1"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(950, 170)
+scale = Vector2(97.1366, 17.5758)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(368, 1141)
+scale = Vector2(43.3933, 18.4617)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D2"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(1542, 1148)
+scale = Vector2(43.3933, 19.7817)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D3"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(69.9999, 443)
+scale = Vector2(-5.9222, 54.8124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D4"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(1850, 501)
+scale = Vector2(-5.9222, 54.8124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D5"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(971, 604)
+scale = Vector2(-27.0639, -11.0845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D6"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(1304, 656)
+scale = Vector2(-5.12998, 5.82739)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D7"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(193, 763)
+scale = Vector2(-8.44998, 19.1874)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D8"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(1776, 773)
+scale = Vector2(-8.44998, 23.7874)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D9"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="Interactables" type="Node" parent="Office_Case1"]
+
+[node name="BookShelf" parent="Office_Case1/Interactables" instance=ExtResource("3_4enqf")]
+position = Vector2(294, 168)
+rotation = -0.00169
+scale = Vector2(13.9693, 16.42)
+dialog_key = "reillyWeek1.w1reillyOptions"
+
+[node name="Sprite2D" parent="Office_Case1/Interactables/BookShelf" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Office_Case1/Interactables/BookShelf" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_nueae")
+
+[node name="BookShelf2" parent="Office_Case1/Interactables" instance=ExtResource("3_4enqf")]
+position = Vector2(1576, 164)
+rotation = -0.0714717
+scale = Vector2(13.9693, 16.42)
+dialog_key = "mcInteractables.boxes"
+
+[node name="Sprite2D" parent="Office_Case1/Interactables/BookShelf2" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Office_Case1/Interactables/BookShelf2" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_nueae")
+
+[node name="PhotoFrame" parent="Office_Case1/Interactables" instance=ExtResource("3_4enqf")]
+position = Vector2(921, 466)
+scale = Vector2(28.5648, 6.06972)
+dialog_key = "mcInteractables.photoFrame"
+
+[node name="Sprite2D" parent="Office_Case1/Interactables/PhotoFrame" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Office_Case1/Interactables/PhotoFrame" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_nueae")
+
+[node name="RoomLeave" type="Area2D" parent="Office_Case1/Interactables"]
+position = Vector2(954, 1283)
+scale = Vector2(14.953, -3.55118)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Interactables/RoomLeave"]
+shape = SubResource("RectangleShape2D_nxw0m")
+
+[node name="ForcedDialogue" parent="Office_Case1/Interactables" instance=ExtResource("4_nx55f")]
+position = Vector2(716, 812)
+scale = Vector2(0.839999, 1.56)
+dialog_key = "friendsWeek1.friendsOffice"
+
+[node name="CollisionShape2D" parent="Office_Case1/Interactables/ForcedDialogue" index="1"]
+position = Vector2(14, 4)
+scale = Vector2(7.44, 1)
+shape = SubResource("RectangleShape2D_2jid1")
+
+[node name="InteractionZone" parent="Office_Case1/Interactables" instance=ExtResource("3_4enqf")]
+position = Vector2(729, 819)
+scale = Vector2(6.37845, 5.93958)
+
+[node name="Sprite2D" parent="Office_Case1/Interactables/InteractionZone" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Office_Case1/Interactables/InteractionZone" index="1"]
+position = Vector2(-0.213441, -0.0545163)
+shape = SubResource("RectangleShape2D_ilgqd")
+
+[node name="DialogPlayer" parent="Office_Case1" instance=ExtResource("4_b1ur1")]
+scene_text_file = "res://Assets/Ink/Main.ink.json"
+
+[node name="PlayerChoice" parent="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
+visible = false
+
+[node name="FadeIn" type="AnimationPlayer" parent="Office_Case1"]
+libraries = {
+"": SubResource("AnimationLibrary_s05um")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Office_Case1/FadeIn"]
+self_modulate = Color(0, 0, 0, 0)
+offset_left = -45.0
+offset_top = -18.0
+offset_right = 1875.0
+offset_bottom = 1062.0
+color = Color(0, 0, 0, 1)
+
+[editable path="Office_Case1/Alex"]
+[editable path="Office_Case1/Alex/DialogAreaBox"]
+[editable path="Office_Case1/Lucie"]
+[editable path="Office_Case1/Lucie/DialogAreaBox"]
+[editable path="Office_Case1/Interactables/BookShelf"]
+[editable path="Office_Case1/Interactables/BookShelf2"]
+[editable path="Office_Case1/Interactables/PhotoFrame"]
+[editable path="Office_Case1/Interactables/ForcedDialogue"]
+[editable path="Office_Case1/Interactables/InteractionZone"]
+[editable path="Office_Case1/DialogPlayer"]
+[editable path="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice"]
