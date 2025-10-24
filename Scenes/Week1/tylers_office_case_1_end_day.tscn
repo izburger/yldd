@@ -1,0 +1,197 @@
+[gd_scene load_steps=14 format=3 uid="uid://v7pl0pim4l14"]
+
+[ext_resource type="Texture2D" uid="uid://cd4tpnsv4qonk" path="res://assets/Backgrounds/Offices/office.png" id="1_n0fxg"]
+[ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="2_vrvd2"]
+[ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_dxqbv"]
+[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="3_n2r66"]
+[ext_resource type="Texture2D" uid="uid://cqwaymerg03bn" path="res://assets/sprites/player/test1.png" id="4_5b6ws"]
+[ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="5_cdcy1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2k06w"]
+size = Vector2(15.6746, 30.2066)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lyxty"]
+radius = 8.94078
+height = 19.6588
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3da2i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fytxw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lkvv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eeljs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wacqd"]
+
+[node name="TylersOffice_Case_1_EndDay" type="Node2D"]
+
+[node name="Office_Case1" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Office_Case1"]
+scale = Vector2(0.997965, 1)
+texture = ExtResource("1_n0fxg")
+centered = false
+
+[node name="Player" parent="Office_Case1" instance=ExtResource("2_vrvd2")]
+position = Vector2(947, 1058)
+scale = Vector2(0.5, 0.5)
+
+[node name="Franz" parent="Office_Case1" instance=ExtResource("3_n2r66")]
+position = Vector2(387, 727)
+
+[node name="Sprite2D" parent="Office_Case1/Franz" index="0"]
+texture = ExtResource("4_5b6ws")
+
+[node name="CollisionShape2D" parent="Office_Case1/Franz" index="2"]
+visible = true
+position = Vector2(9.99999, 37)
+shape = SubResource("RectangleShape2D_2k06w")
+
+[node name="DialogAreaBox" parent="Office_Case1/Franz" index="3"]
+dialog_key = "franzWeek1.franzTylerOffice"
+
+[node name="CollisionShape2D" parent="Office_Case1/Franz/DialogAreaBox" index="1"]
+position = Vector2(-752, -327)
+scale = Vector2(13.4507, 12.9649)
+shape = SubResource("CapsuleShape2D_lyxty")
+debug_color = Color(0.84907, 0.253096, 0.692025, 0.42)
+
+[node name="Walls" type="Node" parent="Office_Case1"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(950, 170)
+scale = Vector2(97.1366, 17.5758)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D"]
+shape = SubResource("RectangleShape2D_3da2i")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(368, 1141)
+scale = Vector2(43.3933, 18.4617)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D2"]
+shape = SubResource("RectangleShape2D_3da2i")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(1542, 1148)
+scale = Vector2(43.3933, 19.7817)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D3"]
+shape = SubResource("RectangleShape2D_3da2i")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(69.9999, 443)
+scale = Vector2(-5.9222, 54.8124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D4"]
+shape = SubResource("RectangleShape2D_3da2i")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(1850, 501)
+scale = Vector2(-5.9222, 54.8124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D5"]
+shape = SubResource("RectangleShape2D_3da2i")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(971, 604)
+scale = Vector2(-27.0639, -11.0845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D6"]
+shape = SubResource("RectangleShape2D_3da2i")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(1304, 656)
+scale = Vector2(-5.12998, 5.82739)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D7"]
+shape = SubResource("RectangleShape2D_3da2i")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(193, 763)
+scale = Vector2(-8.44998, 19.1874)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D8"]
+shape = SubResource("RectangleShape2D_3da2i")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(1776, 773)
+scale = Vector2(-8.44998, 23.7874)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D9"]
+shape = SubResource("RectangleShape2D_3da2i")
+
+[node name="Interactables" type="Node" parent="Office_Case1"]
+
+[node name="Window" parent="Office_Case1/Interactables" instance=ExtResource("3_dxqbv")]
+position = Vector2(956, 226)
+rotation = -0.00169
+scale = Vector2(45.3263, 15.2201)
+dialog_key = "tylerOfficeInteractables.tylerWindow"
+
+[node name="Sprite2D" parent="Office_Case1/Interactables/Window" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Office_Case1/Interactables/Window" index="1"]
+position = Vector2(-0.14305, -0.0611067)
+shape = SubResource("RectangleShape2D_fytxw")
+
+[node name="Chair" parent="Office_Case1/Interactables" instance=ExtResource("3_dxqbv")]
+position = Vector2(1007, 440)
+rotation = -0.00169
+scale = Vector2(11.1787, 3.03688)
+dialog_key = "tylerOfficeInteractables.tylerChair"
+
+[node name="Sprite2D" parent="Office_Case1/Interactables/Chair" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Office_Case1/Interactables/Chair" index="1"]
+position = Vector2(3.09944e-06, 3.8147e-06)
+shape = SubResource("RectangleShape2D_fytxw")
+
+[node name="RoomLeave" type="Area2D" parent="Office_Case1/Interactables"]
+position = Vector2(954, 1283)
+scale = Vector2(14.953, -3.55118)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Interactables/RoomLeave"]
+shape = SubResource("RectangleShape2D_8lkvv")
+
+[node name="CleanDesk" parent="Office_Case1/Interactables" instance=ExtResource("3_dxqbv")]
+position = Vector2(873, 717)
+scale = Vector2(29.8053, -11.2333)
+dialog_key = "tylerOfficeInteractables.tylerTable"
+
+[node name="Sprite2D" parent="Office_Case1/Interactables/CleanDesk" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Office_Case1/Interactables/CleanDesk" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_eeljs")
+
+[node name="Rubbish" parent="Office_Case1/Interactables" instance=ExtResource("3_dxqbv")]
+position = Vector2(1332, 724)
+scale = Vector2(7.1298, -8.49242)
+dialog_key = "tylerOfficeInteractables.tylerRubbish"
+
+[node name="Sprite2D" parent="Office_Case1/Interactables/Rubbish" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Office_Case1/Interactables/Rubbish" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_wacqd")
+
+[node name="DialogPlayer" parent="Office_Case1" instance=ExtResource("5_cdcy1")]
+scene_text_file = "res://Assets/Ink/Main.ink.json"
+
+[node name="PlayerChoice" parent="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
+visible = false
+
+[editable path="Office_Case1/Franz"]
+[editable path="Office_Case1/Franz/DialogAreaBox"]
+[editable path="Office_Case1/Interactables/Window"]
+[editable path="Office_Case1/Interactables/Chair"]
+[editable path="Office_Case1/Interactables/CleanDesk"]
+[editable path="Office_Case1/Interactables/Rubbish"]
+[editable path="Office_Case1/DialogPlayer"]
+[editable path="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice"]
