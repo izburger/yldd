@@ -1,14 +1,3 @@
 [remap]
 
-importer="inkgd.ink.json"
-type="Resource"
-uid="uid://c7fw4scfy3xpx"
-valid=false
-
-[deps]
-
-source_file="res://assets/Json/character_interaction_dialog.json"
-
-[params]
-
-compress=true
+importer="keep"
