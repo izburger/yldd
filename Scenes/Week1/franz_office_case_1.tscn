@@ -1,17 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvof3oqvvsw1v"]
+[gd_scene load_steps=13 format=3 uid="uid://bvof3oqvvsw1v"]
 
-[ext_resource type="Texture2D" uid="uid://cd4tpnsv4qonk" path="res://Assets/Backgrounds/Offices/office.png" id="1_ubkbj"]
-[ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://Assets/Sprites/player/player.tscn" id="2_dx0hi"]
-[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://Assets/Sprites/npc/npc.tscn" id="3_2280b"]
-[ext_resource type="Texture2D" uid="uid://dod7n5l61dvft" path="res://Assets/Sprites/npc/boss/boss.png" id="4_edfxk"]
+[ext_resource type="Texture2D" uid="uid://cd4tpnsv4qonk" path="res://assets/Backgrounds/Offices/office.png" id="1_ubkbj"]
+[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="3_2280b"]
+[ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="4_a402m"]
+[ext_resource type="Texture2D" uid="uid://dod7n5l61dvft" path="res://assets/sprites/npc/boss/boss.png" id="4_edfxk"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="5_vq6hl"]
 [ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="6_dj25j"]
+[ext_resource type="PackedScene" uid="uid://c7iuh8ppjmke0" path="res://Scenes/forced_dialogue.tscn" id="6_i8c7f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgkpj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nueae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxw0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tgt1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxqao"]
+size = Vector2(20, 77)
 
 [node name="FranzOffice_Case_1" type="Node2D"]
 
@@ -22,9 +28,6 @@ scale = Vector2(0.997965, 1)
 texture = ExtResource("1_ubkbj")
 centered = false
 
-[node name="Player" parent="Office_Case1" instance=ExtResource("2_dx0hi")]
-position = Vector2(1489, 510)
-
 [node name="NPC" parent="Office_Case1" instance=ExtResource("3_2280b")]
 visible = false
 position = Vector2(947, 1429)
@@ -34,6 +37,10 @@ texture = ExtResource("4_edfxk")
 
 [node name="CollisionShape2D" parent="Office_Case1/NPC" index="2"]
 visible = true
+
+[node name="Player" parent="Office_Case1" instance=ExtResource("4_a402m")]
+position = Vector2(947, 1058)
+scale = Vector2(0.5, 0.5)
 
 [node name="Walls" type="Node" parent="Office_Case1"]
 
@@ -102,73 +109,39 @@ shape = SubResource("RectangleShape2D_vgkpj")
 
 [node name="Interactables" type="Node" parent="Office_Case1"]
 
-[node name="BookShelf" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
-position = Vector2(294, 168)
-rotation = -0.00169
-scale = Vector2(13.9693, 16.42)
-dialog_key = "reillyWeek1.w1reillyOptions"
+[node name="CleanDesk" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
+position = Vector2(887, 656)
+scale = Vector2(25.6898, -7.11118)
+dialog_key = "franzOfficeInteractables.franzCleanDesk"
 
-[node name="Sprite2D" parent="Office_Case1/Interactables/BookShelf" index="0"]
+[node name="Sprite2D" parent="Office_Case1/Interactables/CleanDesk" index="0"]
 scale = Vector2(0.147237, 0.147237)
 
-[node name="CollisionShape2D" parent="Office_Case1/Interactables/BookShelf" index="1"]
+[node name="CollisionShape2D" parent="Office_Case1/Interactables/CleanDesk" index="1"]
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
-[node name="BookShelf2" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
-position = Vector2(1576, 164)
-rotation = -0.0714717
-scale = Vector2(13.9693, 16.42)
-dialog_key = "mcInteractables.boxes"
+[node name="Rubbish" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
+position = Vector2(1331, 693)
+scale = Vector2(7.1298, -7.11118)
+dialog_key = "franzOfficeInteractables.franzBlood"
 
-[node name="Sprite2D" parent="Office_Case1/Interactables/BookShelf2" index="0"]
+[node name="Sprite2D" parent="Office_Case1/Interactables/Rubbish" index="0"]
 scale = Vector2(0.147237, 0.147237)
 
-[node name="CollisionShape2D" parent="Office_Case1/Interactables/BookShelf2" index="1"]
+[node name="CollisionShape2D" parent="Office_Case1/Interactables/Rubbish" index="1"]
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
-[node name="PhotoFrame" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
-position = Vector2(921, 466)
-scale = Vector2(28.5648, 6.06972)
-dialog_key = "mcInteractables.photoFrame"
-
-[node name="Sprite2D" parent="Office_Case1/Interactables/PhotoFrame" index="0"]
-scale = Vector2(0.147237, 0.147237)
-
-[node name="CollisionShape2D" parent="Office_Case1/Interactables/PhotoFrame" index="1"]
-position = Vector2(1.5, 7.5)
-shape = SubResource("RectangleShape2D_nueae")
-
-[node name="Boxes" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
-position = Vector2(471, 939)
+[node name="Shelves" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
+position = Vector2(173, 463)
 scale = Vector2(29.7698, -7.11118)
-dialog_key = "mcInteractables.boxes"
+dialog_key = "franzOfficeInteractables.franzeShelves"
 
-[node name="Sprite2D" parent="Office_Case1/Interactables/Boxes" index="0"]
+[node name="Sprite2D" parent="Office_Case1/Interactables/Shelves" index="0"]
 scale = Vector2(0.147237, 0.147237)
 
-[node name="CollisionShape2D" parent="Office_Case1/Interactables/Boxes" index="1"]
-position = Vector2(1.5, 7.5)
-shape = SubResource("RectangleShape2D_nueae")
-
-[node name="Boss" type="Area2D" parent="Office_Case1/Interactables"]
-position = Vector2(954, 1101)
-scale = Vector2(14.953, -3.55118)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Interactables/Boss"]
-shape = SubResource("RectangleShape2D_nxw0m")
-
-[node name="BossDialogue" parent="Office_Case1/Interactables/Boss" instance=ExtResource("5_vq6hl")]
-visible = false
-position = Vector2(21.7347, 38.0155)
-scale = Vector2(0.541011, 1.70962)
-dialog_key = "bossWeek1.bossOffice"
-
-[node name="Sprite2D" parent="Office_Case1/Interactables/Boss/BossDialogue" index="0"]
-scale = Vector2(0.147237, 0.147237)
-
-[node name="CollisionShape2D" parent="Office_Case1/Interactables/Boss/BossDialogue" index="1"]
+[node name="CollisionShape2D" parent="Office_Case1/Interactables/Shelves" index="1"]
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
@@ -179,23 +152,41 @@ scale = Vector2(14.953, -3.55118)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Interactables/RoomLeave"]
 shape = SubResource("RectangleShape2D_nxw0m")
 
+[node name="InteractionZone" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
+position = Vector2(931, 934)
+rotation = -0.00169
+scale = Vector2(22.535, 4.38026)
+
+[node name="Sprite2D" parent="Office_Case1/Interactables/InteractionZone" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Office_Case1/Interactables/InteractionZone" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_5tgt1")
+
+[node name="ForcedDialogue" parent="Office_Case1/Interactables" instance=ExtResource("6_i8c7f")]
+position = Vector2(923, 843)
+scale = Vector2(3.04, 1)
+dialog_key = "franzWeek1.franzOffice"
+
+[node name="CollisionShape2D" parent="Office_Case1/Interactables/ForcedDialogue" index="1"]
+position = Vector2(14, 4)
+scale = Vector2(7.44, 1)
+shape = SubResource("RectangleShape2D_nxqao")
+debug_color = Color(0.752699, 0.342259, 0.773717, 0.42)
+
 [node name="DialogPlayer" parent="Office_Case1" instance=ExtResource("6_dj25j")]
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
 [node name="PlayerChoice" parent="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
 visible = false
 
-[node name="Button" parent="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice/HBoxContainer/MarginContainer" index="2"]
-visible = false
-
-[connection signal="area_entered" from="Office_Case1/Interactables/RoomLeave" to="Office_Case1/Player" method="_on_room_leave_area_entered"]
-
 [editable path="Office_Case1/NPC"]
 [editable path="Office_Case1/NPC/DialogAreaBox"]
-[editable path="Office_Case1/Interactables/BookShelf"]
-[editable path="Office_Case1/Interactables/BookShelf2"]
-[editable path="Office_Case1/Interactables/PhotoFrame"]
-[editable path="Office_Case1/Interactables/Boxes"]
-[editable path="Office_Case1/Interactables/Boss/BossDialogue"]
+[editable path="Office_Case1/Interactables/CleanDesk"]
+[editable path="Office_Case1/Interactables/Rubbish"]
+[editable path="Office_Case1/Interactables/Shelves"]
+[editable path="Office_Case1/Interactables/InteractionZone"]
+[editable path="Office_Case1/Interactables/ForcedDialogue"]
 [editable path="Office_Case1/DialogPlayer"]
 [editable path="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice"]
