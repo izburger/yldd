@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b4nnxhu0kneq8"]
+[gd_scene load_steps=20 format=3 uid="uid://b4nnxhu0kneq8"]
 
 [ext_resource type="Texture2D" uid="uid://clomnynfsceji" path="res://assets/Backgrounds/Floors/floor1.png" id="1_5c6kb"]
 [ext_resource type="Texture2D" uid="uid://cqwaymerg03bn" path="res://assets/sprites/player/test1.png" id="3_25kmd"]
@@ -25,6 +25,10 @@ height = 15.6713
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lly86"]
 size = Vector2(13.1874, 10.0744)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wcmc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84i1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wv67"]
 
@@ -129,6 +133,69 @@ debug_color = Color(0.975667, 0, 0.417685, 0.42)
 [node name="Player" parent="." instance=ExtResource("4_0t21d")]
 position = Vector2(364, 141)
 scale = Vector2(0.5, 0.5)
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="MC" type="StaticBody2D" parent="Doors"]
+position = Vector2(375, 130)
+rotation = 3.14159
+scale = Vector2(11.01, -12.9445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/MC"]
+shape = SubResource("RectangleShape2D_3wcmc")
+
+[node name="MCDoor" parent="Doors" instance=ExtResource("3_xkmp7")]
+position = Vector2(374, 197)
+scale = Vector2(11.4893, 12.22)
+
+[node name="Sprite2D" parent="Doors/MCDoor" index="0"]
+position = Vector2(-2.14577e-06, -0.121803)
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Doors/MCDoor" index="1"]
+position = Vector2(0.28634, 9.53674e-07)
+shape = SubResource("RectangleShape2D_84i1y")
+debug_color = Color(0.0599744, 0.631226, 0.447477, 0.42)
+
+[node name="Sonny" type="StaticBody2D" parent="Doors"]
+position = Vector2(833, 131)
+rotation = 3.14159
+scale = Vector2(11.33, -12.9445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Sonny"]
+shape = SubResource("RectangleShape2D_3wcmc")
+
+[node name="SonnyDoor" parent="Doors" instance=ExtResource("3_xkmp7")]
+position = Vector2(830, 196)
+scale = Vector2(11.8493, 12.22)
+
+[node name="Sprite2D" parent="Doors/SonnyDoor" index="0"]
+position = Vector2(-2.14577e-06, -0.121803)
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Doors/SonnyDoor" index="1"]
+position = Vector2(0.28634, 9.53674e-07)
+shape = SubResource("RectangleShape2D_84i1y")
+
+[node name="Franz" type="StaticBody2D" parent="Doors"]
+position = Vector2(1300, 133)
+rotation = 3.14159
+scale = Vector2(12.5047, -12.9445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Franz"]
+shape = SubResource("RectangleShape2D_3wcmc")
+
+[node name="FranzDoor" parent="Doors" instance=ExtResource("3_xkmp7")]
+position = Vector2(1297, 197)
+scale = Vector2(11.4893, 12.22)
+
+[node name="Sprite2D" parent="Doors/FranzDoor" index="0"]
+position = Vector2(-2.14577e-06, -0.121803)
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Doors/FranzDoor" index="1"]
+position = Vector2(0.28634, 9.53674e-07)
+shape = SubResource("RectangleShape2D_84i1y")
 
 [node name="Walls" type="Node" parent="."]
 
@@ -252,7 +319,7 @@ position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_mifym")
 
 [node name="InteractionZone" parent="Interactables" instance=ExtResource("3_xkmp7")]
-position = Vector2(338, 52)
+position = Vector2(-525, 68)
 scale = Vector2(13.9693, 16.42)
 
 [node name="Sprite2D" parent="Interactables/InteractionZone" index="0"]
@@ -294,6 +361,9 @@ scene_text_file = "res://Assets/Ink/Main.ink.json"
 [editable path="Reilly/DialogAreaBox"]
 [editable path="Cat"]
 [editable path="Cat/DialogAreaBox"]
+[editable path="Doors/MCDoor"]
+[editable path="Doors/SonnyDoor"]
+[editable path="Doors/FranzDoor"]
 [editable path="Interactables/LogBook"]
 [editable path="Interactables/InteractionZone"]
 [editable path="Interactables/Coin"]
