@@ -153,9 +153,9 @@ scale = Vector2(14.953, -3.55118)
 shape = SubResource("RectangleShape2D_nxw0m")
 
 [node name="InteractionZone" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
-position = Vector2(934, 768)
+position = Vector2(931, 934)
 rotation = -0.00169
-scale = Vector2(13.9693, 16.42)
+scale = Vector2(22.535, 4.38026)
 
 [node name="Sprite2D" parent="Office_Case1/Interactables/InteractionZone" index="0"]
 scale = Vector2(0.147237, 0.147237)
