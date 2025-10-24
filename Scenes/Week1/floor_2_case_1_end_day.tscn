@@ -1,0 +1,256 @@
+[gd_scene load_steps=11 format=3 uid="uid://dg5phincl2mda"]
+
+[ext_resource type="Texture2D" uid="uid://brwvv1knf6hle" path="res://assets/Backgrounds/Floors/floor2.png" id="1_jcnxd"]
+[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="2_xtern"]
+[ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_167fq"]
+[ext_resource type="Texture2D" uid="uid://dod7n5l61dvft" path="res://assets/sprites/npc/boss/boss.png" id="3_u01wo"]
+[ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="4_tn4u6"]
+[ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="6_gnej0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ab2nd"]
+size = Vector2(11.5079, 15.4959)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2bfcb"]
+radius = 123.033
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r62oy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kl21w"]
+
+[node name="Floor2_Case1_EndDay" type="Node2D"]
+
+[node name="Floor2_Case1" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor2_Case1"]
+scale = Vector2(0.997965, 1)
+texture = ExtResource("1_jcnxd")
+centered = false
+
+[node name="Boss" parent="Floor2_Case1" instance=ExtResource("2_xtern")]
+position = Vector2(1384, 953)
+
+[node name="Sprite2D" parent="Floor2_Case1/Boss" index="0"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_u01wo")
+
+[node name="CollisionShape2D" parent="Floor2_Case1/Boss" index="2"]
+visible = true
+position = Vector2(0, 71.5)
+shape = SubResource("RectangleShape2D_ab2nd")
+
+[node name="DialogAreaBox" parent="Floor2_Case1/Boss" index="3"]
+dialog_key = "bossWeek1.bossBreakRoom"
+
+[node name="CollisionShape2D" parent="Floor2_Case1/Boss/DialogAreaBox" index="1"]
+position = Vector2(-766, -334)
+scale = Vector2(1.44, 1.16)
+shape = SubResource("CircleShape2D_2bfcb")
+
+[node name="Player" parent="Floor2_Case1" instance=ExtResource("4_tn4u6")]
+position = Vector2(1215, 297)
+scale = Vector2(0.5, 0.5)
+
+[node name="Doors" type="Node" parent="Floor2_Case1"]
+
+[node name="Boss" type="StaticBody2D" parent="Floor2_Case1/Doors"]
+position = Vector2(257, 206)
+rotation = 3.14159
+scale = Vector2(11.01, -12.9445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Doors/Boss"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="BossDoor" parent="Floor2_Case1/Doors" instance=ExtResource("3_167fq")]
+position = Vector2(256, 273)
+scale = Vector2(11.4893, 12.22)
+dialog_key = "bossDoorLocked"
+
+[node name="Sprite2D" parent="Floor2_Case1/Doors/BossDoor" index="0"]
+position = Vector2(-2.14577e-06, -0.121803)
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Floor2_Case1/Doors/BossDoor" index="1"]
+position = Vector2(0.28634, 9.53674e-07)
+shape = SubResource("RectangleShape2D_kl21w")
+
+[node name="Harrison" type="StaticBody2D" parent="Floor2_Case1/Doors"]
+position = Vector2(729, 208)
+rotation = 3.14159
+scale = Vector2(11.33, -12.9445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Doors/Harrison"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="HarrisonDoor" parent="Floor2_Case1/Doors" instance=ExtResource("3_167fq")]
+position = Vector2(726, 273)
+scale = Vector2(11.8493, 12.22)
+dialog_key = "harrisonDoorLocked"
+
+[node name="Sprite2D" parent="Floor2_Case1/Doors/HarrisonDoor" index="0"]
+position = Vector2(-2.14577e-06, -0.121803)
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Floor2_Case1/Doors/HarrisonDoor" index="1"]
+position = Vector2(0.28634, 9.53674e-07)
+shape = SubResource("RectangleShape2D_kl21w")
+
+[node name="Tyler" type="StaticBody2D" parent="Floor2_Case1/Doors"]
+position = Vector2(1225, 209)
+rotation = 3.14159
+scale = Vector2(12.5047, -12.9445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Doors/Tyler"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="TylerDoor" parent="Floor2_Case1/Doors" instance=ExtResource("3_167fq")]
+position = Vector2(1222, 273)
+scale = Vector2(11.4893, 12.22)
+dialog_key = "ranBuildingInteractablesw1.bookShelves"
+
+[node name="Sprite2D" parent="Floor2_Case1/Doors/TylerDoor" index="0"]
+position = Vector2(-2.14577e-06, -0.121803)
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Floor2_Case1/Doors/TylerDoor" index="1"]
+position = Vector2(0.28634, 9.53674e-07)
+shape = SubResource("RectangleShape2D_kl21w")
+
+[node name="Interactables" type="Node" parent="Floor2_Case1"]
+
+[node name="BookShelf" parent="Floor2_Case1/Interactables" instance=ExtResource("3_167fq")]
+position = Vector2(318, 659)
+scale = Vector2(26.5293, 17.54)
+dialog_key = "ranBuildingInteractablesw1.bookShelves"
+
+[node name="Sprite2D" parent="Floor2_Case1/Interactables/BookShelf" index="0"]
+position = Vector2(-2.14577e-06, -0.121803)
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Floor2_Case1/Interactables/BookShelf" index="1"]
+position = Vector2(0.28634, 9.53674e-07)
+shape = SubResource("RectangleShape2D_kl21w")
+
+[node name="Walls" type="Node" parent="Floor2_Case1"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor2_Case1/Walls"]
+position = Vector2(1867, 208)
+scale = Vector2(-9.81, 12.9445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Walls/StaticBody2D"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Floor2_Case1/Walls"]
+position = Vector2(194, 986)
+rotation = 2.01287
+scale = Vector2(-9.81, 17.7993)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Walls/StaticBody2D2"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="Floor2_Case1/Walls"]
+position = Vector2(942, 1013)
+scale = Vector2(-34.69, 10.4245)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Walls/StaticBody2D12"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="Floor2_Case1/Walls"]
+position = Vector2(246, 619)
+scale = Vector2(-34.69, 13.3445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Walls/StaticBody2D13"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="Floor2_Case1/Walls"]
+position = Vector2(1725, 926)
+scale = Vector2(-24.33, 13.3445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Walls/StaticBody2D14"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="Floor2_Case1/Walls"]
+position = Vector2(1798, 734)
+rotation = -1.56681
+scale = Vector2(-24.33, 13.3445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Walls/StaticBody2D15"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="Floor2_Case1/Walls"]
+position = Vector2(1446, 636)
+rotation = -1.56681
+scale = Vector2(-4.13793, 13.9048)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Walls/StaticBody2D16"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Floor2_Case1/Walls"]
+position = Vector2(976, 203)
+scale = Vector2(-13.1073, 13.6245)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Walls/StaticBody2D10"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Floor2_Case1/Walls"]
+position = Vector2(1452, 211)
+scale = Vector2(-10.17, 16.3845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Walls/StaticBody2D7"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Floor2_Case1/Walls"]
+position = Vector2(44, 208)
+scale = Vector2(-9.81, 13.1045)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Walls/StaticBody2D8"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Floor2_Case1/Walls"]
+position = Vector2(491, 232)
+scale = Vector2(-12.17, 13.9445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Walls/StaticBody2D9"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Floor2_Case1/Walls"]
+position = Vector2(1014, 1072)
+scale = Vector2(104.873, 4.42167)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Walls/StaticBody2D3"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="Floor2_Case1/Walls"]
+position = Vector2(980, 48)
+scale = Vector2(104.873, 4.42167)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Walls/StaticBody2D11"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Floor2_Case1/Walls"]
+position = Vector2(-10, 561)
+scale = Vector2(-5.9222, 57.7324)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Walls/StaticBody2D4"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Floor2_Case1/Walls"]
+position = Vector2(1914, 539)
+scale = Vector2(-5.9222, 54.8124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Walls/StaticBody2D5"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="DialogPlayer" parent="Floor2_Case1" instance=ExtResource("6_gnej0")]
+scene_text_file = "res://Assets/Ink/Main.ink.json"
+
+[node name="PlayerChoice" parent="Floor2_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
+visible = false
+
+[editable path="Floor2_Case1/Boss"]
+[editable path="Floor2_Case1/Boss/DialogAreaBox"]
+[editable path="Floor2_Case1/Doors/BossDoor"]
+[editable path="Floor2_Case1/Doors/HarrisonDoor"]
+[editable path="Floor2_Case1/Doors/TylerDoor"]
+[editable path="Floor2_Case1/Interactables/BookShelf"]
+[editable path="Floor2_Case1/DialogPlayer"]
+[editable path="Floor2_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice"]
