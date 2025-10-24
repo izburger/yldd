@@ -155,7 +155,7 @@ shape = SubResource("RectangleShape2D_nxw0m")
 [node name="InteractionZone" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
 position = Vector2(931, 873)
 rotation = -0.00169
-scale = Vector2(22.535, 4.38026)
+scale = Vector2(34.9353, 4.38026)
 
 [node name="Sprite2D" parent="Office_Case1/Interactables/InteractionZone" index="0"]
 scale = Vector2(0.147237, 0.147237)
@@ -176,6 +176,7 @@ shape = SubResource("RectangleShape2D_nxqao")
 debug_color = Color(0.752699, 0.342259, 0.773717, 0.42)
 
 [node name="DialogPlayer" parent="Office_Case1" instance=ExtResource("6_dj25j")]
+visible = false
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
 [node name="PlayerChoice" parent="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
