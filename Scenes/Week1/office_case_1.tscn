@@ -252,4 +252,3 @@ color = Color(0, 0, 0, 1)
 [editable path="Interactables/Boxes"]
 [editable path="Interactables/Boss/BossDialogue"]
 [editable path="DialogPlayer"]
-[editable path="DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice"]

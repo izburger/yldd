@@ -85,7 +85,7 @@ shape = SubResource("CapsuleShape2D_n15w0")
 debug_color = Color(0.84907, 0.253096, 0.692025, 0.42)
 
 [node name="Reilly" parent="." instance=ExtResource("3_o2mcs")]
-position = Vector2(1579, 734)
+position = Vector2(1579, 736)
 
 [node name="Sprite2D" parent="Reilly" index="0"]
 scale = Vector2(0.5, 0.5)

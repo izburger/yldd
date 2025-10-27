@@ -386,6 +386,7 @@ radius = 1.29548
 height = 24.9977
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_2s5x7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
