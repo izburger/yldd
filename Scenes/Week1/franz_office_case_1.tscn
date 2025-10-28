@@ -39,6 +39,70 @@ scale = Vector2(0.997965, 1)
 texture = ExtResource("1_hxvih")
 centered = false
 
+[node name="Sprites" type="Node" parent="Office_Case1"]
+
+[node name="Cleaning" type="Sprite2D" parent="Office_Case1/Sprites"]
+show_behind_parent = true
+y_sort_enabled = true
+position = Vector2(416, 317)
+texture = ExtResource("5_w6kpj")
+
+[node name="Cleaning2" type="Sprite2D" parent="Office_Case1/Sprites"]
+show_behind_parent = true
+y_sort_enabled = true
+position = Vector2(1484, 320)
+texture = ExtResource("5_w6kpj")
+
+[node name="Rubbish" type="Sprite2D" parent="Office_Case1/Sprites"]
+show_behind_parent = true
+y_sort_enabled = true
+position = Vector2(1373.3, 701.8)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("6_tr2sk")
+
+[node name="Rubbish2" type="Sprite2D" parent="Office_Case1/Sprites"]
+show_behind_parent = true
+y_sort_enabled = true
+position = Vector2(1350.3, 728.8)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("7_o6wyj")
+
+[node name="Desk" type="Sprite2D" parent="Office_Case1/Sprites"]
+show_behind_parent = true
+y_sort_enabled = true
+position = Vector2(266, 680)
+texture = ExtResource("9_ogp60")
+
+[node name="carpet" type="Sprite2D" parent="Office_Case1/Sprites"]
+show_behind_parent = true
+y_sort_enabled = true
+position = Vector2(880, 688)
+texture = ExtResource("8_ecq5u")
+
+[node name="ActualDesk" type="Sprite2D" parent="Office_Case1/Sprites"]
+show_behind_parent = true
+y_sort_enabled = true
+position = Vector2(942, 561)
+texture = ExtResource("10_nacai")
+
+[node name="Paper" type="Sprite2D" parent="Office_Case1/Sprites"]
+show_behind_parent = true
+y_sort_enabled = true
+position = Vector2(1079, 473)
+texture = ExtResource("11_1b4wp")
+
+[node name="Paper2" type="Sprite2D" parent="Office_Case1/Sprites"]
+show_behind_parent = true
+y_sort_enabled = true
+position = Vector2(1083, 457)
+texture = ExtResource("11_1b4wp")
+
+[node name="Paper3" type="Sprite2D" parent="Office_Case1/Sprites"]
+show_behind_parent = true
+y_sort_enabled = true
+position = Vector2(1085, 441)
+texture = ExtResource("11_1b4wp")
+
 [node name="NPC" parent="Office_Case1" instance=ExtResource("3_2280b")]
 visible = false
 position = Vector2(947, 1429)
@@ -50,52 +114,9 @@ texture = ExtResource("4_edfxk")
 visible = true
 
 [node name="Player" parent="Office_Case1" instance=ExtResource("4_a402m")]
+top_level = true
 position = Vector2(947, 1058)
 scale = Vector2(0.5, 0.5)
-
-[node name="Sprites" type="Node" parent="Office_Case1"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Office_Case1/Sprites"]
-position = Vector2(416, 317)
-texture = ExtResource("5_w6kpj")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Office_Case1/Sprites"]
-position = Vector2(1484, 320)
-texture = ExtResource("5_w6kpj")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Office_Case1/Sprites"]
-position = Vector2(1373.3, 701.8)
-scale = Vector2(1.4, 1.4)
-texture = ExtResource("6_tr2sk")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Office_Case1/Sprites"]
-position = Vector2(1350.3, 728.8)
-scale = Vector2(1.4, 1.4)
-texture = ExtResource("7_o6wyj")
-
-[node name="Sprite2D10" type="Sprite2D" parent="Office_Case1/Sprites"]
-position = Vector2(880, 688)
-texture = ExtResource("8_ecq5u")
-
-[node name="Sprite2D5" type="Sprite2D" parent="Office_Case1/Sprites"]
-position = Vector2(266, 680)
-texture = ExtResource("9_ogp60")
-
-[node name="Sprite2D6" type="Sprite2D" parent="Office_Case1/Sprites"]
-position = Vector2(942, 561)
-texture = ExtResource("10_nacai")
-
-[node name="Sprite2D7" type="Sprite2D" parent="Office_Case1/Sprites"]
-position = Vector2(1079, 473)
-texture = ExtResource("11_1b4wp")
-
-[node name="Sprite2D8" type="Sprite2D" parent="Office_Case1/Sprites"]
-position = Vector2(1083, 457)
-texture = ExtResource("11_1b4wp")
-
-[node name="Sprite2D9" type="Sprite2D" parent="Office_Case1/Sprites"]
-position = Vector2(1085, 441)
-texture = ExtResource("11_1b4wp")
 
 [node name="Walls" type="Node" parent="Office_Case1"]
 
@@ -155,36 +176,8 @@ scale = Vector2(-3.61102, 4.6003)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis"]
 shape = SubResource("RectangleShape2D_0sad5")
 
-[node name="tgis2" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(1210, 653)
-scale = Vector2(-9.52301, 6.36033)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis2"]
-shape = SubResource("RectangleShape2D_0sad5")
-
-[node name="tgis3" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(1152, 556)
-scale = Vector2(-9.52301, 6.36033)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis3"]
-shape = SubResource("RectangleShape2D_0sad5")
-
-[node name="tgis4" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(307, 412)
-scale = Vector2(-9.52301, 6.36033)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis4"]
-shape = SubResource("RectangleShape2D_0sad5")
-
-[node name="tgis7" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(335.5, 832)
-scale = Vector2(-4.76302, 6.36033)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis7"]
-shape = SubResource("RectangleShape2D_0sad5")
-
 [node name="tgis8" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(1596, 425)
+position = Vector2(1364, 711)
 scale = Vector2(-4.76302, 6.36033)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis8"]
@@ -205,8 +198,8 @@ scale = Vector2(-19.6326, 11.2156)
 shape = SubResource("RectangleShape2D_0sad5")
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(234, 702)
-scale = Vector2(-8.44998, 19.1874)
+position = Vector2(236, 683)
+scale = Vector2(-8.44998, 16.7474)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D8"]
 shape = SubResource("RectangleShape2D_0sad5")
@@ -221,9 +214,8 @@ shape = SubResource("RectangleShape2D_0sad5")
 [node name="Interactables" type="Node" parent="Office_Case1"]
 
 [node name="CleanDesk" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
-visible = false
-position = Vector2(873, 717)
-scale = Vector2(27.8431, -16.0004)
+position = Vector2(893, 609)
+scale = Vector2(27.8431, -11.3604)
 dialog_key = "franzOfficeInteractables.franzCleanDesk"
 
 [node name="Sprite2D" parent="Office_Case1/Interactables/CleanDesk" index="0"]
@@ -234,8 +226,7 @@ position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
 [node name="Rubbish" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
-visible = false
-position = Vector2(1332, 724)
+position = Vector2(1360, 782)
 scale = Vector2(7.1298, -8.49242)
 dialog_key = "franzOfficeInteractables.franzBlood"
 
@@ -247,8 +238,7 @@ position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
 [node name="Shelves" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
-visible = false
-position = Vector2(173, 463)
+position = Vector2(236, 414)
 scale = Vector2(29.7698, -7.11118)
 dialog_key = "franzOfficeInteractables.franzeShelves"
 
@@ -256,6 +246,18 @@ dialog_key = "franzOfficeInteractables.franzeShelves"
 scale = Vector2(0.147237, 0.147237)
 
 [node name="CollisionShape2D" parent="Office_Case1/Interactables/Shelves" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_nueae")
+
+[node name="Shelves2" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
+position = Vector2(1562, 422)
+scale = Vector2(29.7698, -7.11118)
+dialog_key = "franzOfficeInteractables.franzeShelves"
+
+[node name="Sprite2D" parent="Office_Case1/Interactables/Shelves2" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Office_Case1/Interactables/Shelves2" index="1"]
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
@@ -324,7 +326,6 @@ text = "Floor 1
 "
 
 [node name="DialogPlayer" parent="Office_Case1" instance=ExtResource("6_dj25j")]
-visible = false
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
 [node name="PlayerChoice" parent="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
@@ -338,6 +339,7 @@ visible = false
 [editable path="Office_Case1/Interactables/CleanDesk"]
 [editable path="Office_Case1/Interactables/Rubbish"]
 [editable path="Office_Case1/Interactables/Shelves"]
+[editable path="Office_Case1/Interactables/Shelves2"]
 [editable path="Office_Case1/Interactables/InteractionZone"]
 [editable path="Office_Case1/Interactables/ForcedDialogue"]
 [editable path="Office_Case1/DialogPlayer"]
