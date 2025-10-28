@@ -1,12 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://btv3bac8oosqd"]
+[gd_scene load_steps=18 format=3 uid="uid://btv3bac8oosqd"]
 
-[ext_resource type="Texture2D" uid="uid://brwvv1knf6hle" path="res://assets/Backgrounds/Floors/floor2.png" id="1_yoo3e"]
+[ext_resource type="Texture2D" uid="uid://cnd7a2q2nv8si" path="res://assets/Backgrounds/Floors/Floor2/secondfloor.png" id="1_if7jp"]
 [ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="2_51go3"]
 [ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="2_clhve"]
 [ext_resource type="Texture2D" uid="uid://dod7n5l61dvft" path="res://assets/sprites/npc/boss/boss.png" id="3_0w5ps"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_va07x"]
-[ext_resource type="Texture2D" uid="uid://dwwejmnmugpok" path="res://assets/sprites/npc/harrison/Harrison.png" id="4_feqgh"]
+[ext_resource type="Texture2D" uid="uid://fr5iap75820i" path="res://assets/sprites/npc/harrison/harrisonsprites.png" id="4_etol0"]
+[ext_resource type="Texture2D" uid="uid://brfh3ki15xsdt" path="res://assets/Backgrounds/Chapter1/harrisonsleeping.png" id="6_v633v"]
+[ext_resource type="Script" path="res://Scripts/door_area.gd" id="6_ws3r5"]
+[ext_resource type="FontFile" uid="uid://bsblej0iv5c7j" path="res://assets/Fonts/Main/American Typewriter Bold.ttf" id="7_a5hlr"]
 [ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="7_kvb3u"]
+[ext_resource type="PackedScene" uid="uid://c6thavrbrmx3" path="res://Scenes/door_2d.tscn" id="8_x507u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab2nd"]
 size = Vector2(11.5079, 15.4959)
@@ -14,15 +18,19 @@ size = Vector2(11.5079, 15.4959)
 [sub_resource type="CircleShape2D" id="CircleShape2D_2bfcb"]
 radius = 123.033
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r62oy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4cl8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3inl6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kl21w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r62oy"]
 
 [node name="Floor2_Case1" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.997965, 1)
-texture = ExtResource("1_yoo3e")
+texture = ExtResource("1_if7jp")
 centered = false
 
 [node name="Boss" parent="." instance=ExtResource("2_51go3")]
@@ -49,9 +57,8 @@ shape = SubResource("CircleShape2D_2bfcb")
 position = Vector2(1722, 750)
 
 [node name="Sprite2D" parent="Harrison" index="0"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_feqgh")
-hframes = 1
+texture = ExtResource("4_etol0")
+hframes = 9
 
 [node name="CollisionShape2D" parent="Harrison" index="2"]
 visible = true
@@ -71,76 +78,149 @@ debug_color = Color(0.894487, 0.000214664, 0.781049, 0.42)
 position = Vector2(1667, 329)
 scale = Vector2(0.5, 0.5)
 
+[node name="Sprites" type="Node" parent="."]
+
+[node name="Couch" type="Sprite2D" parent="Sprites"]
+position = Vector2(1668, 797)
+texture = ExtResource("6_v633v")
+
 [node name="Doors" type="Node" parent="."]
 
 [node name="Boss" type="StaticBody2D" parent="Doors"]
-position = Vector2(257, 206)
+position = Vector2(282, 217)
 rotation = 3.14159
 scale = Vector2(11.01, -12.9445)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Boss"]
-shape = SubResource("RectangleShape2D_r62oy")
+shape = SubResource("RectangleShape2D_d4cl8")
 
-[node name="BossDoor" parent="Doors" instance=ExtResource("3_va07x")]
-position = Vector2(256, 273)
-scale = Vector2(11.4893, 12.22)
-dialog_key = "bossDoorLocked"
+[node name="BossDoor" type="Node2D" parent="Doors"]
 
-[node name="Sprite2D" parent="Doors/BossDoor" index="0"]
+[node name="Area2D" type="Area2D" parent="Doors/BossDoor"]
+position = Vector2(364, 268)
+scale = Vector2(11.685, 12.034)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("6_ws3r5")
+target_scene = null
+
+[node name="Sprite2D" type="Sprite2D" parent="Doors/BossDoor/Area2D"]
 position = Vector2(-2.14577e-06, -0.121803)
 scale = Vector2(0.147237, 0.147237)
 
-[node name="CollisionShape2D" parent="Doors/BossDoor" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/BossDoor/Area2D"]
+position = Vector2(-6.38888, 1.24647)
+scale = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_3inl6")
+debug_color = Color(0.50589, 0.435297, 0.976594, 0.42)
+
+[node name="PromptLabel" type="Label" parent="Doors/BossDoor/Area2D"]
+visible = false
+offset_left = -29.3539
+offset_top = 53.9305
+offset_right = 98.6461
+offset_bottom = 109.931
+scale = Vector2(0.22697, 0.22697)
+theme_override_fonts/font = ExtResource("7_a5hlr")
+theme_override_font_sizes/font_size = 45
+text = "Boss's Office"
+
+[node name="BossDoor2" parent="Doors" instance=ExtResource("3_va07x")]
+position = Vector2(288, 284)
+scale = Vector2(5.8093, 12.22)
+dialog_key = "bossDoorLocked"
+
+[node name="Sprite2D" parent="Doors/BossDoor2" index="0"]
+position = Vector2(-2.14577e-06, -0.121803)
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Doors/BossDoor2" index="1"]
 position = Vector2(0.28634, 9.53674e-07)
 shape = SubResource("RectangleShape2D_kl21w")
 
 [node name="Harrison" type="StaticBody2D" parent="Doors"]
-position = Vector2(729, 208)
+position = Vector2(686.654, 217)
 rotation = 3.14159
 scale = Vector2(11.33, -12.9445)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Harrison"]
-shape = SubResource("RectangleShape2D_r62oy")
+shape = SubResource("RectangleShape2D_d4cl8")
 
-[node name="HarrisonDoor" parent="Doors" instance=ExtResource("3_va07x")]
-position = Vector2(726, 273)
-scale = Vector2(11.8493, 12.22)
+[node name="HarrisonDoor" parent="Doors" instance=ExtResource("8_x507u")]
+position = Vector2(0, -6)
+
+[node name="CollisionShape2D" parent="Doors/HarrisonDoor/Area2D" index="1"]
+position = Vector2(27.5567, 1.16337)
+scale = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_3inl6")
+
+[node name="PromptLabel" parent="Doors/HarrisonDoor/Area2D" index="2"]
+visible = false
+offset_right = 217.646
+text = "Harrison's Office"
+
+[node name="HarrisonDoor2" parent="Doors" instance=ExtResource("3_va07x")]
+position = Vector2(683, 276)
+scale = Vector2(5.7693, 12.22)
 dialog_key = "harrisonDoorLocked"
 
-[node name="Sprite2D" parent="Doors/HarrisonDoor" index="0"]
+[node name="Sprite2D" parent="Doors/HarrisonDoor2" index="0"]
 position = Vector2(-2.14577e-06, -0.121803)
 scale = Vector2(0.147237, 0.147237)
 
-[node name="CollisionShape2D" parent="Doors/HarrisonDoor" index="1"]
+[node name="CollisionShape2D" parent="Doors/HarrisonDoor2" index="1"]
 position = Vector2(0.28634, 9.53674e-07)
 shape = SubResource("RectangleShape2D_kl21w")
 
 [node name="Tyler" type="StaticBody2D" parent="Doors"]
-position = Vector2(1225, 209)
+position = Vector2(1113, 217)
 rotation = 3.14159
 scale = Vector2(12.5047, -12.9445)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Tyler"]
-shape = SubResource("RectangleShape2D_r62oy")
+shape = SubResource("RectangleShape2D_d4cl8")
 
-[node name="TylerDoor" parent="Doors" instance=ExtResource("3_va07x")]
-position = Vector2(1222, 273)
-scale = Vector2(11.4893, 12.22)
-dialog_key = "ranBuildingInteractablesw1.bookShelves"
+[node name="TylerDoor" parent="Doors" instance=ExtResource("8_x507u")]
 
-[node name="Sprite2D" parent="Doors/TylerDoor" index="0"]
-position = Vector2(-2.14577e-06, -0.121803)
-scale = Vector2(0.147237, 0.147237)
+[node name="Area2D" parent="Doors/TylerDoor" index="0"]
+target_scene = "res://Scenes/Week1/tyler_office_case_1.tscn"
 
-[node name="CollisionShape2D" parent="Doors/TylerDoor" index="1"]
-position = Vector2(0.28634, 9.53674e-07)
-shape = SubResource("RectangleShape2D_kl21w")
+[node name="CollisionShape2D" parent="Doors/TylerDoor/Area2D" index="1"]
+position = Vector2(64.2145, 1.16337)
+scale = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_3inl6")
+
+[node name="PromptLabel" parent="Doors/TylerDoor/Area2D" index="2"]
+visible = false
+text = "Tyler's Office"
+
+[node name="Stairs" type="StaticBody2D" parent="Doors"]
+position = Vector2(1587, 216)
+rotation = 3.14159
+scale = Vector2(12.5047, -12.9445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Stairs"]
+shape = SubResource("RectangleShape2D_d4cl8")
+
+[node name="StairsEntrance" parent="Doors" instance=ExtResource("8_x507u")]
+
+[node name="Area2D" parent="Doors/StairsEntrance" index="0"]
+target_scene = "res://Scenes/Week1/floor_1_case_1.tscn"
+
+[node name="CollisionShape2D" parent="Doors/StairsEntrance/Area2D" index="1"]
+position = Vector2(104.779, 0.997176)
+scale = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_3inl6")
+
+[node name="PromptLabel" parent="Doors/StairsEntrance/Area2D" index="2"]
+visible = false
+text = "Floor 1"
 
 [node name="Interactables" type="Node" parent="."]
 
 [node name="BookShelf" parent="Interactables" instance=ExtResource("3_va07x")]
-position = Vector2(318, 659)
-scale = Vector2(26.5293, 17.54)
+position = Vector2(235, 617)
+scale = Vector2(26.5293, 14.46)
 dialog_key = "ranBuildingInteractablesw1.bookShelves"
 
 [node name="Sprite2D" parent="Interactables/BookShelf" index="0"]
@@ -154,43 +234,64 @@ shape = SubResource("RectangleShape2D_kl21w")
 [node name="Walls" type="Node" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
-position = Vector2(1867, 208)
+position = Vector2(1784, 211)
 scale = Vector2(-9.81, 12.9445)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
 shape = SubResource("RectangleShape2D_r62oy")
 
+[node name="StaticBody2D6" type="StaticBody2D" parent="Walls"]
+position = Vector2(1310, 259)
+scale = Vector2(-3.17438, 11.3845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D6"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="Walls"]
+position = Vector2(454, 256)
+scale = Vector2(-3.17438, 11.3845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D17"]
+shape = SubResource("RectangleShape2D_r62oy")
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="Walls"]
+position = Vector2(1464, 1037)
+scale = Vector2(-3.41438, 11.3845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D18"]
+shape = SubResource("RectangleShape2D_r62oy")
+
 [node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
-position = Vector2(194, 986)
-rotation = 2.01287
-scale = Vector2(-9.81, 17.7993)
+position = Vector2(354, 891)
+rotation = 1.45608
+scale = Vector2(-7.62096, 18.0705)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
 shape = SubResource("RectangleShape2D_r62oy")
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="Walls"]
-position = Vector2(942, 1013)
+position = Vector2(984, 1011)
 scale = Vector2(-34.69, 10.4245)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D12"]
 shape = SubResource("RectangleShape2D_r62oy")
 
 [node name="StaticBody2D13" type="StaticBody2D" parent="Walls"]
-position = Vector2(246, 619)
-scale = Vector2(-34.69, 13.3445)
+position = Vector2(134, 585)
+scale = Vector2(-34.69, 11.5045)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D13"]
 shape = SubResource("RectangleShape2D_r62oy")
 
 [node name="StaticBody2D14" type="StaticBody2D" parent="Walls"]
-position = Vector2(1725, 926)
+position = Vector2(1764, 956)
 scale = Vector2(-24.33, 13.3445)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D14"]
 shape = SubResource("RectangleShape2D_r62oy")
 
 [node name="StaticBody2D15" type="StaticBody2D" parent="Walls"]
-position = Vector2(1798, 734)
+position = Vector2(1790, 836)
 rotation = -1.56681
 scale = Vector2(-24.33, 13.3445)
 
@@ -198,64 +299,64 @@ scale = Vector2(-24.33, 13.3445)
 shape = SubResource("RectangleShape2D_r62oy")
 
 [node name="StaticBody2D16" type="StaticBody2D" parent="Walls"]
-position = Vector2(1446, 636)
+position = Vector2(1451, 710)
 rotation = -1.56681
-scale = Vector2(-4.13793, 13.9048)
+scale = Vector2(-6.22829, 11.7892)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D16"]
 shape = SubResource("RectangleShape2D_r62oy")
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="Walls"]
-position = Vector2(976, 203)
-scale = Vector2(-13.1073, 13.6245)
+position = Vector2(903, 211)
+scale = Vector2(-12.5873, 13.6245)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D10"]
 shape = SubResource("RectangleShape2D_r62oy")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="Walls"]
-position = Vector2(1452, 211)
-scale = Vector2(-10.17, 16.3845)
+position = Vector2(1346, 183)
+scale = Vector2(-14.53, 16.3845)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D7"]
 shape = SubResource("RectangleShape2D_r62oy")
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="Walls"]
-position = Vector2(44, 208)
+position = Vector2(101, 214)
 scale = Vector2(-9.81, 13.1045)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D8"]
 shape = SubResource("RectangleShape2D_r62oy")
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="Walls"]
-position = Vector2(491, 232)
-scale = Vector2(-12.17, 13.9445)
+position = Vector2(486, 207)
+scale = Vector2(-11.45, 13.9445)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D9"]
 shape = SubResource("RectangleShape2D_r62oy")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
-position = Vector2(1014, 1072)
+position = Vector2(1014, 1078)
 scale = Vector2(104.873, 4.42167)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
 shape = SubResource("RectangleShape2D_r62oy")
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="Walls"]
-position = Vector2(980, 48)
+position = Vector2(980, 121)
 scale = Vector2(104.873, 4.42167)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D11"]
 shape = SubResource("RectangleShape2D_r62oy")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
-position = Vector2(-10, 561)
+position = Vector2(35, 558)
 scale = Vector2(-5.9222, 57.7324)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
 shape = SubResource("RectangleShape2D_r62oy")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Walls"]
-position = Vector2(1914, 539)
+position = Vector2(1883, 539)
 scale = Vector2(-5.9222, 54.8124)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D5"]
@@ -267,13 +368,17 @@ scene_text_file = "res://Assets/Ink/Main.ink.json"
 [node name="PlayerChoice" parent="DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
 visible = false
 
+[connection signal="area_entered" from="Doors/BossDoor/Area2D" to="Doors/BossDoor/Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="Doors/BossDoor/Area2D" to="Doors/BossDoor/Area2D" method="_on_area_exited"]
+
 [editable path="Boss"]
 [editable path="Boss/DialogAreaBox"]
 [editable path="Harrison"]
 [editable path="Harrison/DialogAreaBox"]
-[editable path="Doors/BossDoor"]
+[editable path="Doors/BossDoor2"]
 [editable path="Doors/HarrisonDoor"]
+[editable path="Doors/HarrisonDoor2"]
 [editable path="Doors/TylerDoor"]
+[editable path="Doors/StairsEntrance"]
 [editable path="Interactables/BookShelf"]
 [editable path="DialogPlayer"]
-[editable path="DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice"]

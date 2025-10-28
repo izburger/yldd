@@ -1,12 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckvx6brx2rjmh"]
+[gd_scene load_steps=22 format=3 uid="uid://ckvx6brx2rjmh"]
 
-[ext_resource type="Texture2D" uid="uid://cd4tpnsv4qonk" path="res://assets/Backgrounds/Offices/office.png" id="1_js6cq"]
+[ext_resource type="Texture2D" uid="uid://xdx41d4uvasg" path="res://assets/Backgrounds/Offices/dayversion.png" id="1_oac74"]
 [ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="2_8uawh"]
+[ext_resource type="Texture2D" uid="uid://dbx7iao102rbk" path="res://assets/Backgrounds/Chapter1/scratchesonground.png" id="2_lqhto"]
+[ext_resource type="Texture2D" uid="uid://bwlsc3xpaaqq8" path="res://assets/Backgrounds/Offices/Furniture/yellowcarpet.png" id="3_c0hs5"]
 [ext_resource type="PackedScene" uid="uid://c7iuh8ppjmke0" path="res://Scenes/forced_dialogue.tscn" id="4_4trff"]
+[ext_resource type="Texture2D" uid="uid://c850hgrn82d11" path="res://assets/Backgrounds/Offices/Furniture/desk.png" id="4_36d3h"]
+[ext_resource type="Texture2D" uid="uid://1crr0imgtykw" path="res://assets/Backgrounds/Offices/Furniture/paper.png" id="5_6wx6e"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="5_86apf"]
+[ext_resource type="Texture2D" uid="uid://d52sgdxdm5u6" path="res://assets/Backgrounds/Offices/Furniture/paperstack.png" id="6_l14n2"]
 [ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="6_nmhqt"]
+[ext_resource type="Texture2D" uid="uid://hs7q55srxaxt" path="res://assets/Backgrounds/Chapter1/loveletter.png" id="7_msw8g"]
+[ext_resource type="Script" path="res://Scripts/door_area.gd" id="11_g8ndt"]
+[ext_resource type="FontFile" uid="uid://bsblej0iv5c7j" path="res://assets/Fonts/Main/American Typewriter Bold.ttf" id="12_saqxa"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bod7m"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4b2d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qos6"]
 
@@ -21,90 +29,153 @@ size = Vector2(20, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcs07"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16usq"]
+
 [node name="TylerOffice_Case_1" type="Node2D"]
 
 [node name="Office_Case1" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Office_Case1"]
 scale = Vector2(0.997965, 1)
-texture = ExtResource("1_js6cq")
+texture = ExtResource("1_oac74")
 centered = false
 
+[node name="Sprites" type="Node" parent="Office_Case1"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(1150, 639)
+texture = ExtResource("2_lqhto")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(882, 686)
+texture = ExtResource("3_c0hs5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(939, 561)
+texture = ExtResource("4_36d3h")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(750, 457)
+texture = ExtResource("5_6wx6e")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(751, 459)
+texture = ExtResource("6_l14n2")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(993, 462)
+texture = ExtResource("5_6wx6e")
+flip_h = true
+
+[node name="Sprite2D7" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(641, 506)
+texture = ExtResource("7_msw8g")
+flip_h = true
+
 [node name="Player" parent="Office_Case1" instance=ExtResource("2_8uawh")]
+top_level = true
 position = Vector2(947, 1058)
 scale = Vector2(0.5, 0.5)
 
 [node name="Walls" type="Node" parent="Office_Case1"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(950, 170)
+position = Vector2(950, 165)
 scale = Vector2(97.1366, 17.5758)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D"]
-shape = SubResource("RectangleShape2D_bod7m")
+shape = SubResource("RectangleShape2D_p4b2d")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(1033, 1261)
+scale = Vector2(97.1366, 17.5758)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D7"]
+shape = SubResource("RectangleShape2D_p4b2d")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(368, 1141)
+position = Vector2(279, 1123)
 scale = Vector2(43.3933, 18.4617)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D2"]
-shape = SubResource("RectangleShape2D_bod7m")
+shape = SubResource("RectangleShape2D_p4b2d")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(1542, 1148)
+position = Vector2(1618, 1137)
 scale = Vector2(43.3933, 19.7817)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D3"]
-shape = SubResource("RectangleShape2D_bod7m")
+shape = SubResource("RectangleShape2D_p4b2d")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(69.9999, 443)
+position = Vector2(150, 442)
 scale = Vector2(-5.9222, 54.8124)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D4"]
-shape = SubResource("RectangleShape2D_bod7m")
+shape = SubResource("RectangleShape2D_p4b2d")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(1850, 501)
+position = Vector2(1770, 500)
 scale = Vector2(-5.9222, 54.8124)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D5"]
-shape = SubResource("RectangleShape2D_bod7m")
+shape = SubResource("RectangleShape2D_p4b2d")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(971, 604)
-scale = Vector2(-27.0639, -11.0845)
+position = Vector2(924, 529)
+scale = Vector2(-25.4611, -9.24591)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D6"]
-shape = SubResource("RectangleShape2D_bod7m")
+shape = SubResource("RectangleShape2D_p4b2d")
 
-[node name="StaticBody2D7" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(1304, 656)
-scale = Vector2(-5.12998, 5.82739)
+[node name="tgis" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(644, 542)
+scale = Vector2(-3.61102, 4.6003)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D7"]
-shape = SubResource("RectangleShape2D_bod7m")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis"]
+shape = SubResource("RectangleShape2D_p4b2d")
+
+[node name="tgis8" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(1364, 711)
+scale = Vector2(-4.76302, 3.47236)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis8"]
+shape = SubResource("RectangleShape2D_p4b2d")
+
+[node name="tgis5" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(421, 292)
+scale = Vector2(-19.7526, 11.2156)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis5"]
+shape = SubResource("RectangleShape2D_p4b2d")
+
+[node name="tgis6" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(1503, 295)
+scale = Vector2(-19.6326, 11.2156)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis6"]
+shape = SubResource("RectangleShape2D_p4b2d")
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(193, 763)
-scale = Vector2(-8.44998, 19.1874)
+position = Vector2(236, 683)
+scale = Vector2(-8.44998, 16.7474)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D8"]
-shape = SubResource("RectangleShape2D_bod7m")
+shape = SubResource("RectangleShape2D_p4b2d")
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(1776, 773)
+position = Vector2(1685, 751)
 scale = Vector2(-8.44998, 23.7874)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D9"]
-shape = SubResource("RectangleShape2D_bod7m")
+shape = SubResource("RectangleShape2D_p4b2d")
 
 [node name="Interactables" type="Node" parent="Office_Case1"]
 
 [node name="Window" parent="Office_Case1/Interactables" instance=ExtResource("5_86apf")]
 position = Vector2(956, 226)
 rotation = -0.00169
-scale = Vector2(45.3263, 15.2201)
+scale = Vector2(30.8446, 15.2201)
 dialog_key = "tylerOfficeInteractables.tylerWindow"
 
 [node name="Sprite2D" parent="Office_Case1/Interactables/Window" index="0"]
@@ -128,6 +199,7 @@ position = Vector2(3.09944e-06, 3.8147e-06)
 shape = SubResource("RectangleShape2D_8qos6")
 
 [node name="RoomLeave" type="Area2D" parent="Office_Case1/Interactables"]
+visible = false
 position = Vector2(954, 1283)
 scale = Vector2(14.953, -3.55118)
 
@@ -135,8 +207,8 @@ scale = Vector2(14.953, -3.55118)
 shape = SubResource("RectangleShape2D_1iywj")
 
 [node name="CleanDesk" parent="Office_Case1/Interactables" instance=ExtResource("5_86apf")]
-position = Vector2(873, 717)
-scale = Vector2(29.8053, -11.2333)
+position = Vector2(933, 635)
+scale = Vector2(27.6936, -8.77482)
 dialog_key = "tylerOfficeInteractables.tylerTable"
 
 [node name="Sprite2D" parent="Office_Case1/Interactables/CleanDesk" index="0"]
@@ -149,7 +221,7 @@ shape = SubResource("RectangleShape2D_owcec")
 [node name="InteractionZone" parent="Office_Case1/Interactables" instance=ExtResource("5_86apf")]
 position = Vector2(931, 873)
 rotation = -0.00169
-scale = Vector2(22.535, 4.38026)
+scale = Vector2(24.6953, 4.38026)
 
 [node name="Sprite2D" parent="Office_Case1/Interactables/InteractionZone" index="0"]
 scale = Vector2(0.147237, 0.147237)
@@ -159,8 +231,8 @@ position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_t6kfa")
 
 [node name="ForcedDialogue" parent="Office_Case1/Interactables" instance=ExtResource("4_4trff")]
-position = Vector2(923, 861)
-scale = Vector2(3.04, 1)
+position = Vector2(901, 863)
+scale = Vector2(3.64, 1)
 dialog_key = "tylerWeek1.tylerOffice"
 
 [node name="CollisionShape2D" parent="Office_Case1/Interactables/ForcedDialogue" index="1"]
@@ -170,8 +242,8 @@ shape = SubResource("RectangleShape2D_6ik35")
 debug_color = Color(0.752699, 0.342259, 0.773717, 0.42)
 
 [node name="Rubbish" parent="Office_Case1/Interactables" instance=ExtResource("5_86apf")]
-position = Vector2(1332, 724)
-scale = Vector2(7.1298, -8.49242)
+position = Vector2(591, 586)
+scale = Vector2(5.0098, -7.05242)
 dialog_key = "tylerOfficeInteractables.tylerRubbish"
 
 [node name="Sprite2D" parent="Office_Case1/Interactables/Rubbish" index="0"]
@@ -181,11 +253,47 @@ scale = Vector2(0.147237, 0.147237)
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_lcs07")
 
+[node name="MCDoor" type="Node2D" parent="Office_Case1/Interactables"]
+
+[node name="Area2D" type="Area2D" parent="Office_Case1/Interactables/MCDoor"]
+position = Vector2(364, 268)
+scale = Vector2(11.685, 12.034)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("11_g8ndt")
+target_scene = "res://Scenes/Week1/floor_2_case_1_lunch.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="Office_Case1/Interactables/MCDoor/Area2D"]
+position = Vector2(-2.14577e-06, -0.121803)
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Interactables/MCDoor/Area2D"]
+position = Vector2(49.893, 67.7248)
+rotation = 1.5708
+scale = Vector2(0.5, 2.08692)
+shape = SubResource("RectangleShape2D_16usq")
+debug_color = Color(0.50589, 0.435297, 0.976594, 0.42)
+
+[node name="PromptLabel" type="Label" parent="Office_Case1/Interactables/MCDoor/Area2D"]
+visible = false
+offset_left = -29.3539
+offset_top = 53.9305
+offset_right = 131.646
+offset_bottom = 109.931
+scale = Vector2(0.22697, 0.22697)
+theme_override_fonts/font = ExtResource("12_saqxa")
+theme_override_font_sizes/font_size = 45
+text = "Floor 2
+"
+
 [node name="DialogPlayer" parent="Office_Case1" instance=ExtResource("6_nmhqt")]
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
 [node name="PlayerChoice" parent="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
 visible = false
+
+[connection signal="area_entered" from="Office_Case1/Interactables/MCDoor/Area2D" to="Office_Case1/Interactables/MCDoor/Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="Office_Case1/Interactables/MCDoor/Area2D" to="Office_Case1/Interactables/MCDoor/Area2D" method="_on_area_exited"]
 
 [editable path="Office_Case1/Interactables/Window"]
 [editable path="Office_Case1/Interactables/Chair"]
@@ -194,4 +302,3 @@ visible = false
 [editable path="Office_Case1/Interactables/ForcedDialogue"]
 [editable path="Office_Case1/Interactables/Rubbish"]
 [editable path="Office_Case1/DialogPlayer"]
-[editable path="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice"]
