@@ -290,4 +290,3 @@ color = Color(0, 0, 0, 1)
 [editable path="Office_Case1/Interactables/ForcedDialogue"]
 [editable path="Office_Case1/Interactables/InteractionZone"]
 [editable path="Office_Case1/DialogPlayer"]
-[editable path="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice"]
