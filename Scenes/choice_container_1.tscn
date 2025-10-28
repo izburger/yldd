@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdk6e1sajavs0"]
+
+[ext_resource type="Script" path="res://Scripts/choice_container_1.gd" id="1_7bsd0"]
+
+[node name="ChoiceContainer1" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_7bsd0")
+
+[node name="ChoiceVBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4

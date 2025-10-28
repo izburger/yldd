@@ -5,6 +5,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_roeaf"]
 
 [node name="NPC" type="CharacterBody2D"]
+y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 hframes = 10
