@@ -337,4 +337,3 @@ visible = false
 [editable path="Floor2_Case1/Interactables/InteractionZone"]
 [editable path="Floor2_Case1/Interactables/ForcedDialogue"]
 [editable path="Floor2_Case1/DialogPlayer"]
-[editable path="Floor2_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice"]

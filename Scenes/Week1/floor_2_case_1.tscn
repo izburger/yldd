@@ -276,4 +276,3 @@ visible = false
 [editable path="Doors/TylerDoor"]
 [editable path="Interactables/BookShelf"]
 [editable path="DialogPlayer"]
-[editable path="DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice"]

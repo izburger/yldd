@@ -1,10 +1,10 @@
 [gd_scene load_steps=18 format=3 uid="uid://bw51eeietit1f"]
 
-[ext_resource type="Texture2D" uid="uid://clomnynfsceji" path="res://assets/Backgrounds/Floors/floor1.png" id="1_r7eyt"]
+[ext_resource type="Texture2D" uid="uid://dc274hkaxccif" path="res://assets/Backgrounds/Floors/Floor1/floor1.png" id="1_hkadw"]
 [ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="3_dcnbp"]
 [ext_resource type="Texture2D" uid="uid://cqwaymerg03bn" path="res://assets/sprites/player/test1.png" id="3_ffviy"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_guhx5"]
-[ext_resource type="Texture2D" uid="uid://dqsk80h0j3opn" path="res://assets/sprites/npc/reilly/Reiliy.png" id="4_jvevw"]
+[ext_resource type="Texture2D" uid="uid://cejlybrffouom" path="res://assets/sprites/npc/reilly/reiliyspritesheet.png" id="4_frs42"]
 [ext_resource type="Texture2D" uid="uid://ciie2mardiso1" path="res://assets/sprites/npc/cat/Cat.png" id="5_edrir"]
 [ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="6_pkfgb"]
 [ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="8_uqpd8"]
@@ -18,18 +18,18 @@ height = 19.6588
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41jgb"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3n7d"]
+size = Vector2(13.1874, 10.0744)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8c8td"]
 radius = 7.83565
 height = 15.6713
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3n7d"]
-size = Vector2(13.1874, 10.0744)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugru8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sorxk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fidwf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkv11"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rn6aa"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ome7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iyfyv"]
 
@@ -39,7 +39,7 @@ size = Vector2(13.1874, 10.0744)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor1_Case1"]
 scale = Vector2(0.997965, 1)
-texture = ExtResource("1_r7eyt")
+texture = ExtResource("1_hkadw")
 centered = false
 
 [node name="Charles" parent="Floor1_Case1" instance=ExtResource("3_dcnbp")]
@@ -62,31 +62,8 @@ scale = Vector2(9.73069, 7.32496)
 shape = SubResource("CapsuleShape2D_14n7j")
 debug_color = Color(0.84907, 0.253096, 0.692025, 0.42)
 
-[node name="Reilly" parent="Floor1_Case1" instance=ExtResource("3_dcnbp")]
-position = Vector2(1579, 734)
-
-[node name="Sprite2D" parent="Floor1_Case1/Reilly" index="0"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_jvevw")
-hframes = 1
-
-[node name="CollisionShape2D" parent="Floor1_Case1/Reilly" index="2"]
-visible = true
-position = Vector2(0, 96)
-scale = Vector2(5, 2.4)
-shape = SubResource("RectangleShape2D_41jgb")
-
-[node name="DialogAreaBox" parent="Floor1_Case1/Reilly" index="3"]
-dialog_key = "reillyWeek1.w1reillyOptionsLunch"
-
-[node name="CollisionShape2D" parent="Floor1_Case1/Reilly/DialogAreaBox" index="1"]
-position = Vector2(-853, -259)
-scale = Vector2(25.0407, -5.7736)
-shape = SubResource("CapsuleShape2D_8c8td")
-debug_color = Color(0.975667, 0, 0.417685, 0.42)
-
 [node name="Cat" parent="Floor1_Case1" instance=ExtResource("3_dcnbp")]
-position = Vector2(1466, 895)
+position = Vector2(1474, 914)
 
 [node name="Sprite2D" parent="Floor1_Case1/Cat" index="0"]
 position = Vector2(16, 26)
@@ -112,18 +89,40 @@ debug_color = Color(0.975667, 0, 0.417685, 0.42)
 position = Vector2(364, 141)
 scale = Vector2(0.5, 0.5)
 
+[node name="Reilly" parent="Floor1_Case1" instance=ExtResource("3_dcnbp")]
+position = Vector2(1595, 742)
+
+[node name="Sprite2D" parent="Floor1_Case1/Reilly" index="0"]
+texture = ExtResource("4_frs42")
+hframes = 9
+
+[node name="CollisionShape2D" parent="Floor1_Case1/Reilly" index="2"]
+visible = true
+position = Vector2(0, 96)
+scale = Vector2(5, 2.4)
+shape = SubResource("RectangleShape2D_41jgb")
+
+[node name="DialogAreaBox" parent="Floor1_Case1/Reilly" index="3"]
+dialog_key = "reillyWeek1.w1reillyOptionsLunch"
+
+[node name="CollisionShape2D" parent="Floor1_Case1/Reilly/DialogAreaBox" index="1"]
+position = Vector2(-853, -259)
+scale = Vector2(25.0407, -5.7736)
+shape = SubResource("CapsuleShape2D_8c8td")
+debug_color = Color(0.975667, 0, 0.417685, 0.42)
+
 [node name="Doors" type="Node" parent="Floor1_Case1"]
 
 [node name="MC" type="StaticBody2D" parent="Floor1_Case1/Doors"]
-position = Vector2(375, 130)
+position = Vector2(360, 202)
 rotation = 3.14159
 scale = Vector2(11.01, -12.9445)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Doors/MC"]
-shape = SubResource("RectangleShape2D_sorxk")
+shape = SubResource("RectangleShape2D_ugru8")
 
 [node name="MCDoor" parent="Floor1_Case1/Doors" instance=ExtResource("3_guhx5")]
-position = Vector2(374, 197)
+position = Vector2(359, 269)
 scale = Vector2(11.4893, 12.22)
 
 [node name="Sprite2D" parent="Floor1_Case1/Doors/MCDoor" index="0"]
@@ -132,21 +131,20 @@ scale = Vector2(0.147237, 0.147237)
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Doors/MCDoor" index="1"]
 position = Vector2(0.28634, 9.53674e-07)
-shape = SubResource("RectangleShape2D_tkv11")
+shape = SubResource("RectangleShape2D_fidwf")
 debug_color = Color(0.0599744, 0.631226, 0.447477, 0.42)
 
 [node name="Sonny" type="StaticBody2D" parent="Floor1_Case1/Doors"]
-position = Vector2(833, 131)
+position = Vector2(732, 203)
 rotation = 3.14159
 scale = Vector2(11.33, -12.9445)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Doors/Sonny"]
-shape = SubResource("RectangleShape2D_sorxk")
+shape = SubResource("RectangleShape2D_ugru8")
 
 [node name="SonnyDoor" parent="Floor1_Case1/Doors" instance=ExtResource("3_guhx5")]
-position = Vector2(830, 196)
+position = Vector2(729, 268)
 scale = Vector2(11.8493, 12.22)
-dialog_key = "sonnyDoorLocked"
 
 [node name="Sprite2D" parent="Floor1_Case1/Doors/SonnyDoor" index="0"]
 position = Vector2(-2.14577e-06, -0.121803)
@@ -154,18 +152,18 @@ scale = Vector2(0.147237, 0.147237)
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Doors/SonnyDoor" index="1"]
 position = Vector2(0.28634, 9.53674e-07)
-shape = SubResource("RectangleShape2D_tkv11")
+shape = SubResource("RectangleShape2D_fidwf")
 
 [node name="Franz" type="StaticBody2D" parent="Floor1_Case1/Doors"]
-position = Vector2(1300, 133)
+position = Vector2(1122, 203)
 rotation = 3.14159
 scale = Vector2(12.5047, -12.9445)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Doors/Franz"]
-shape = SubResource("RectangleShape2D_sorxk")
+shape = SubResource("RectangleShape2D_ugru8")
 
 [node name="FranzDoor" parent="Floor1_Case1/Doors" instance=ExtResource("3_guhx5")]
-position = Vector2(1297, 197)
+position = Vector2(1119, 267)
 scale = Vector2(11.4893, 12.22)
 
 [node name="Sprite2D" parent="Floor1_Case1/Doors/FranzDoor" index="0"]
@@ -174,119 +172,174 @@ scale = Vector2(0.147237, 0.147237)
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Doors/FranzDoor" index="1"]
 position = Vector2(0.28634, 9.53674e-07)
-shape = SubResource("RectangleShape2D_tkv11")
+shape = SubResource("RectangleShape2D_fidwf")
+
+[node name="Stairs" type="StaticBody2D" parent="Floor1_Case1/Doors"]
+position = Vector2(1550, 204)
+rotation = 3.14159
+scale = Vector2(12.5047, -12.9445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Doors/Stairs"]
+shape = SubResource("RectangleShape2D_ugru8")
+
+[node name="StairsEntrance" parent="Floor1_Case1/Doors" instance=ExtResource("3_guhx5")]
+position = Vector2(1547, 268)
+scale = Vector2(11.4893, 12.22)
+
+[node name="Sprite2D" parent="Floor1_Case1/Doors/StairsEntrance" index="0"]
+position = Vector2(-2.14577e-06, -0.121803)
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Floor1_Case1/Doors/StairsEntrance" index="1"]
+position = Vector2(0.28634, 9.53674e-07)
+shape = SubResource("RectangleShape2D_fidwf")
 
 [node name="Walls" type="Node" parent="Floor1_Case1"]
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="Floor1_Case1/Walls"]
-position = Vector2(-16025.4, 1442.19)
+position = Vector2(-16025, 1513.19)
 scale = Vector2(96.2361, 57.5243)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D12"]
-shape = SubResource("RectangleShape2D_rn6aa")
+shape = SubResource("RectangleShape2D_4ome7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Floor1_Case1/Walls"]
-position = Vector2(1819, 168)
+position = Vector2(1744, 257)
 scale = Vector2(-9.81, 7.58448)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D"]
-shape = SubResource("RectangleShape2D_rn6aa")
+shape = SubResource("RectangleShape2D_4ome7")
 
 [node name="StaticBody2D14" type="StaticBody2D" parent="Floor1_Case1/Walls"]
-position = Vector2(652, 768)
+position = Vector2(677, 797)
 scale = Vector2(-11.89, 6.70449)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D14"]
-shape = SubResource("RectangleShape2D_rn6aa")
+shape = SubResource("RectangleShape2D_4ome7")
 
 [node name="StaticBody2D15" type="StaticBody2D" parent="Floor1_Case1/Walls"]
-position = Vector2(1837, 986)
+position = Vector2(1742, 1222)
 scale = Vector2(-6.21001, 6.70449)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D15"]
-shape = SubResource("RectangleShape2D_rn6aa")
+shape = SubResource("RectangleShape2D_4ome7")
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="Floor1_Case1/Walls"]
-position = Vector2(1066, 187)
-scale = Vector2(-17.7473, 7.58448)
+position = Vector2(926, 256)
+scale = Vector2(-11.5073, 7.58448)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D10"]
-shape = SubResource("RectangleShape2D_rn6aa")
+shape = SubResource("RectangleShape2D_4ome7")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="Floor1_Case1/Walls"]
-position = Vector2(1470, 165)
-scale = Vector2(-12.21, 7.58448)
+position = Vector2(1330, 258)
+scale = Vector2(-12.65, 7.58448)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D7"]
-shape = SubResource("RectangleShape2D_rn6aa")
+shape = SubResource("RectangleShape2D_4ome7")
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="Floor1_Case1/Walls"]
-position = Vector2(204, 184)
+position = Vector2(187, 255)
 scale = Vector2(-9.81, 7.58448)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D8"]
-shape = SubResource("RectangleShape2D_rn6aa")
+shape = SubResource("RectangleShape2D_4ome7")
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="Floor1_Case1/Walls"]
-position = Vector2(599, 186)
-scale = Vector2(-17.25, 7.58448)
+position = Vector2(547, 256)
+scale = Vector2(-10.4358, 7.58448)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D9"]
-shape = SubResource("RectangleShape2D_rn6aa")
+shape = SubResource("RectangleShape2D_4ome7")
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="Floor1_Case1/Walls"]
+position = Vector2(488, 661)
+scale = Vector2(-19.21, 7.58448)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D17"]
+shape = SubResource("RectangleShape2D_4ome7")
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="Floor1_Case1/Walls"]
+position = Vector2(486, 737)
+scale = Vector2(-11.3766, 7.58448)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D18"]
+shape = SubResource("RectangleShape2D_4ome7")
+
+[node name="StaticBody2D19" type="StaticBody2D" parent="Floor1_Case1/Walls"]
+position = Vector2(898, 722)
+scale = Vector2(-9.7366, 7.58448)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D19"]
+shape = SubResource("RectangleShape2D_4ome7")
+
+[node name="StaticBody2D20" type="StaticBody2D" parent="Floor1_Case1/Walls"]
+position = Vector2(964, 637)
+scale = Vector2(-9.7366, 7.58448)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D20"]
+shape = SubResource("RectangleShape2D_4ome7")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Floor1_Case1/Walls"]
-position = Vector2(525, 467)
-scale = Vector2(52.0845, 12.0752)
+position = Vector2(539, 538)
+scale = Vector2(52.0845, 13.6805)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D2"]
-shape = SubResource("RectangleShape2D_rn6aa")
+shape = SubResource("RectangleShape2D_4ome7")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Floor1_Case1/Walls"]
-position = Vector2(1014, 1072)
+position = Vector2(1013, 1077)
 scale = Vector2(104.873, 4.42167)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D3"]
-shape = SubResource("RectangleShape2D_rn6aa")
+shape = SubResource("RectangleShape2D_4ome7")
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="Floor1_Case1/Walls"]
-position = Vector2(1000, 64.0001)
-scale = Vector2(104.873, 4.42167)
+position = Vector2(999, 93)
+scale = Vector2(104.873, 8.58167)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D11"]
-shape = SubResource("RectangleShape2D_rn6aa")
+shape = SubResource("RectangleShape2D_4ome7")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Floor1_Case1/Walls"]
-position = Vector2(92, 453)
-scale = Vector2(-5.9222, 44.4124)
+position = Vector2(89, 456)
+scale = Vector2(-11.4422, 44.4124)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D4"]
-shape = SubResource("RectangleShape2D_rn6aa")
+shape = SubResource("RectangleShape2D_4ome7")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Floor1_Case1/Walls"]
-position = Vector2(1914, 539)
+position = Vector2(1887, 611)
 scale = Vector2(-5.9222, 54.8124)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D5"]
-shape = SubResource("RectangleShape2D_rn6aa")
+shape = SubResource("RectangleShape2D_4ome7")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Floor1_Case1/Walls"]
-position = Vector2(1679, 443)
-scale = Vector2(26.4445, 11.5552)
+position = Vector2(1679, 541)
+scale = Vector2(26.4445, 13.3552)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D6"]
-shape = SubResource("RectangleShape2D_rn6aa")
+shape = SubResource("RectangleShape2D_4ome7")
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="Floor1_Case1/Walls"]
+position = Vector2(1847, 606)
+scale = Vector2(26.4445, 13.3552)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D16"]
+shape = SubResource("RectangleShape2D_4ome7")
 
 [node name="StaticBody2D13" type="StaticBody2D" parent="Floor1_Case1/Walls"]
-position = Vector2(1466, 886)
-scale = Vector2(-5.09, 23.9045)
+position = Vector2(1483, 976)
+scale = Vector2(-6.16999, 23.9045)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Walls/StaticBody2D13"]
-shape = SubResource("RectangleShape2D_rn6aa")
+shape = SubResource("RectangleShape2D_4ome7")
 
 [node name="Interactables" type="Node" parent="Floor1_Case1"]
 
 [node name="LogBook" parent="Floor1_Case1/Interactables" instance=ExtResource("3_guhx5")]
-position = Vector2(1593, 413)
+position = Vector2(1759, 580)
 scale = Vector2(25.1693, 10.74)
 dialog_key = "ranBuildingInteractablesw1.logBookEveningw1"
 
@@ -314,12 +367,13 @@ scene_text_file = "res://Assets/Ink/Main.ink.json"
 
 [editable path="Floor1_Case1/Charles"]
 [editable path="Floor1_Case1/Charles/DialogAreaBox"]
-[editable path="Floor1_Case1/Reilly"]
-[editable path="Floor1_Case1/Reilly/DialogAreaBox"]
 [editable path="Floor1_Case1/Cat"]
 [editable path="Floor1_Case1/Cat/DialogAreaBox"]
+[editable path="Floor1_Case1/Reilly"]
+[editable path="Floor1_Case1/Reilly/DialogAreaBox"]
 [editable path="Floor1_Case1/Doors/MCDoor"]
 [editable path="Floor1_Case1/Doors/SonnyDoor"]
 [editable path="Floor1_Case1/Doors/FranzDoor"]
+[editable path="Floor1_Case1/Doors/StairsEntrance"]
 [editable path="Floor1_Case1/Interactables/LogBook"]
 [editable path="Floor1_Case1/Interactables/Coin"]

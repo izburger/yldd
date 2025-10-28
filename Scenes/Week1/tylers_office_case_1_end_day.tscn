@@ -194,4 +194,3 @@ visible = false
 [editable path="Office_Case1/Interactables/CleanDesk"]
 [editable path="Office_Case1/Interactables/Rubbish"]
 [editable path="Office_Case1/DialogPlayer"]
-[editable path="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice"]
