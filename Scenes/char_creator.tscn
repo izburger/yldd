@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://c71uwidwnckkc" path="res://Scripts/char_creator.gd" id="1_ivb2j"]
 [ext_resource type="Script" uid="uid://bybncrow58t5s" path="res://Scripts/body.gd" id="2_0ml2j"]
 [ext_resource type="FontFile" uid="uid://chfs0odslc5jb" path="res://assets/STAMPWRITER-KIT.ttf" id="2_f3pqy"]
+[ext_resource type="Texture2D" uid="uid://hc8uv6puwy4v" path="res://assets/background-char.png" id="3_alodn"]
 [ext_resource type="Texture2D" uid="uid://c3y3ggqvp0lrc" path="res://assets/body.png" id="3_kxquo"]
-[ext_resource type="Texture2D" uid="uid://bfnoxcgc3wy6w" path="res://assets/background2.png" id="3_t3pra"]
 [ext_resource type="Script" uid="uid://3va655q2fdgu" path="res://Scripts/hair.gd" id="4_dfwav"]
 [ext_resource type="Texture2D" uid="uid://hrurujh7gsoe" path="res://assets/hair.png" id="5_0lkl7"]
 [ext_resource type="Script" uid="uid://cjyqyx7663t35" path="res://Scripts/outfit.gd" id="6_5vjv2"]
@@ -163,9 +163,9 @@ script = ExtResource("1_ivb2j")
 
 [node name="ColorRect" type="ColorRect" parent="creatorscreen"]
 offset_left = 832.0
-offset_top = 223.0
+offset_top = 103.0
 offset_right = 1532.0
-offset_bottom = 723.0
+offset_bottom = 603.0
 color = Color(0.388235, 0.286275, 0.227451, 0)
 
 [node name="body" type="ColorRect" parent="creatorscreen/ColorRect"]
@@ -303,9 +303,9 @@ libraries = {
 
 [node name="Label" type="Label" parent="creatorscreen/TextPopUp"]
 offset_left = 542.0
-offset_top = 410.0
+offset_top = 501.0
 offset_right = 1342.0
-offset_bottom = 549.0
+offset_bottom = 640.0
 theme_override_fonts/font = ExtResource("2_f3pqy")
 theme_override_font_sizes/font_size = 50
 text = "hello"
@@ -315,10 +315,10 @@ visible_ratio = 0.0
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("3_t3pra")
+texture = ExtResource("3_alodn")
 
 [node name="skeleton" type="Node2D" parent="."]
-position = Vector2(1329, 381)
+position = Vector2(1329, 269)
 scale = Vector2(3, 3)
 
 [node name="body" type="Node2D" parent="skeleton"]
@@ -346,7 +346,7 @@ hframes = 9
 vframes = 8
 
 [node name="skeleton big" type="Node2D" parent="."]
-position = Vector2(1123, 111)
+position = Vector2(1123, -1)
 
 [node name="bodybig" type="Node2D" parent="skeleton big"]
 script = ExtResource("8_r30tn")

@@ -1,17 +1,23 @@
-[gd_scene load_steps=13 format=3 uid="uid://bru00mm5cu3vc"]
+[gd_scene load_steps=18 format=3 uid="uid://bru00mm5cu3vc"]
 
-[ext_resource type="Texture2D" uid="uid://cd4tpnsv4qonk" path="res://assets/Backgrounds/Offices/office.png" id="1_5up7p"]
+[ext_resource type="Texture2D" uid="uid://xdx41d4uvasg" path="res://assets/Backgrounds/Offices/dayversion.png" id="1_xklic"]
 [ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="2_mqucq"]
 [ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="3_ugo4v"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_xyope"]
 [ext_resource type="Texture2D" uid="uid://dod7n5l61dvft" path="res://assets/sprites/npc/boss/boss.png" id="4_1vrt3"]
 [ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="4_lvti4"]
+[ext_resource type="Texture2D" uid="uid://i1pho8ehesyh" path="res://assets/Backgrounds/Chapter1/boxclosed.png" id="5_f7hfv"]
+[ext_resource type="Texture2D" uid="uid://b2gy4845h7owr" path="res://assets/Backgrounds/Chapter1/boxopen.png" id="6_m7kef"]
+[ext_resource type="Script" path="res://Scripts/door_area.gd" id="8_4fb63"]
+[ext_resource type="FontFile" uid="uid://bsblej0iv5c7j" path="res://assets/Fonts/Main/American Typewriter Bold.ttf" id="9_y44q1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgkpj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nueae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxw0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wth7"]
 
 [sub_resource type="Animation" id="Animation_t6sxh"]
 length = 0.001
@@ -65,8 +71,42 @@ _data = {
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.997965, 1)
-texture = ExtResource("1_5up7p")
+texture = ExtResource("1_xklic")
 centered = false
+
+[node name="Sprites" type="Node" parent="."]
+
+[node name="boxclosed2" type="Sprite2D" parent="Sprites"]
+position = Vector2(353, 406)
+texture = ExtResource("5_f7hfv")
+
+[node name="boxclosed6" type="Sprite2D" parent="Sprites"]
+position = Vector2(1594, 428)
+texture = ExtResource("5_f7hfv")
+
+[node name="boxclosed" type="Sprite2D" parent="Sprites"]
+position = Vector2(259, 416)
+texture = ExtResource("5_f7hfv")
+
+[node name="boxclosed4" type="Sprite2D" parent="Sprites"]
+position = Vector2(1256.5, 653)
+texture = ExtResource("5_f7hfv")
+
+[node name="boxclosed5" type="Sprite2D" parent="Sprites"]
+position = Vector2(1162.5, 663)
+texture = ExtResource("5_f7hfv")
+
+[node name="boxclosed3" type="Sprite2D" parent="Sprites"]
+position = Vector2(279, 328)
+texture = ExtResource("5_f7hfv")
+
+[node name="boxopen" type="Sprite2D" parent="Sprites"]
+position = Vector2(1199, 552)
+texture = ExtResource("6_m7kef")
+
+[node name="boxopen2" type="Sprite2D" parent="Sprites"]
+position = Vector2(335.5, 823)
+texture = ExtResource("6_m7kef")
 
 [node name="Player" parent="." instance=ExtResource("2_mqucq")]
 position = Vector2(1488, 550)
@@ -76,6 +116,7 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(947, 1429)
 
 [node name="Sprite2D" parent="NPC" index="0"]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_1vrt3")
 
 [node name="CollisionShape2D" parent="NPC" index="2"]
@@ -84,63 +125,119 @@ visible = true
 [node name="Walls" type="Node" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
-position = Vector2(950, 170)
+position = Vector2(950, 165)
 scale = Vector2(97.1366, 17.5758)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
 shape = SubResource("RectangleShape2D_vgkpj")
 
+[node name="StaticBody2D7" type="StaticBody2D" parent="Walls"]
+position = Vector2(1033, 1261)
+scale = Vector2(97.1366, 17.5758)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D7"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
 [node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
-position = Vector2(368, 1141)
+position = Vector2(279, 1123)
 scale = Vector2(43.3933, 18.4617)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
 shape = SubResource("RectangleShape2D_vgkpj")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
-position = Vector2(1542, 1148)
+position = Vector2(1618, 1137)
 scale = Vector2(43.3933, 19.7817)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
 shape = SubResource("RectangleShape2D_vgkpj")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
-position = Vector2(69.9999, 443)
+position = Vector2(150, 442)
 scale = Vector2(-5.9222, 54.8124)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
 shape = SubResource("RectangleShape2D_vgkpj")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Walls"]
-position = Vector2(1850, 501)
+position = Vector2(1770, 500)
 scale = Vector2(-5.9222, 54.8124)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D5"]
 shape = SubResource("RectangleShape2D_vgkpj")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Walls"]
-position = Vector2(971, 604)
-scale = Vector2(-27.0639, -11.0845)
+position = Vector2(943, 531)
+scale = Vector2(-25.4611, -9.24591)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D6"]
 shape = SubResource("RectangleShape2D_vgkpj")
 
-[node name="StaticBody2D7" type="StaticBody2D" parent="Walls"]
-position = Vector2(1304, 656)
-scale = Vector2(-5.12998, 5.82739)
+[node name="tgis" type="StaticBody2D" parent="Walls"]
+position = Vector2(644, 542)
+scale = Vector2(-3.61102, 4.6003)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/tgis"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="tgis2" type="StaticBody2D" parent="Walls"]
+position = Vector2(1210, 653)
+scale = Vector2(-9.52301, 6.36033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/tgis2"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="tgis3" type="StaticBody2D" parent="Walls"]
+position = Vector2(1152, 556)
+scale = Vector2(-9.52301, 6.36033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/tgis3"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="tgis4" type="StaticBody2D" parent="Walls"]
+position = Vector2(307, 412)
+scale = Vector2(-9.52301, 6.36033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/tgis4"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="tgis7" type="StaticBody2D" parent="Walls"]
+position = Vector2(335.5, 832)
+scale = Vector2(-4.76302, 6.36033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/tgis7"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="tgis8" type="StaticBody2D" parent="Walls"]
+position = Vector2(1596, 425)
+scale = Vector2(-4.76302, 6.36033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/tgis8"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="tgis5" type="StaticBody2D" parent="Walls"]
+position = Vector2(421, 292)
+scale = Vector2(-19.7526, 11.2156)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/tgis5"]
+shape = SubResource("RectangleShape2D_vgkpj")
+
+[node name="tgis6" type="StaticBody2D" parent="Walls"]
+position = Vector2(1489, 296)
+scale = Vector2(-19.6326, 11.2156)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/tgis6"]
 shape = SubResource("RectangleShape2D_vgkpj")
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="Walls"]
-position = Vector2(193, 763)
+position = Vector2(234, 702)
 scale = Vector2(-8.44998, 19.1874)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D8"]
 shape = SubResource("RectangleShape2D_vgkpj")
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="Walls"]
-position = Vector2(1776, 773)
+position = Vector2(1685, 751)
 scale = Vector2(-8.44998, 23.7874)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D9"]
@@ -148,34 +245,47 @@ shape = SubResource("RectangleShape2D_vgkpj")
 
 [node name="Interactables" type="Node" parent="."]
 
-[node name="BookShelf" parent="Interactables" instance=ExtResource("3_xyope")]
-position = Vector2(294, 168)
+[node name="Boxes2" parent="Interactables" instance=ExtResource("3_xyope")]
+position = Vector2(367, 360)
 rotation = -0.00169
-scale = Vector2(13.9693, 16.42)
-dialog_key = "reillyWeek1.w1reillyOptions"
-
-[node name="Sprite2D" parent="Interactables/BookShelf" index="0"]
-scale = Vector2(0.147237, 0.147237)
-
-[node name="CollisionShape2D" parent="Interactables/BookShelf" index="1"]
-position = Vector2(1.5, 7.5)
-shape = SubResource("RectangleShape2D_nueae")
-
-[node name="BookShelf2" parent="Interactables" instance=ExtResource("3_xyope")]
-position = Vector2(1576, 164)
-rotation = -0.0714717
-scale = Vector2(13.9693, 16.42)
+scale = Vector2(11.9682, 11.7393)
 dialog_key = "mcInteractables.boxes"
 
-[node name="Sprite2D" parent="Interactables/BookShelf2" index="0"]
+[node name="Sprite2D" parent="Interactables/Boxes2" index="0"]
 scale = Vector2(0.147237, 0.147237)
 
-[node name="CollisionShape2D" parent="Interactables/BookShelf2" index="1"]
-position = Vector2(1.5, 7.5)
+[node name="CollisionShape2D" parent="Interactables/Boxes2" index="1"]
+position = Vector2(-0.0836965, 0.0850415)
+shape = SubResource("RectangleShape2D_nueae")
+
+[node name="Boxes3" parent="Interactables" instance=ExtResource("3_xyope")]
+position = Vector2(1625, 400)
+rotation = -0.00169
+scale = Vector2(11.9682, 11.7393)
+dialog_key = "mcInteractables.boxes"
+
+[node name="Sprite2D" parent="Interactables/Boxes3" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Interactables/Boxes3" index="1"]
+position = Vector2(-0.0836965, 0.0850415)
+shape = SubResource("RectangleShape2D_nueae")
+
+[node name="Boxes4" parent="Interactables" instance=ExtResource("3_xyope")]
+position = Vector2(356, 847)
+rotation = -0.00169
+scale = Vector2(11.9682, 9.13937)
+dialog_key = "mcInteractables.boxes"
+
+[node name="Sprite2D" parent="Interactables/Boxes4" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Interactables/Boxes4" index="1"]
+position = Vector2(-0.0836965, 0.0850415)
 shape = SubResource("RectangleShape2D_nueae")
 
 [node name="PhotoFrame" parent="Interactables" instance=ExtResource("3_xyope")]
-position = Vector2(921, 466)
+position = Vector2(42.0001, 540)
 scale = Vector2(28.5648, 6.06972)
 dialog_key = "mcInteractables.photoFrame"
 
@@ -187,8 +297,8 @@ position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
 [node name="Boxes" parent="Interactables" instance=ExtResource("3_xyope")]
-position = Vector2(471, 939)
-scale = Vector2(29.7698, -7.11118)
+position = Vector2(1198, 726)
+scale = Vector2(15.6934, -16.5228)
 dialog_key = "mcInteractables.boxes"
 
 [node name="Sprite2D" parent="Interactables/Boxes" index="0"]
@@ -199,8 +309,8 @@ position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
 [node name="Boss" type="Area2D" parent="Interactables"]
-position = Vector2(954, 1101)
-scale = Vector2(14.953, -3.55118)
+position = Vector2(947, 982)
+scale = Vector2(27.3806, 8.23125)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Boss"]
 shape = SubResource("RectangleShape2D_nxw0m")
@@ -225,6 +335,38 @@ scale = Vector2(14.953, -3.55118)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/RoomLeave"]
 shape = SubResource("RectangleShape2D_nxw0m")
 
+[node name="MCDoor" type="Node2D" parent="Interactables"]
+
+[node name="Area2D" type="Area2D" parent="Interactables/MCDoor"]
+position = Vector2(364, 268)
+scale = Vector2(11.685, 12.034)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("8_4fb63")
+target_scene = "res://Scenes/Week1/floor_1_case_1.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/MCDoor/Area2D"]
+position = Vector2(-2.14577e-06, -0.121803)
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/MCDoor/Area2D"]
+position = Vector2(49.893, 67.7248)
+rotation = 1.5708
+scale = Vector2(0.5, 2.08692)
+shape = SubResource("RectangleShape2D_1wth7")
+debug_color = Color(0.50589, 0.435297, 0.976594, 0.42)
+
+[node name="PromptLabel" type="Label" parent="Interactables/MCDoor/Area2D"]
+offset_left = -29.3539
+offset_top = 53.9305
+offset_right = 131.646
+offset_bottom = 109.931
+scale = Vector2(0.22697, 0.22697)
+theme_override_fonts/font = ExtResource("9_y44q1")
+theme_override_font_sizes/font_size = 45
+text = "Floor 1
+"
+
 [node name="DialogPlayer" parent="." instance=ExtResource("4_lvti4")]
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
@@ -244,10 +386,14 @@ offset_right = 1875.0
 offset_bottom = 1062.0
 color = Color(0, 0, 0, 1)
 
+[connection signal="area_entered" from="Interactables/MCDoor/Area2D" to="Interactables/MCDoor/Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="Interactables/MCDoor/Area2D" to="Interactables/MCDoor/Area2D" method="_on_area_exited"]
+
 [editable path="NPC"]
 [editable path="NPC/DialogAreaBox"]
-[editable path="Interactables/BookShelf"]
-[editable path="Interactables/BookShelf2"]
+[editable path="Interactables/Boxes2"]
+[editable path="Interactables/Boxes3"]
+[editable path="Interactables/Boxes4"]
 [editable path="Interactables/PhotoFrame"]
 [editable path="Interactables/Boxes"]
 [editable path="Interactables/Boss/BossDialogue"]

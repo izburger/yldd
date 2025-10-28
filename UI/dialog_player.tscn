@@ -91,8 +91,8 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 

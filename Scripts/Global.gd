@@ -73,10 +73,7 @@ var selected_hair_colour_BIG = hair_colour_options[0]
 var selected_body_colour = ""
 var selected_hair_colour = ""
 
-#experience variables
+
 var player_name = ""
-var your_taste = ""
-var your_ganda = ""
-var your_experience = ""
-var your_feeling = ""
-var your_betryal = ""
+
+
