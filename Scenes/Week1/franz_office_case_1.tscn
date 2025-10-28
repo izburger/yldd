@@ -1,14 +1,23 @@
-[gd_scene load_steps=13 format=3 uid="uid://bvof3oqvvsw1v"]
+[gd_scene load_steps=23 format=3 uid="uid://bvof3oqvvsw1v"]
 
-[ext_resource type="Texture2D" uid="uid://cd4tpnsv4qonk" path="res://assets/Backgrounds/Offices/office.png" id="1_ubkbj"]
+[ext_resource type="Texture2D" uid="uid://xdx41d4uvasg" path="res://assets/Backgrounds/Offices/dayversion.png" id="1_hxvih"]
 [ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="3_2280b"]
 [ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="4_a402m"]
 [ext_resource type="Texture2D" uid="uid://dod7n5l61dvft" path="res://assets/sprites/npc/boss/boss.png" id="4_edfxk"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="5_vq6hl"]
+[ext_resource type="Texture2D" uid="uid://j8lct4vc52bn" path="res://assets/Backgrounds/Chapter1/cleaningshelf.png" id="5_w6kpj"]
 [ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="6_dj25j"]
 [ext_resource type="PackedScene" uid="uid://c7iuh8ppjmke0" path="res://Scenes/forced_dialogue.tscn" id="6_i8c7f"]
+[ext_resource type="Texture2D" uid="uid://beis7656r6wlo" path="res://assets/Backgrounds/Chapter1/bloodytrash.png" id="6_tr2sk"]
+[ext_resource type="Texture2D" uid="uid://cv36qetov8q7p" path="res://assets/Backgrounds/Chapter1/slightlybloodytrash.png" id="7_o6wyj"]
+[ext_resource type="Script" path="res://Scripts/door_area.gd" id="7_w55yc"]
+[ext_resource type="Texture2D" uid="uid://s2xydk17flyc" path="res://assets/Backgrounds/Offices/Furniture/redcarpet.png" id="8_ecq5u"]
+[ext_resource type="FontFile" uid="uid://bsblej0iv5c7j" path="res://assets/Fonts/Main/American Typewriter Bold.ttf" id="8_kglhl"]
+[ext_resource type="Texture2D" uid="uid://csohe0rl6iovl" path="res://assets/Backgrounds/Offices/Furniture/draws.png" id="9_ogp60"]
+[ext_resource type="Texture2D" uid="uid://c850hgrn82d11" path="res://assets/Backgrounds/Offices/Furniture/desk.png" id="10_nacai"]
+[ext_resource type="Texture2D" uid="uid://d52sgdxdm5u6" path="res://assets/Backgrounds/Offices/Furniture/paperstack.png" id="11_1b4wp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgkpj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sad5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nueae"]
 
@@ -19,13 +28,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxqao"]
 size = Vector2(20, 77)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eusq1"]
+
 [node name="FranzOffice_Case_1" type="Node2D"]
 
 [node name="Office_Case1" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Office_Case1"]
 scale = Vector2(0.997965, 1)
-texture = ExtResource("1_ubkbj")
+texture = ExtResource("1_hxvih")
 centered = false
 
 [node name="NPC" parent="Office_Case1" instance=ExtResource("3_2280b")]
@@ -42,74 +53,175 @@ visible = true
 position = Vector2(947, 1058)
 scale = Vector2(0.5, 0.5)
 
+[node name="Sprites" type="Node" parent="Office_Case1"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(416, 317)
+texture = ExtResource("5_w6kpj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(1484, 320)
+texture = ExtResource("5_w6kpj")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(1373.3, 701.8)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("6_tr2sk")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(1350.3, 728.8)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("7_o6wyj")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(880, 688)
+texture = ExtResource("8_ecq5u")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(266, 680)
+texture = ExtResource("9_ogp60")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(942, 561)
+texture = ExtResource("10_nacai")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(1079, 473)
+texture = ExtResource("11_1b4wp")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(1083, 457)
+texture = ExtResource("11_1b4wp")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Office_Case1/Sprites"]
+position = Vector2(1085, 441)
+texture = ExtResource("11_1b4wp")
+
 [node name="Walls" type="Node" parent="Office_Case1"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(950, 170)
+position = Vector2(950, 165)
 scale = Vector2(97.1366, 17.5758)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D"]
-shape = SubResource("RectangleShape2D_vgkpj")
+shape = SubResource("RectangleShape2D_0sad5")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(1033, 1261)
+scale = Vector2(97.1366, 17.5758)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D7"]
+shape = SubResource("RectangleShape2D_0sad5")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(368, 1141)
+position = Vector2(279, 1123)
 scale = Vector2(43.3933, 18.4617)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D2"]
-shape = SubResource("RectangleShape2D_vgkpj")
+shape = SubResource("RectangleShape2D_0sad5")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(1542, 1148)
+position = Vector2(1618, 1137)
 scale = Vector2(43.3933, 19.7817)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D3"]
-shape = SubResource("RectangleShape2D_vgkpj")
+shape = SubResource("RectangleShape2D_0sad5")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(69.9999, 443)
+position = Vector2(150, 442)
 scale = Vector2(-5.9222, 54.8124)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D4"]
-shape = SubResource("RectangleShape2D_vgkpj")
+shape = SubResource("RectangleShape2D_0sad5")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(1850, 501)
+position = Vector2(1770, 500)
 scale = Vector2(-5.9222, 54.8124)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D5"]
-shape = SubResource("RectangleShape2D_vgkpj")
+shape = SubResource("RectangleShape2D_0sad5")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(971, 604)
-scale = Vector2(-27.0639, -11.0845)
+position = Vector2(943, 531)
+scale = Vector2(-25.4611, -9.24591)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D6"]
-shape = SubResource("RectangleShape2D_vgkpj")
+shape = SubResource("RectangleShape2D_0sad5")
 
-[node name="StaticBody2D7" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(1304, 656)
-scale = Vector2(-5.12998, 5.82739)
+[node name="tgis" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(644, 542)
+scale = Vector2(-3.61102, 4.6003)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D7"]
-shape = SubResource("RectangleShape2D_vgkpj")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis"]
+shape = SubResource("RectangleShape2D_0sad5")
+
+[node name="tgis2" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(1210, 653)
+scale = Vector2(-9.52301, 6.36033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis2"]
+shape = SubResource("RectangleShape2D_0sad5")
+
+[node name="tgis3" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(1152, 556)
+scale = Vector2(-9.52301, 6.36033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis3"]
+shape = SubResource("RectangleShape2D_0sad5")
+
+[node name="tgis4" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(307, 412)
+scale = Vector2(-9.52301, 6.36033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis4"]
+shape = SubResource("RectangleShape2D_0sad5")
+
+[node name="tgis7" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(335.5, 832)
+scale = Vector2(-4.76302, 6.36033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis7"]
+shape = SubResource("RectangleShape2D_0sad5")
+
+[node name="tgis8" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(1596, 425)
+scale = Vector2(-4.76302, 6.36033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis8"]
+shape = SubResource("RectangleShape2D_0sad5")
+
+[node name="tgis5" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(421, 292)
+scale = Vector2(-19.7526, 11.2156)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis5"]
+shape = SubResource("RectangleShape2D_0sad5")
+
+[node name="tgis6" type="StaticBody2D" parent="Office_Case1/Walls"]
+position = Vector2(1489, 296)
+scale = Vector2(-19.6326, 11.2156)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/tgis6"]
+shape = SubResource("RectangleShape2D_0sad5")
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(193, 763)
+position = Vector2(234, 702)
 scale = Vector2(-8.44998, 19.1874)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D8"]
-shape = SubResource("RectangleShape2D_vgkpj")
+shape = SubResource("RectangleShape2D_0sad5")
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="Office_Case1/Walls"]
-position = Vector2(1776, 773)
+position = Vector2(1685, 751)
 scale = Vector2(-8.44998, 23.7874)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Walls/StaticBody2D9"]
-shape = SubResource("RectangleShape2D_vgkpj")
+shape = SubResource("RectangleShape2D_0sad5")
 
 [node name="Interactables" type="Node" parent="Office_Case1"]
 
 [node name="CleanDesk" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
+visible = false
 position = Vector2(873, 717)
 scale = Vector2(27.8431, -16.0004)
 dialog_key = "franzOfficeInteractables.franzCleanDesk"
@@ -122,6 +234,7 @@ position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
 [node name="Rubbish" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
+visible = false
 position = Vector2(1332, 724)
 scale = Vector2(7.1298, -8.49242)
 dialog_key = "franzOfficeInteractables.franzBlood"
@@ -134,6 +247,7 @@ position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
 [node name="Shelves" parent="Office_Case1/Interactables" instance=ExtResource("5_vq6hl")]
+visible = false
 position = Vector2(173, 463)
 scale = Vector2(29.7698, -7.11118)
 dialog_key = "franzOfficeInteractables.franzeShelves"
@@ -146,6 +260,7 @@ position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
 [node name="RoomLeave" type="Area2D" parent="Office_Case1/Interactables"]
+visible = false
 position = Vector2(954, 1283)
 scale = Vector2(14.953, -3.55118)
 
@@ -165,8 +280,8 @@ position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_5tgt1")
 
 [node name="ForcedDialogue" parent="Office_Case1/Interactables" instance=ExtResource("6_i8c7f")]
-position = Vector2(923, 861)
-scale = Vector2(3.04, 1)
+position = Vector2(923, 886)
+scale = Vector2(4, 1)
 dialog_key = "franzWeek1.franzOffice"
 
 [node name="CollisionShape2D" parent="Office_Case1/Interactables/ForcedDialogue" index="1"]
@@ -175,12 +290,48 @@ scale = Vector2(7.44, 1)
 shape = SubResource("RectangleShape2D_nxqao")
 debug_color = Color(0.752699, 0.342259, 0.773717, 0.42)
 
+[node name="MCDoor" type="Node2D" parent="Office_Case1/Interactables"]
+
+[node name="Area2D" type="Area2D" parent="Office_Case1/Interactables/MCDoor"]
+position = Vector2(364, 268)
+scale = Vector2(11.685, 12.034)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_w55yc")
+target_scene = "res://Scenes/Week1/floor_1_case_1.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="Office_Case1/Interactables/MCDoor/Area2D"]
+position = Vector2(-2.14577e-06, -0.121803)
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office_Case1/Interactables/MCDoor/Area2D"]
+position = Vector2(49.893, 67.7248)
+rotation = 1.5708
+scale = Vector2(0.5, 2.08692)
+shape = SubResource("RectangleShape2D_eusq1")
+debug_color = Color(0.50589, 0.435297, 0.976594, 0.42)
+
+[node name="PromptLabel" type="Label" parent="Office_Case1/Interactables/MCDoor/Area2D"]
+visible = false
+offset_left = -29.3539
+offset_top = 53.9305
+offset_right = 131.646
+offset_bottom = 109.931
+scale = Vector2(0.22697, 0.22697)
+theme_override_fonts/font = ExtResource("8_kglhl")
+theme_override_font_sizes/font_size = 45
+text = "Floor 1
+"
+
 [node name="DialogPlayer" parent="Office_Case1" instance=ExtResource("6_dj25j")]
 visible = false
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
 [node name="PlayerChoice" parent="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
 visible = false
+
+[connection signal="area_entered" from="Office_Case1/Interactables/MCDoor/Area2D" to="Office_Case1/Interactables/MCDoor/Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="Office_Case1/Interactables/MCDoor/Area2D" to="Office_Case1/Interactables/MCDoor/Area2D" method="_on_area_exited"]
 
 [editable path="Office_Case1/NPC"]
 [editable path="Office_Case1/NPC/DialogAreaBox"]

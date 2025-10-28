@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bw51eeietit1f"]
+[gd_scene load_steps=21 format=3 uid="uid://bw51eeietit1f"]
 
 [ext_resource type="Texture2D" uid="uid://dc274hkaxccif" path="res://assets/Backgrounds/Floors/Floor1/floor1.png" id="1_hkadw"]
 [ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="3_dcnbp"]
@@ -7,7 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://cejlybrffouom" path="res://assets/sprites/npc/reilly/reiliyspritesheet.png" id="4_frs42"]
 [ext_resource type="Texture2D" uid="uid://ciie2mardiso1" path="res://assets/sprites/npc/cat/Cat.png" id="5_edrir"]
 [ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="6_pkfgb"]
+[ext_resource type="Script" path="res://Scripts/door_area.gd" id="7_vpcva"]
+[ext_resource type="FontFile" uid="uid://bsblej0iv5c7j" path="res://assets/Fonts/Main/American Typewriter Bold.ttf" id="8_2inbq"]
 [ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="8_uqpd8"]
+[ext_resource type="PackedScene" uid="uid://c6thavrbrmx3" path="res://Scenes/door_2d.tscn" id="9_rulxl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4hhb"]
 size = Vector2(15.6746, 30.2066)
@@ -25,9 +28,9 @@ size = Vector2(13.1874, 10.0744)
 radius = 7.83565
 height = 15.6713
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugru8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5tn2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fidwf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7o2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ome7"]
 
@@ -119,20 +122,38 @@ rotation = 3.14159
 scale = Vector2(11.01, -12.9445)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Doors/MC"]
-shape = SubResource("RectangleShape2D_ugru8")
+shape = SubResource("RectangleShape2D_j5tn2")
 
-[node name="MCDoor" parent="Floor1_Case1/Doors" instance=ExtResource("3_guhx5")]
-position = Vector2(359, 269)
-scale = Vector2(11.4893, 12.22)
+[node name="MCDoor" type="Node2D" parent="Floor1_Case1/Doors"]
 
-[node name="Sprite2D" parent="Floor1_Case1/Doors/MCDoor" index="0"]
+[node name="Area2D" type="Area2D" parent="Floor1_Case1/Doors/MCDoor"]
+position = Vector2(364, 268)
+scale = Vector2(11.685, 12.034)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_vpcva")
+target_scene = "res://Scenes/Week1/office_case_1.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor1_Case1/Doors/MCDoor/Area2D"]
 position = Vector2(-2.14577e-06, -0.121803)
 scale = Vector2(0.147237, 0.147237)
 
-[node name="CollisionShape2D" parent="Floor1_Case1/Doors/MCDoor" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Doors/MCDoor/Area2D"]
 position = Vector2(0.28634, 9.53674e-07)
-shape = SubResource("RectangleShape2D_fidwf")
-debug_color = Color(0.0599744, 0.631226, 0.447477, 0.42)
+scale = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_u7o2v")
+debug_color = Color(0.50589, 0.435297, 0.976594, 0.42)
+
+[node name="PromptLabel" type="Label" parent="Floor1_Case1/Doors/MCDoor/Area2D"]
+visible = false
+offset_left = -29.3539
+offset_top = 53.9305
+offset_right = 98.6461
+offset_bottom = 109.931
+scale = Vector2(0.22697, 0.22697)
+theme_override_fonts/font = ExtResource("8_2inbq")
+theme_override_font_sizes/font_size = 45
+text = "Your Office"
 
 [node name="Sonny" type="StaticBody2D" parent="Floor1_Case1/Doors"]
 position = Vector2(732, 203)
@@ -140,19 +161,23 @@ rotation = 3.14159
 scale = Vector2(11.33, -12.9445)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Doors/Sonny"]
-shape = SubResource("RectangleShape2D_ugru8")
+shape = SubResource("RectangleShape2D_j5tn2")
 
-[node name="SonnyDoor" parent="Floor1_Case1/Doors" instance=ExtResource("3_guhx5")]
-position = Vector2(729, 268)
-scale = Vector2(11.8493, 12.22)
+[node name="SonnyDoor" parent="Floor1_Case1/Doors" instance=ExtResource("9_rulxl")]
+position = Vector2(0, -6)
 
-[node name="Sprite2D" parent="Floor1_Case1/Doors/SonnyDoor" index="0"]
-position = Vector2(-2.14577e-06, -0.121803)
-scale = Vector2(0.147237, 0.147237)
+[node name="Area2D" parent="Floor1_Case1/Doors/SonnyDoor" index="0"]
+target_scene = "res://Scenes/Week1/sonny_office_case_1.tscn"
 
-[node name="CollisionShape2D" parent="Floor1_Case1/Doors/SonnyDoor" index="1"]
-position = Vector2(0.28634, 9.53674e-07)
-shape = SubResource("RectangleShape2D_fidwf")
+[node name="CollisionShape2D" parent="Floor1_Case1/Doors/SonnyDoor/Area2D" index="1"]
+position = Vector2(31.4374, 9.53674e-07)
+scale = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_u7o2v")
+
+[node name="PromptLabel" parent="Floor1_Case1/Doors/SonnyDoor/Area2D" index="2"]
+visible = false
+offset_right = 217.646
+text = "Sonny's Office"
 
 [node name="Franz" type="StaticBody2D" parent="Floor1_Case1/Doors"]
 position = Vector2(1122, 203)
@@ -160,19 +185,21 @@ rotation = 3.14159
 scale = Vector2(12.5047, -12.9445)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Doors/Franz"]
-shape = SubResource("RectangleShape2D_ugru8")
+shape = SubResource("RectangleShape2D_j5tn2")
 
-[node name="FranzDoor" parent="Floor1_Case1/Doors" instance=ExtResource("3_guhx5")]
-position = Vector2(1119, 267)
-scale = Vector2(11.4893, 12.22)
+[node name="FranzDoor" parent="Floor1_Case1/Doors" instance=ExtResource("9_rulxl")]
 
-[node name="Sprite2D" parent="Floor1_Case1/Doors/FranzDoor" index="0"]
-position = Vector2(-2.14577e-06, -0.121803)
-scale = Vector2(0.147237, 0.147237)
+[node name="Area2D" parent="Floor1_Case1/Doors/FranzDoor" index="0"]
+target_scene = "res://Scenes/Week1/franz_office_case_1.tscn"
 
-[node name="CollisionShape2D" parent="Floor1_Case1/Doors/FranzDoor" index="1"]
-position = Vector2(0.28634, 9.53674e-07)
-shape = SubResource("RectangleShape2D_fidwf")
+[node name="CollisionShape2D" parent="Floor1_Case1/Doors/FranzDoor/Area2D" index="1"]
+position = Vector2(64.9847, 9.53674e-07)
+scale = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_u7o2v")
+
+[node name="PromptLabel" parent="Floor1_Case1/Doors/FranzDoor/Area2D" index="2"]
+visible = false
+text = "Franz's Office"
 
 [node name="Stairs" type="StaticBody2D" parent="Floor1_Case1/Doors"]
 position = Vector2(1550, 204)
@@ -180,19 +207,21 @@ rotation = 3.14159
 scale = Vector2(12.5047, -12.9445)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Doors/Stairs"]
-shape = SubResource("RectangleShape2D_ugru8")
+shape = SubResource("RectangleShape2D_j5tn2")
 
-[node name="StairsEntrance" parent="Floor1_Case1/Doors" instance=ExtResource("3_guhx5")]
-position = Vector2(1547, 268)
-scale = Vector2(11.4893, 12.22)
+[node name="StairsEntrance" parent="Floor1_Case1/Doors" instance=ExtResource("9_rulxl")]
 
-[node name="Sprite2D" parent="Floor1_Case1/Doors/StairsEntrance" index="0"]
-position = Vector2(-2.14577e-06, -0.121803)
-scale = Vector2(0.147237, 0.147237)
+[node name="Area2D" parent="Floor1_Case1/Doors/StairsEntrance" index="0"]
+target_scene = "res://Scenes/Week1/floor_2_case_1.tscn"
 
-[node name="CollisionShape2D" parent="Floor1_Case1/Doors/StairsEntrance" index="1"]
-position = Vector2(0.28634, 9.53674e-07)
-shape = SubResource("RectangleShape2D_fidwf")
+[node name="CollisionShape2D" parent="Floor1_Case1/Doors/StairsEntrance/Area2D" index="1"]
+position = Vector2(101.613, 9.53674e-07)
+scale = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_u7o2v")
+
+[node name="PromptLabel" parent="Floor1_Case1/Doors/StairsEntrance/Area2D" index="2"]
+visible = false
+text = "Floor 2"
 
 [node name="Walls" type="Node" parent="Floor1_Case1"]
 
@@ -365,13 +394,15 @@ shape = SubResource("RectangleShape2D_iyfyv")
 [node name="DialogPlayer" parent="Floor1_Case1" instance=ExtResource("8_uqpd8")]
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
+[connection signal="area_entered" from="Floor1_Case1/Doors/MCDoor/Area2D" to="Floor1_Case1/Doors/MCDoor/Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="Floor1_Case1/Doors/MCDoor/Area2D" to="Floor1_Case1/Doors/MCDoor/Area2D" method="_on_area_exited"]
+
 [editable path="Floor1_Case1/Charles"]
 [editable path="Floor1_Case1/Charles/DialogAreaBox"]
 [editable path="Floor1_Case1/Cat"]
 [editable path="Floor1_Case1/Cat/DialogAreaBox"]
 [editable path="Floor1_Case1/Reilly"]
 [editable path="Floor1_Case1/Reilly/DialogAreaBox"]
-[editable path="Floor1_Case1/Doors/MCDoor"]
 [editable path="Floor1_Case1/Doors/SonnyDoor"]
 [editable path="Floor1_Case1/Doors/FranzDoor"]
 [editable path="Floor1_Case1/Doors/StairsEntrance"]
