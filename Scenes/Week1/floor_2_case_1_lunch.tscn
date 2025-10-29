@@ -187,19 +187,14 @@ shape = SubResource("RectangleShape2D_dkno6")
 [node name="HarrisonDoor" parent="Floor2_Case1/Doors" instance=ExtResource("10_u383f")]
 position = Vector2(0, -6)
 
-[node name="Area2D" parent="Floor2_Case1/Doors/HarrisonDoor" index="0"]
-position = Vector2(364, 268)
-
 [node name="CollisionShape2D" parent="Floor2_Case1/Doors/HarrisonDoor/Area2D" index="1"]
 position = Vector2(27.5567, 1.16337)
 scale = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_8q2lh")
-debug_color = Color(0.50589, 0.435297, 0.976594, 0.42)
 
 [node name="PromptLabel" parent="Floor2_Case1/Doors/HarrisonDoor/Area2D" index="2"]
 visible = false
 offset_right = 217.646
-scale = Vector2(0.22697, 0.22697)
 text = "Harrison's Office"
 
 [node name="HarrisonDoor2" parent="Floor2_Case1/Doors" instance=ExtResource("6_yp88a")]
@@ -227,18 +222,15 @@ shape = SubResource("RectangleShape2D_dkno6")
 
 [node name="Area2D" parent="Floor2_Case1/Doors/TylerDoor" index="0"]
 process_mode = 4
-position = Vector2(364, 268)
 target_scene = "res://Scenes/Week1/tyler_office_case_1.tscn"
 
 [node name="CollisionShape2D" parent="Floor2_Case1/Doors/TylerDoor/Area2D" index="1"]
 position = Vector2(64.2145, 1.16337)
 scale = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_8q2lh")
-debug_color = Color(0.50589, 0.435297, 0.976594, 0.42)
 
 [node name="PromptLabel" parent="Floor2_Case1/Doors/TylerDoor/Area2D" index="2"]
 visible = false
-scale = Vector2(0.22697, 0.22697)
 text = "Tyler's Office"
 
 [node name="Stairs" type="StaticBody2D" parent="Floor2_Case1/Doors"]
@@ -252,18 +244,15 @@ shape = SubResource("RectangleShape2D_dkno6")
 [node name="StairsEntrance" parent="Floor2_Case1/Doors" instance=ExtResource("10_u383f")]
 
 [node name="Area2D" parent="Floor2_Case1/Doors/StairsEntrance" index="0"]
-position = Vector2(364, 268)
-target_scene = "res://Scenes/Week1/floor_1_case_1.tscn"
+target_scene = "res://Scenes/Week1/floor_1_case_1_lunch.tscn"
 
 [node name="CollisionShape2D" parent="Floor2_Case1/Doors/StairsEntrance/Area2D" index="1"]
 position = Vector2(104.779, 0.997176)
 scale = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_8q2lh")
-debug_color = Color(0.50589, 0.435297, 0.976594, 0.42)
 
 [node name="PromptLabel" parent="Floor2_Case1/Doors/StairsEntrance/Area2D" index="2"]
 visible = false
-scale = Vector2(0.22697, 0.22697)
 text = "Floor 1"
 
 [node name="Walls" type="Node" parent="Floor2_Case1"]

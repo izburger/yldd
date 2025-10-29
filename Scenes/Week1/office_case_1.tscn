@@ -357,6 +357,7 @@ shape = SubResource("RectangleShape2D_1wth7")
 debug_color = Color(0.50589, 0.435297, 0.976594, 0.42)
 
 [node name="PromptLabel" type="Label" parent="Interactables/MCDoor/Area2D"]
+visible = false
 offset_left = -29.3539
 offset_top = 53.9305
 offset_right = 131.646

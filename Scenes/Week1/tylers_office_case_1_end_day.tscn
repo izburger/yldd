@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://v7pl0pim4l14"]
+[gd_scene load_steps=24 format=3 uid="uid://v7pl0pim4l14"]
 
 [ext_resource type="Texture2D" uid="uid://xdx41d4uvasg" path="res://assets/Backgrounds/Offices/dayversion.png" id="1_my74l"]
 [ext_resource type="Texture2D" uid="uid://dbx7iao102rbk" path="res://assets/Backgrounds/Chapter1/scratchesonground.png" id="2_7j5p6"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://d52sgdxdm5u6" path="res://assets/Backgrounds/Offices/Furniture/paperstack.png" id="6_jqp13"]
 [ext_resource type="Texture2D" uid="uid://hs7q55srxaxt" path="res://assets/Backgrounds/Chapter1/loveletter.png" id="7_rtam7"]
 [ext_resource type="Texture2D" uid="uid://ce53tqkw5d6b" path="res://assets/sprites/npc/franz/Franzspritesheet.png" id="10_dgqg2"]
-[ext_resource type="PackedScene" uid="uid://c7iuh8ppjmke0" path="res://Scenes/forced_dialogue.tscn" id="13_4e8rb"]
 [ext_resource type="Script" path="res://Scripts/door_area.gd" id="13_5f001"]
 [ext_resource type="FontFile" uid="uid://bsblej0iv5c7j" path="res://assets/Fonts/Main/American Typewriter Bold.ttf" id="14_ia5ho"]
 
@@ -32,9 +31,6 @@ height = 19.6588
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rr7cu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4rqky"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wf7og"]
-size = Vector2(20, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_048jg"]
 
@@ -260,17 +256,6 @@ scale = Vector2(0.147237, 0.147237)
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_4rqky")
 
-[node name="ForcedDialogue" parent="Office_Case1/Interactables" instance=ExtResource("13_4e8rb")]
-position = Vector2(901, 863)
-scale = Vector2(3.64, 1)
-dialog_key = "tylerWeek1.tylerOffice"
-
-[node name="CollisionShape2D" parent="Office_Case1/Interactables/ForcedDialogue" index="1"]
-position = Vector2(14, 4)
-scale = Vector2(7.44, 1)
-shape = SubResource("RectangleShape2D_wf7og")
-debug_color = Color(0.752699, 0.342259, 0.773717, 0.42)
-
 [node name="MCDoor" type="Node2D" parent="Office_Case1/Interactables"]
 
 [node name="Area2D" type="Area2D" parent="Office_Case1/Interactables/MCDoor"]
@@ -332,6 +317,5 @@ visible = false
 [editable path="Office_Case1/Interactables/Chair"]
 [editable path="Office_Case1/Interactables/CleanDesk"]
 [editable path="Office_Case1/Interactables/InteractionZone"]
-[editable path="Office_Case1/Interactables/ForcedDialogue"]
 [editable path="Office_Case1/Interactables/Rubbish"]
 [editable path="Office_Case1/DialogPlayer"]
