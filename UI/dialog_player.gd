@@ -131,6 +131,7 @@ func finish():
 	choicebackground.visible = false
 	in_progress = false
 	get_tree().paused = false
+	SignalBus.emit_signal("dialogue_closed")
 
 func on_display_dialog(dialog_key: String):
 	if in_progress:

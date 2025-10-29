@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bru00mm5cu3vc"]
+[gd_scene load_steps=31 format=3 uid="uid://bru00mm5cu3vc"]
 
 [ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_fopa0"]
 [ext_resource type="Texture2D" uid="uid://xdx41d4uvasg" path="res://assets/Backgrounds/Offices/dayversion.png" id="1_xklic"]
@@ -10,8 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://i1pho8ehesyh" path="res://assets/Backgrounds/Chapter1/boxclosed.png" id="5_f7hfv"]
 [ext_resource type="Texture2D" uid="uid://b2gy4845h7owr" path="res://assets/Backgrounds/Chapter1/boxopen.png" id="6_m7kef"]
 [ext_resource type="Script" path="res://Scripts/door_area.gd" id="8_4fb63"]
+[ext_resource type="Script" path="res://Scripts/blackout.gd" id="9_je3an"]
 [ext_resource type="FontFile" uid="uid://bsblej0iv5c7j" path="res://assets/Fonts/Main/American Typewriter Bold.ttf" id="9_y44q1"]
 [ext_resource type="Script" path="res://Scripts/SpawnPoint.gd" id="10_h1bie"]
+[ext_resource type="PackedScene" uid="uid://b8gic8c2g2gpk" path="res://Scenes/fade_layer.tscn" id="14_xpomm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmov8"]
 atlas = ExtResource("4_1vrt3")
@@ -194,7 +196,6 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(947, 1429)
 
 [node name="Sprite2D" parent="NPC" index="0"]
-visible = false
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_1vrt3")
 
@@ -400,23 +401,41 @@ scale = Vector2(0.147237, 0.147237)
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
+[node name="Boxes5" parent="Interactables" instance=ExtResource("3_xyope")]
+position = Vector2(908, 1108)
+scale = Vector2(27.8017, -14.1195)
+
+[node name="Sprite2D" parent="Interactables/Boxes5" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Interactables/Boxes5" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_nueae")
+
 [node name="Boss" type="Area2D" parent="Interactables"]
 position = Vector2(947, 982)
 scale = Vector2(27.3806, 8.23125)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Boss"]
+scale = Vector2(1.02264, 0.488738)
 shape = SubResource("RectangleShape2D_nxw0m")
 
-[node name="BossDialogue" parent="Interactables/Boss" instance=ExtResource("3_xyope")]
-visible = false
-position = Vector2(21.7347, 38.0155)
+[node name="BossDialogue" type="Area2D" parent="Interactables/Boss"]
+process_mode = 3
+position = Vector2(-0.766968, -12.7563)
 scale = Vector2(0.541011, 1.70962)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("9_je3an")
+npc_path = NodePath("../../../NPC")
 dialog_key = "bossWeek1.bossOffice"
+x = 740
+y = 740
 
-[node name="Sprite2D" parent="Interactables/Boss/BossDialogue" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/Boss/BossDialogue"]
 scale = Vector2(0.147237, 0.147237)
 
-[node name="CollisionShape2D" parent="Interactables/Boss/BossDialogue" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Boss/BossDialogue"]
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
@@ -485,6 +504,10 @@ offset_right = 1875.0
 offset_bottom = 1062.0
 color = Color(0, 0, 0, 1)
 
+[node name="FadeLayer" parent="." instance=ExtResource("14_xpomm")]
+
+[connection signal="area_entered" from="Interactables/Boss/BossDialogue" to="Interactables/Boss/BossDialogue" method="_on_area_entered"]
+[connection signal="area_exited" from="Interactables/Boss/BossDialogue" to="Interactables/Boss/BossDialogue" method="_on_area_exited"]
 [connection signal="area_entered" from="Interactables/MCDoor/Area2D" to="Interactables/MCDoor/Area2D" method="_on_area_entered"]
 [connection signal="area_exited" from="Interactables/MCDoor/Area2D" to="Interactables/MCDoor/Area2D" method="_on_area_exited"]
 
@@ -495,5 +518,5 @@ color = Color(0, 0, 0, 1)
 [editable path="Interactables/Boxes4"]
 [editable path="Interactables/PhotoFrame"]
 [editable path="Interactables/Boxes"]
-[editable path="Interactables/Boss/BossDialogue"]
+[editable path="Interactables/Boxes5"]
 [editable path="DialogPlayer"]
