@@ -1,5 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://v7pl0pim4l14"]
 
+[ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_dhyb8"]
 [ext_resource type="Texture2D" uid="uid://xdx41d4uvasg" path="res://assets/Backgrounds/Offices/dayversion.png" id="1_my74l"]
 [ext_resource type="Texture2D" uid="uid://dbx7iao102rbk" path="res://assets/Backgrounds/Chapter1/scratchesonground.png" id="2_7j5p6"]
 [ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="2_vrvd2"]
@@ -12,9 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://d52sgdxdm5u6" path="res://assets/Backgrounds/Offices/Furniture/paperstack.png" id="6_jqp13"]
 [ext_resource type="Texture2D" uid="uid://hs7q55srxaxt" path="res://assets/Backgrounds/Chapter1/loveletter.png" id="7_rtam7"]
 [ext_resource type="Texture2D" uid="uid://ce53tqkw5d6b" path="res://assets/sprites/npc/franz/Franzspritesheet.png" id="10_dgqg2"]
-[ext_resource type="PackedScene" uid="uid://c7iuh8ppjmke0" path="res://Scenes/forced_dialogue.tscn" id="13_4e8rb"]
 [ext_resource type="Script" path="res://Scripts/door_area.gd" id="13_5f001"]
 [ext_resource type="FontFile" uid="uid://bsblej0iv5c7j" path="res://assets/Fonts/Main/American Typewriter Bold.ttf" id="14_ia5ho"]
+[ext_resource type="Script" path="res://Scripts/SpawnPoint.gd" id="15_mdjxy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2k06w"]
 size = Vector2(15.6746, 30.2066)
@@ -33,9 +34,6 @@ height = 19.6588
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4rqky"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wf7og"]
-size = Vector2(20, 77)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_048jg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_186ps"]
@@ -43,6 +41,7 @@ size = Vector2(20, 77)
 [node name="TylersOffice_Case_1_EndDay" type="Node2D"]
 
 [node name="Office_Case1" type="Node2D" parent="."]
+script = ExtResource("1_dhyb8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Office_Case1"]
 scale = Vector2(0.997965, 1)
@@ -260,17 +259,6 @@ scale = Vector2(0.147237, 0.147237)
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_4rqky")
 
-[node name="ForcedDialogue" parent="Office_Case1/Interactables" instance=ExtResource("13_4e8rb")]
-position = Vector2(901, 863)
-scale = Vector2(3.64, 1)
-dialog_key = "tylerWeek1.tylerOffice"
-
-[node name="CollisionShape2D" parent="Office_Case1/Interactables/ForcedDialogue" index="1"]
-position = Vector2(14, 4)
-scale = Vector2(7.44, 1)
-shape = SubResource("RectangleShape2D_wf7og")
-debug_color = Color(0.752699, 0.342259, 0.773717, 0.42)
-
 [node name="MCDoor" type="Node2D" parent="Office_Case1/Interactables"]
 
 [node name="Area2D" type="Area2D" parent="Office_Case1/Interactables/MCDoor"]
@@ -280,6 +268,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("13_5f001")
 target_scene = "res://Scenes/Week1/floor_2_case_1_end_day.tscn"
+exit_spawn_id = "tyler_office"
 
 [node name="Sprite2D" type="Sprite2D" parent="Office_Case1/Interactables/MCDoor/Area2D"]
 position = Vector2(-2.14577e-06, -0.121803)
@@ -304,6 +293,11 @@ theme_override_font_sizes/font_size = 45
 text = "Floor 2
 
 "
+
+[node name="Marker2D" type="Marker2D" parent="Office_Case1/Interactables/MCDoor/Area2D" groups=["spawn_points"]]
+position = Vector2(49.893, 68.0572)
+script = ExtResource("15_mdjxy")
+spawn_id = "tyler_office"
 
 [node name="Rubbish" parent="Office_Case1/Interactables" instance=ExtResource("3_dxqbv")]
 position = Vector2(591, 586)
@@ -332,6 +326,5 @@ visible = false
 [editable path="Office_Case1/Interactables/Chair"]
 [editable path="Office_Case1/Interactables/CleanDesk"]
 [editable path="Office_Case1/Interactables/InteractionZone"]
-[editable path="Office_Case1/Interactables/ForcedDialogue"]
 [editable path="Office_Case1/Interactables/Rubbish"]
 [editable path="Office_Case1/DialogPlayer"]

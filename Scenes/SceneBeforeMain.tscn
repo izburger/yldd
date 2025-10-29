@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://kx8ywkfpm3ad"]
 
 [ext_resource type="Texture2D" uid="uid://bfnoxcgc3wy6w" path="res://assets/background2.png" id="1_a6mw3"]
-[ext_resource type="Script" uid="uid://bh5f3e1c0rodx" path="res://Scripts/scene_before_main.gd" id="1_a7kuv"]
+[ext_resource type="Script" path="res://Scripts/scene_before_main.gd" id="1_a7kuv"]
 [ext_resource type="ButtonGroup" uid="uid://brt1w7v4v4o46" path="res://assets/ButtonResource/button_group_betryal.tres" id="2_a6mw3"]
 [ext_resource type="FontFile" uid="uid://chfs0odslc5jb" path="res://assets/STAMPWRITER-KIT.ttf" id="3_0fo6i"]
 

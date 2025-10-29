@@ -75,5 +75,9 @@ var selected_hair_colour = ""
 
 
 var player_name = ""
-
+var your_taste = ""
+var your_ganda = ""
+var your_experience = ""
+var your_feeling = ""
+var your_betryal = ""
 

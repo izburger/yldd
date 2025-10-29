@@ -9,7 +9,6 @@
 [node name="DialogPlayer" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_vv8hu")
-scene_text_file = null
 
 [node name="ChoiceContainer" type="MarginContainer" parent="."]
 anchors_preset = 15

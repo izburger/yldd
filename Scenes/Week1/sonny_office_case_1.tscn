@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c2pithabfm018"]
+[gd_scene load_steps=25 format=3 uid="uid://c2pithabfm018"]
 
 [ext_resource type="Texture2D" uid="uid://xdx41d4uvasg" path="res://assets/Backgrounds/Offices/dayversion.png" id="1_1u2qa"]
 [ext_resource type="Texture2D" uid="uid://c850hgrn82d11" path="res://assets/Backgrounds/Offices/Furniture/desk.png" id="2_b5roa"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://6ox5j0cqr0t2" path="res://assets/Backgrounds/Chapter1/detectiveboard.png" id="7_qbh34"]
 [ext_resource type="Script" path="res://Scripts/door_area.gd" id="7_ur40v"]
 [ext_resource type="FontFile" uid="uid://bsblej0iv5c7j" path="res://assets/Fonts/Main/American Typewriter Bold.ttf" id="8_6t0pe"]
+[ext_resource type="Script" path="res://Scripts/SpawnPoint.gd" id="15_otx4f"]
+[ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="16_8vvlf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3bjd"]
 size = Vector2(11.0119, 15.4959)
@@ -36,6 +38,7 @@ size = Vector2(20, 77)
 [node name="SonnyOffice_Case_1" type="Node2D"]
 
 [node name="Office_Case1" type="Node2D" parent="."]
+script = ExtResource("16_8vvlf")
 
 [node name="Sprite2D" type="Sprite2D" parent="Office_Case1"]
 scale = Vector2(0.997965, 1)
@@ -283,6 +286,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("7_ur40v")
 target_scene = "res://Scenes/Week1/floor_1_case_1.tscn"
+exit_spawn_id = "sonny_office"
 
 [node name="Sprite2D" type="Sprite2D" parent="Office_Case1/Interactables/MCDoor/Area2D"]
 position = Vector2(-2.14577e-06, -0.121803)
@@ -306,6 +310,11 @@ theme_override_fonts/font = ExtResource("8_6t0pe")
 theme_override_font_sizes/font_size = 45
 text = "Floor 1
 "
+
+[node name="Marker2D" type="Marker2D" parent="Office_Case1/Interactables/MCDoor/Area2D" groups=["spawn_points"]]
+position = Vector2(49.893, 68.0572)
+script = ExtResource("15_otx4f")
+spawn_id = "sonny_office"
 
 [node name="DialogPlayer" parent="Office_Case1" instance=ExtResource("6_rod0r")]
 scene_text_file = "res://Assets/Ink/Main.ink.json"

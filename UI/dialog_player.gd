@@ -62,7 +62,7 @@ func show_choices():
 
 	print("choices = ", ink_story.current_choices.size())
 	for i in ink_story.current_choices.size():
-		var ch = ink_story.current_choices[i]           # each has .text and .index
+		var ch = ink_story.current_choices[i]
 		var idx := int(ch.index)
 		print(" row i=", i, "  ch.index=", ch.index, "  text='", ch.text, "'")
 		var b  = Button.new()
@@ -120,7 +120,7 @@ func show_choices():
 #	continue_story()
 
 func _on_choice_pressed(ink_idx: int) -> void:
-	# Tell ink which branch we chose, then advance again
+	#which branch we chose, then advance again
 	ink_story.choose_choice_index(ink_idx)
 	continue_story()
 

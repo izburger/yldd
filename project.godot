@@ -20,6 +20,7 @@ config/icon="res://Assets/Sprites/Items/icon.svg"
 SignalBus="*res://Globals/SignalBus.gd"
 __InkRuntime="*res://addons/inkgd/ink_runtime.gd"
 Global="*res://Scripts/Global.gd"
+GameStates="*res://Globals/GameState.gd"
 
 [display]
 

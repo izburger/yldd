@@ -1,0 +1,18 @@
+extends Node
+@onready var player: Node2D = $Player
+
+func _ready() -> void:
+	var spawn_id := GameStates.consume_next_spawn_id()
+	if spawn_id == "":
+		return
+	var spawn := _find_spawn(spawn_id)
+	if spawn:
+		player.global_position = spawn.global_position
+	else:
+		push_warning("Spawn id '%s' not found" % spawn_id)
+
+func _find_spawn(id: String) -> Marker2D:
+	for n in get_tree().get_nodes_in_group("spawn_points"):
+		if n is Marker2D and n.get("spawn_id") == id:
+			return n
+	return null

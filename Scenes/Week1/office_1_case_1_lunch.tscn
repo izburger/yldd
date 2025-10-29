@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://cdd2im5ycbc5o"]
+[gd_scene load_steps=26 format=3 uid="uid://cdd2im5ycbc5o"]
 
 [ext_resource type="Texture2D" uid="uid://xdx41d4uvasg" path="res://assets/Backgrounds/Offices/dayversion.png" id="1_hfg1v"]
+[ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_i8ewo"]
 [ext_resource type="Texture2D" uid="uid://i1pho8ehesyh" path="res://assets/Backgrounds/Chapter1/boxclosed.png" id="2_2k2ra"]
 [ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="2_lhsgs"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_4enqf"]
@@ -12,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://wwsg54t2jen3" path="res://assets/sprites/npc/lucie/luciespritesheet.png" id="6_k2tn4"]
 [ext_resource type="Script" path="res://Scripts/door_area.gd" id="10_yix7f"]
 [ext_resource type="FontFile" uid="uid://bsblej0iv5c7j" path="res://assets/Fonts/Main/American Typewriter Bold.ttf" id="11_01440"]
+[ext_resource type="Script" path="res://Scripts/SpawnPoint.gd" id="13_1i7al"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7p5y"]
 size = Vector2(15.6746, 30.2066)
@@ -84,6 +86,7 @@ _data = {
 [node name="Office1_Case_1_Lunch" type="Node2D"]
 
 [node name="Office_Case1" type="Node2D" parent="."]
+script = ExtResource("1_i8ewo")
 
 [node name="Sprite2D" type="Sprite2D" parent="Office_Case1"]
 scale = Vector2(0.997965, 1)
@@ -394,6 +397,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("10_yix7f")
 target_scene = "res://Scenes/Week1/floor_1_case_1_end_day.tscn"
+exit_spawn_id = "mc_office"
 
 [node name="Sprite2D" type="Sprite2D" parent="Office_Case1/Interactables/MCDoor/Area2D"]
 position = Vector2(-2.14577e-06, -0.121803)
@@ -417,6 +421,11 @@ theme_override_fonts/font = ExtResource("11_01440")
 theme_override_font_sizes/font_size = 45
 text = "Floor 1
 "
+
+[node name="Marker2D" type="Marker2D" parent="Office_Case1/Interactables/MCDoor/Area2D" groups=["spawn_points"]]
+position = Vector2(49.893, 65.398)
+script = ExtResource("13_1i7al")
+spawn_id = "mc_office"
 
 [node name="DialogPlayer" parent="Office_Case1" instance=ExtResource("4_b1ur1")]
 scene_text_file = "res://Assets/Ink/Main.ink.json"
