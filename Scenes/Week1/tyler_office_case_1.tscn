@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://ckvx6brx2rjmh"]
+[gd_scene load_steps=24 format=3 uid="uid://ckvx6brx2rjmh"]
 
+[ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_gvpiw"]
 [ext_resource type="Texture2D" uid="uid://xdx41d4uvasg" path="res://assets/Backgrounds/Offices/dayversion.png" id="1_oac74"]
 [ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="2_8uawh"]
 [ext_resource type="Texture2D" uid="uid://dbx7iao102rbk" path="res://assets/Backgrounds/Chapter1/scratchesonground.png" id="2_lqhto"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://hs7q55srxaxt" path="res://assets/Backgrounds/Chapter1/loveletter.png" id="7_msw8g"]
 [ext_resource type="Script" path="res://Scripts/door_area.gd" id="11_g8ndt"]
 [ext_resource type="FontFile" uid="uid://bsblej0iv5c7j" path="res://assets/Fonts/Main/American Typewriter Bold.ttf" id="12_saqxa"]
+[ext_resource type="Script" path="res://Scripts/SpawnPoint.gd" id="14_bpuwj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4b2d"]
 
@@ -34,6 +36,7 @@ size = Vector2(20, 77)
 [node name="TylerOffice_Case_1" type="Node2D"]
 
 [node name="Office_Case1" type="Node2D" parent="."]
+script = ExtResource("1_gvpiw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Office_Case1"]
 scale = Vector2(0.997965, 1)
@@ -262,7 +265,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("11_g8ndt")
 target_scene = "res://Scenes/Week1/floor_2_case_1_lunch.tscn"
-exit_spawn_id = null
+exit_spawn_id = "tyler_office"
 
 [node name="Sprite2D" type="Sprite2D" parent="Office_Case1/Interactables/MCDoor/Area2D"]
 position = Vector2(-2.14577e-06, -0.121803)
@@ -286,6 +289,11 @@ theme_override_fonts/font = ExtResource("12_saqxa")
 theme_override_font_sizes/font_size = 45
 text = "Floor 2
 "
+
+[node name="Marker2D" type="Marker2D" parent="Office_Case1/Interactables/MCDoor/Area2D" groups=["spawn_points"]]
+position = Vector2(49.893, 68.0572)
+script = ExtResource("14_bpuwj")
+spawn_id = "tyler_office"
 
 [node name="DialogPlayer" parent="Office_Case1" instance=ExtResource("6_nmhqt")]
 scene_text_file = "res://Assets/Ink/Main.ink.json"

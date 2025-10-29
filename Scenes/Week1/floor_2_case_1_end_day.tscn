@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://dg5phincl2mda"]
+[gd_scene load_steps=19 format=3 uid="uid://dg5phincl2mda"]
 
 [ext_resource type="Texture2D" uid="uid://cnd7a2q2nv8si" path="res://assets/Backgrounds/Floors/Floor2/secondfloor.png" id="1_10quj"]
+[ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_aaaxe"]
 [ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="2_xtern"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_167fq"]
 [ext_resource type="Texture2D" uid="uid://dod7n5l61dvft" path="res://assets/sprites/npc/boss/boss.png" id="3_u01wo"]
@@ -9,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://bsblej0iv5c7j" path="res://assets/Fonts/Main/American Typewriter Bold.ttf" id="6_4n3bs"]
 [ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="6_gnej0"]
 [ext_resource type="PackedScene" uid="uid://c6thavrbrmx3" path="res://Scenes/door_2d.tscn" id="8_d2kg6"]
+[ext_resource type="Script" path="res://Scripts/SpawnPoint.gd" id="10_gh5ch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab2nd"]
 size = Vector2(11.5079, 15.4959)
@@ -29,6 +31,7 @@ radius = 123.033
 [node name="Floor2_Case1_EndDay" type="Node2D"]
 
 [node name="Floor2_Case1" type="Node2D" parent="."]
+script = ExtResource("1_aaaxe")
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor2_Case1"]
 scale = Vector2(0.997965, 1)
@@ -163,7 +166,7 @@ shape = SubResource("RectangleShape2D_tqunh")
 
 [node name="Area2D" parent="Floor2_Case1/Doors/TylerDoor" index="0"]
 target_scene = "res://Scenes/Week1/tylers_office_case_1_end_day.tscn"
-exit_spawn_id = null
+exit_spawn_id = "tyler_office"
 
 [node name="CollisionShape2D" parent="Floor2_Case1/Doors/TylerDoor/Area2D" index="1"]
 position = Vector2(64.2145, 1.16337)
@@ -173,6 +176,11 @@ shape = SubResource("RectangleShape2D_1f815")
 [node name="PromptLabel" parent="Floor2_Case1/Doors/TylerDoor/Area2D" index="2"]
 visible = false
 text = "Tyler's Office"
+
+[node name="Marker2D" type="Marker2D" parent="Floor2_Case1/Doors/TylerDoor/Area2D" index="3" groups=["spawn_points"]]
+position = Vector2(64.4416, 6.64783)
+script = ExtResource("10_gh5ch")
+spawn_id = "tyler_office"
 
 [node name="Stairs" type="StaticBody2D" parent="Floor2_Case1/Doors"]
 position = Vector2(1587, 216)
@@ -186,7 +194,7 @@ shape = SubResource("RectangleShape2D_tqunh")
 
 [node name="Area2D" parent="Floor2_Case1/Doors/StairsEntrance" index="0"]
 target_scene = "res://Scenes/Week1/floor_1_case_1_end_day.tscn"
-exit_spawn_id = null
+exit_spawn_id = "floor_1"
 
 [node name="CollisionShape2D" parent="Floor2_Case1/Doors/StairsEntrance/Area2D" index="1"]
 position = Vector2(104.779, 0.997176)
@@ -196,6 +204,11 @@ shape = SubResource("RectangleShape2D_1f815")
 [node name="PromptLabel" parent="Floor2_Case1/Doors/StairsEntrance/Area2D" index="2"]
 visible = false
 text = "Floor 1"
+
+[node name="Marker2D" type="Marker2D" parent="Floor2_Case1/Doors/StairsEntrance/Area2D" index="3" groups=["spawn_points"]]
+position = Vector2(104.921, 6.81403)
+script = ExtResource("10_gh5ch")
+spawn_id = "floor_1"
 
 [node name="Walls" type="Node" parent="Floor2_Case1"]
 

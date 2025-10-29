@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://bw51eeietit1f"]
+[gd_scene load_steps=25 format=3 uid="uid://bw51eeietit1f"]
 
 [ext_resource type="Texture2D" uid="uid://dc274hkaxccif" path="res://assets/Backgrounds/Floors/Floor1/floor1.png" id="1_hkadw"]
+[ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_x2cas"]
 [ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="3_dcnbp"]
 [ext_resource type="Texture2D" uid="uid://cqwaymerg03bn" path="res://assets/sprites/player/test1.png" id="3_ffviy"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_guhx5"]
@@ -11,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://bsblej0iv5c7j" path="res://assets/Fonts/Main/American Typewriter Bold.ttf" id="8_2inbq"]
 [ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="8_uqpd8"]
 [ext_resource type="PackedScene" uid="uid://c6thavrbrmx3" path="res://Scenes/door_2d.tscn" id="9_rulxl"]
+[ext_resource type="Script" path="res://Scripts/SpawnPoint.gd" id="10_h1p1m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4hhb"]
 size = Vector2(15.6746, 30.2066)
@@ -43,6 +45,7 @@ height = 15.6713
 [node name="Floor1_Case1_EndDay" type="Node2D"]
 
 [node name="Floor1_Case1" type="Node2D" parent="."]
+script = ExtResource("1_x2cas")
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor1_Case1"]
 scale = Vector2(0.997965, 1)
@@ -137,7 +140,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("7_vpcva")
 target_scene = "res://Scenes/Week1/office_1_case_1_lunch.tscn"
-exit_spawn_id = null
+exit_spawn_id = "mc_office"
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor1_Case1/Doors/MCDoor/Area2D"]
 position = Vector2(-2.14577e-06, -0.121803)
@@ -160,6 +163,11 @@ theme_override_fonts/font = ExtResource("8_2inbq")
 theme_override_font_sizes/font_size = 45
 text = "Your Office"
 
+[node name="Marker2D" type="Marker2D" parent="Floor1_Case1/Doors/MCDoor/Area2D" groups=["spawn_points"]]
+position = Vector2(-3.8147e-06, 5.40136)
+script = ExtResource("10_h1p1m")
+spawn_id = "mc_office"
+
 [node name="Sonny" type="StaticBody2D" parent="Floor1_Case1/Doors"]
 position = Vector2(732, 203)
 rotation = 3.14159
@@ -173,7 +181,7 @@ position = Vector2(0, -6)
 
 [node name="Area2D" parent="Floor1_Case1/Doors/SonnyDoor" index="0"]
 target_scene = "res://Scenes/Week1/sonny_office_case_1.tscn"
-exit_spawn_id = null
+exit_spawn_id = "sonny_office"
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Doors/SonnyDoor/Area2D" index="1"]
 position = Vector2(31.4374, 9.53674e-07)
@@ -184,6 +192,11 @@ shape = SubResource("RectangleShape2D_u7o2v")
 visible = false
 offset_right = 217.646
 text = "Sonny's Office"
+
+[node name="Marker2D" type="Marker2D" parent="Floor1_Case1/Doors/SonnyDoor/Area2D" index="3" groups=["spawn_points"]]
+position = Vector2(31.2366, 5.81686)
+script = ExtResource("10_h1p1m")
+spawn_id = "sonny_office"
 
 [node name="Franz" type="StaticBody2D" parent="Floor1_Case1/Doors"]
 position = Vector2(1122, 203)
@@ -197,7 +210,7 @@ shape = SubResource("RectangleShape2D_j5tn2")
 
 [node name="Area2D" parent="Floor1_Case1/Doors/FranzDoor" index="0"]
 target_scene = "res://Scenes/Week1/franz_office_case_1.tscn"
-exit_spawn_id = null
+exit_spawn_id = "franz_office"
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Doors/FranzDoor/Area2D" index="1"]
 position = Vector2(64.9847, 9.53674e-07)
@@ -207,6 +220,11 @@ shape = SubResource("RectangleShape2D_u7o2v")
 [node name="PromptLabel" parent="Floor1_Case1/Doors/FranzDoor/Area2D" index="2"]
 visible = false
 text = "Franz's Office"
+
+[node name="Marker2D" type="Marker2D" parent="Floor1_Case1/Doors/FranzDoor/Area2D" index="3" groups=["spawn_points"]]
+position = Vector2(65.0406, 5.81685)
+script = ExtResource("10_h1p1m")
+spawn_id = "franz_office"
 
 [node name="Stairs" type="StaticBody2D" parent="Floor1_Case1/Doors"]
 position = Vector2(1550, 204)
@@ -220,7 +238,7 @@ shape = SubResource("RectangleShape2D_j5tn2")
 
 [node name="Area2D" parent="Floor1_Case1/Doors/StairsEntrance" index="0"]
 target_scene = "res://Scenes/Week1/floor_2_case_1_end_day.tscn"
-exit_spawn_id = null
+exit_spawn_id = "floor_1"
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Doors/StairsEntrance/Area2D" index="1"]
 position = Vector2(101.613, 9.53674e-07)
@@ -231,6 +249,11 @@ shape = SubResource("RectangleShape2D_u7o2v")
 visible = false
 text = "Floor 2"
 
+[node name="Marker2D" type="Marker2D" parent="Floor1_Case1/Doors/StairsEntrance/Area2D" index="3" groups=["spawn_points"]]
+position = Vector2(101.583, 5.23517)
+script = ExtResource("10_h1p1m")
+spawn_id = "floor_1"
+
 [node name="Exit" type="StaticBody2D" parent="Floor1_Case1/Doors"]
 position = Vector2(-112, 970)
 rotation = 3.14159
@@ -240,6 +263,7 @@ scale = Vector2(11.33, -12.9445)
 shape = SubResource("RectangleShape2D_5itg2")
 
 [node name="ExitDoor" parent="Floor1_Case1/Doors" instance=ExtResource("9_rulxl")]
+process_mode = 4
 position = Vector2(-661, 698)
 
 [node name="Area2D" parent="Floor1_Case1/Doors/ExitDoor" index="0"]
@@ -256,6 +280,11 @@ offset_top = -4.0718
 offset_right = 274.642
 offset_bottom = 51.9287
 text = "Exit"
+
+[node name="Marker2D" type="Marker2D" parent="Floor1_Case1/Doors/ExitDoor/Area2D" index="3" groups=["spawn_points"]]
+position = Vector2(31.2366, 5.81686)
+script = ExtResource("10_h1p1m")
+spawn_id = "exit_door"
 
 [node name="Walls" type="Node" parent="Floor1_Case1"]
 
