@@ -201,6 +201,32 @@ visible = false
 offset_right = 217.646
 text = "Sonny's Office"
 
+[node name="Exit" type="StaticBody2D" parent="Doors"]
+position = Vector2(-112, 970)
+rotation = 3.14159
+scale = Vector2(11.33, -12.9445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Exit"]
+shape = SubResource("RectangleShape2D_3wcmc")
+
+[node name="ExitDoor" parent="Doors" instance=ExtResource("7_nkag0")]
+position = Vector2(-661, 698)
+
+[node name="Area2D" parent="Doors/ExitDoor" index="0"]
+target_scene = ""
+
+[node name="CollisionShape2D" parent="Doors/ExitDoor/Area2D" index="1"]
+position = Vector2(31.4374, 9.53674e-07)
+scale = Vector2(0.5, 1)
+
+[node name="PromptLabel" parent="Doors/ExitDoor/Area2D" index="2"]
+visible = false
+offset_left = 27.6423
+offset_top = -4.0718
+offset_right = 274.642
+offset_bottom = 51.9287
+text = "Exit"
+
 [node name="Franz" type="StaticBody2D" parent="Doors"]
 position = Vector2(1122, 203)
 rotation = 3.14159
@@ -399,6 +425,18 @@ scale = Vector2(0.147237, 0.147237)
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_mifym")
 
+[node name="Exit" parent="Interactables" instance=ExtResource("3_xkmp7")]
+position = Vector2(-30, 865)
+scale = Vector2(9.22264, 15.5852)
+dialog_key = "clockOut"
+
+[node name="Sprite2D" parent="Interactables/Exit" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Interactables/Exit" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_mifym")
+
 [node name="InteractionZone" parent="Interactables" instance=ExtResource("3_xkmp7")]
 position = Vector2(545, 348)
 scale = Vector2(4.9293, 10.82)
@@ -448,9 +486,11 @@ scene_text_file = "res://Assets/Ink/Main.ink.json"
 [editable path="Reilly"]
 [editable path="Reilly/DialogAreaBox"]
 [editable path="Doors/SonnyDoor"]
+[editable path="Doors/ExitDoor"]
 [editable path="Doors/FranzDoor"]
 [editable path="Doors/StairsEntrance"]
 [editable path="Interactables/LogBook"]
+[editable path="Interactables/Exit"]
 [editable path="Interactables/InteractionZone"]
 [editable path="Interactables/Coin"]
 [editable path="Interactables/ForcedDialogue"]

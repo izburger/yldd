@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bw51eeietit1f"]
+[gd_scene load_steps=23 format=3 uid="uid://bw51eeietit1f"]
 
 [ext_resource type="Texture2D" uid="uid://dc274hkaxccif" path="res://assets/Backgrounds/Floors/Floor1/floor1.png" id="1_hkadw"]
 [ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="3_dcnbp"]
@@ -32,9 +32,13 @@ height = 15.6713
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7o2v"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5itg2"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ome7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iyfyv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvfkq"]
 
 [node name="Floor1_Case1_EndDay" type="Node2D"]
 
@@ -223,6 +227,32 @@ shape = SubResource("RectangleShape2D_u7o2v")
 visible = false
 text = "Floor 2"
 
+[node name="Exit" type="StaticBody2D" parent="Floor1_Case1/Doors"]
+position = Vector2(-112, 970)
+rotation = 3.14159
+scale = Vector2(11.33, -12.9445)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1_Case1/Doors/Exit"]
+shape = SubResource("RectangleShape2D_5itg2")
+
+[node name="ExitDoor" parent="Floor1_Case1/Doors" instance=ExtResource("9_rulxl")]
+position = Vector2(-661, 698)
+
+[node name="Area2D" parent="Floor1_Case1/Doors/ExitDoor" index="0"]
+target_scene = ""
+
+[node name="CollisionShape2D" parent="Floor1_Case1/Doors/ExitDoor/Area2D" index="1"]
+position = Vector2(31.4374, 9.53674e-07)
+scale = Vector2(0.5, 1)
+
+[node name="PromptLabel" parent="Floor1_Case1/Doors/ExitDoor/Area2D" index="2"]
+visible = false
+offset_left = 27.6423
+offset_top = -4.0718
+offset_right = 274.642
+offset_bottom = 51.9287
+text = "Exit"
+
 [node name="Walls" type="Node" parent="Floor1_Case1"]
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="Floor1_Case1/Walls"]
@@ -391,6 +421,18 @@ scale = Vector2(0.147237, 0.147237)
 position = Vector2(1.24695, 8.32099)
 shape = SubResource("RectangleShape2D_iyfyv")
 
+[node name="Exit" parent="Floor1_Case1/Interactables" instance=ExtResource("3_guhx5")]
+position = Vector2(-30, 865)
+scale = Vector2(9.22264, 15.5852)
+dialog_key = "leavingTimew1"
+
+[node name="Sprite2D" parent="Floor1_Case1/Interactables/Exit" index="0"]
+scale = Vector2(0.147237, 0.147237)
+
+[node name="CollisionShape2D" parent="Floor1_Case1/Interactables/Exit" index="1"]
+position = Vector2(1.5, 7.5)
+shape = SubResource("RectangleShape2D_gvfkq")
+
 [node name="DialogPlayer" parent="Floor1_Case1" instance=ExtResource("8_uqpd8")]
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
@@ -406,5 +448,7 @@ scene_text_file = "res://Assets/Ink/Main.ink.json"
 [editable path="Floor1_Case1/Doors/SonnyDoor"]
 [editable path="Floor1_Case1/Doors/FranzDoor"]
 [editable path="Floor1_Case1/Doors/StairsEntrance"]
+[editable path="Floor1_Case1/Doors/ExitDoor"]
 [editable path="Floor1_Case1/Interactables/LogBook"]
 [editable path="Floor1_Case1/Interactables/Coin"]
+[editable path="Floor1_Case1/Interactables/Exit"]
