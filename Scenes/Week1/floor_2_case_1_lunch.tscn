@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://78a2wtjayl6n"]
+[gd_scene load_steps=29 format=3 uid="uid://78a2wtjayl6n"]
 
 [ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_4aa2l"]
 [ext_resource type="Texture2D" uid="uid://cnd7a2q2nv8si" path="res://assets/Backgrounds/Floors/Floor2/secondfloor.png" id="1_jmdif"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dod7n5l61dvft" path="res://assets/sprites/npc/boss/boss.png" id="3_mwotf"]
 [ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="4_8wjit"]
 [ext_resource type="Texture2D" uid="uid://dwwejmnmugpok" path="res://assets/sprites/npc/harrison/Harrison.png" id="5_2a6a0"]
+[ext_resource type="Script" path="res://Scripts/blackout.gd" id="5_3sdbl"]
 [ext_resource type="Texture2D" uid="uid://dqsk80h0j3opn" path="res://assets/sprites/npc/reilly/Reiliy.png" id="5_wjfdk"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="6_yp88a"]
 [ext_resource type="Texture2D" uid="uid://brfh3ki15xsdt" path="res://assets/Backgrounds/Chapter1/harrisonsleeping.png" id="7_3ckep"]
@@ -15,6 +16,7 @@
 [ext_resource type="FontFile" uid="uid://bsblej0iv5c7j" path="res://assets/Fonts/Main/American Typewriter Bold.ttf" id="8_r3g4y"]
 [ext_resource type="PackedScene" uid="uid://c6thavrbrmx3" path="res://Scenes/door_2d.tscn" id="10_u383f"]
 [ext_resource type="Script" path="res://Scripts/SpawnPoint.gd" id="13_qqel1"]
+[ext_resource type="PackedScene" uid="uid://b8gic8c2g2gpk" path="res://Scenes/fade_layer.tscn" id="17_mp3w2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vv7my"]
 
@@ -53,19 +55,31 @@ scale = Vector2(0.997965, 1)
 texture = ExtResource("1_jmdif")
 centered = false
 
-[node name="Reilly" parent="Floor2_Case1" instance=ExtResource("2_12rc4")]
-position = Vector2(1389, 326)
+[node name="Reilly" type="CharacterBody2D" parent="Floor2_Case1"]
+y_sort_enabled = true
+position = Vector2(1544, -226)
 
-[node name="Sprite2D" parent="Floor2_Case1/Reilly" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="Floor2_Case1/Reilly"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_wjfdk")
-hframes = 1
 
-[node name="CollisionShape2D" parent="Floor2_Case1/Reilly" index="2"]
-visible = true
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Floor2_Case1/Reilly"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2_Case1/Reilly"]
 position = Vector2(0, 96)
 scale = Vector2(5, 2.4)
 shape = SubResource("RectangleShape2D_vv7my")
+
+[node name="DialogAreaBox" parent="Floor2_Case1/Reilly" instance=ExtResource("6_yp88a")]
+position = Vector2(611, 875)
+script = ExtResource("5_3sdbl")
+npc_path = NodePath("..")
+dialog_key = "friendsWeek1.friendsArrive"
+x = 1389
+y = 326
+
+[node name="Sprite2D" parent="Floor2_Case1/Reilly/DialogAreaBox" index="0"]
+scale = Vector2(0.147237, 0.147237)
 
 [node name="CollisionShape2D" parent="Floor2_Case1/Reilly/DialogAreaBox" index="1"]
 position = Vector2(-853, -259)
@@ -433,6 +447,7 @@ position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_tf65h")
 
 [node name="ForcedDialogue" parent="Floor2_Case1/Interactables" instance=ExtResource("7_nulew")]
+process_mode = 4
 position = Vector2(1236, 374)
 scale = Vector2(3.04, 1)
 dialog_key = "friendsWeek1.friendsArrive"
@@ -449,10 +464,11 @@ scene_text_file = "res://Assets/Ink/Main.ink.json"
 [node name="PlayerChoice" parent="Floor2_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
 visible = false
 
+[node name="FadeLayer" parent="Floor2_Case1" instance=ExtResource("17_mp3w2")]
+
 [connection signal="area_entered" from="Floor2_Case1/Doors/BossDoor/Area2D" to="Floor2_Case1/Doors/BossDoor/Area2D" method="_on_area_entered"]
 [connection signal="area_exited" from="Floor2_Case1/Doors/BossDoor/Area2D" to="Floor2_Case1/Doors/BossDoor/Area2D" method="_on_area_exited"]
 
-[editable path="Floor2_Case1/Reilly"]
 [editable path="Floor2_Case1/Reilly/DialogAreaBox"]
 [editable path="Floor2_Case1/Boss"]
 [editable path="Floor2_Case1/Boss/DialogAreaBox"]
