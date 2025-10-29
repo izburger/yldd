@@ -141,6 +141,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("7_142t6")
 target_scene = null
+exit_spawn_id = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor2_Case1/Doors/BossDoor/Area2D"]
 position = Vector2(-2.14577e-06, -0.121803)
@@ -187,6 +188,9 @@ shape = SubResource("RectangleShape2D_dkno6")
 [node name="HarrisonDoor" parent="Floor2_Case1/Doors" instance=ExtResource("10_u383f")]
 position = Vector2(0, -6)
 
+[node name="Area2D" parent="Floor2_Case1/Doors/HarrisonDoor" index="0"]
+exit_spawn_id = null
+
 [node name="CollisionShape2D" parent="Floor2_Case1/Doors/HarrisonDoor/Area2D" index="1"]
 position = Vector2(27.5567, 1.16337)
 scale = Vector2(0.5, 1)
@@ -223,6 +227,7 @@ shape = SubResource("RectangleShape2D_dkno6")
 [node name="Area2D" parent="Floor2_Case1/Doors/TylerDoor" index="0"]
 process_mode = 4
 target_scene = "res://Scenes/Week1/tyler_office_case_1.tscn"
+exit_spawn_id = null
 
 [node name="CollisionShape2D" parent="Floor2_Case1/Doors/TylerDoor/Area2D" index="1"]
 position = Vector2(64.2145, 1.16337)
@@ -245,6 +250,7 @@ shape = SubResource("RectangleShape2D_dkno6")
 
 [node name="Area2D" parent="Floor2_Case1/Doors/StairsEntrance" index="0"]
 target_scene = "res://Scenes/Week1/floor_1_case_1_lunch.tscn"
+exit_spawn_id = null
 
 [node name="CollisionShape2D" parent="Floor2_Case1/Doors/StairsEntrance/Area2D" index="1"]
 position = Vector2(104.779, 0.997176)

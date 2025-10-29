@@ -265,6 +265,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("13_5f001")
 target_scene = "res://Scenes/Week1/floor_2_case_1_end_day.tscn"
+exit_spawn_id = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Office_Case1/Interactables/MCDoor/Area2D"]
 position = Vector2(-2.14577e-06, -0.121803)

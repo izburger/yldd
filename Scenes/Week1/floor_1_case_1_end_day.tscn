@@ -137,6 +137,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("7_vpcva")
 target_scene = "res://Scenes/Week1/office_1_case_1_lunch.tscn"
+exit_spawn_id = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor1_Case1/Doors/MCDoor/Area2D"]
 position = Vector2(-2.14577e-06, -0.121803)
@@ -172,6 +173,7 @@ position = Vector2(0, -6)
 
 [node name="Area2D" parent="Floor1_Case1/Doors/SonnyDoor" index="0"]
 target_scene = "res://Scenes/Week1/sonny_office_case_1.tscn"
+exit_spawn_id = null
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Doors/SonnyDoor/Area2D" index="1"]
 position = Vector2(31.4374, 9.53674e-07)
@@ -195,6 +197,7 @@ shape = SubResource("RectangleShape2D_j5tn2")
 
 [node name="Area2D" parent="Floor1_Case1/Doors/FranzDoor" index="0"]
 target_scene = "res://Scenes/Week1/franz_office_case_1.tscn"
+exit_spawn_id = null
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Doors/FranzDoor/Area2D" index="1"]
 position = Vector2(64.9847, 9.53674e-07)
@@ -217,6 +220,7 @@ shape = SubResource("RectangleShape2D_j5tn2")
 
 [node name="Area2D" parent="Floor1_Case1/Doors/StairsEntrance" index="0"]
 target_scene = "res://Scenes/Week1/floor_2_case_1_end_day.tscn"
+exit_spawn_id = null
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Doors/StairsEntrance/Area2D" index="1"]
 position = Vector2(101.613, 9.53674e-07)
@@ -239,7 +243,7 @@ shape = SubResource("RectangleShape2D_5itg2")
 position = Vector2(-661, 698)
 
 [node name="Area2D" parent="Floor1_Case1/Doors/ExitDoor" index="0"]
-target_scene = ""
+exit_spawn_id = null
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Doors/ExitDoor/Area2D" index="1"]
 position = Vector2(31.4374, 9.53674e-07)
