@@ -180,7 +180,7 @@ shape = SubResource("RectangleShape2D_j5tn2")
 position = Vector2(0, -6)
 
 [node name="Area2D" parent="Floor1_Case1/Doors/SonnyDoor" index="0"]
-target_scene = "res://Scenes/Week1/sonny_office_case_1.tscn"
+target_scene = "res://Scenes/Week1/sonny_office_case_1_end_day.tscn"
 exit_spawn_id = "sonny_office"
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Doors/SonnyDoor/Area2D" index="1"]
@@ -209,7 +209,7 @@ shape = SubResource("RectangleShape2D_j5tn2")
 [node name="FranzDoor" parent="Floor1_Case1/Doors" instance=ExtResource("9_rulxl")]
 
 [node name="Area2D" parent="Floor1_Case1/Doors/FranzDoor" index="0"]
-target_scene = "res://Scenes/Week1/franz_office_case_1.tscn"
+target_scene = "res://Scenes/Week1/franz_office_case_1_end_day.tscn"
 exit_spawn_id = "franz_office"
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Doors/FranzDoor/Area2D" index="1"]

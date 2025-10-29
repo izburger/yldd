@@ -167,7 +167,7 @@ scale = Vector2(0.147237, 0.147237)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/MCDoor/Area2D"]
 position = Vector2(0.28634, 9.53674e-07)
-scale = Vector2(0.5, 1)
+scale = Vector2(0.202182, 1)
 shape = SubResource("RectangleShape2D_ldqgp")
 debug_color = Color(0.50589, 0.435297, 0.976594, 0.42)
 
@@ -204,7 +204,7 @@ exit_spawn_id = "sonny_office"
 
 [node name="CollisionShape2D" parent="Doors/SonnyDoor/Area2D" index="1"]
 position = Vector2(31.4374, 9.53674e-07)
-scale = Vector2(0.5, 1)
+scale = Vector2(0.195336, 1)
 
 [node name="PromptLabel" parent="Doors/SonnyDoor/Area2D" index="2"]
 visible = false

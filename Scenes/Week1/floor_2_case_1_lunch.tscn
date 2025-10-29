@@ -229,7 +229,7 @@ shape = SubResource("RectangleShape2D_dkno6")
 
 [node name="Area2D" parent="Floor2_Case1/Doors/TylerDoor" index="0"]
 process_mode = 4
-target_scene = "res://Scenes/Week1/tyler_office_case_1.tscn"
+target_scene = "res://Scenes/Week1/tyler_office_case_1_lunch.tscn"
 exit_spawn_id = "tyler_office"
 
 [node name="CollisionShape2D" parent="Floor2_Case1/Doors/TylerDoor/Area2D" index="1"]
