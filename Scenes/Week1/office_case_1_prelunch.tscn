@@ -1,42 +1,40 @@
-[gd_scene load_steps=31 format=3 uid="uid://bru00mm5cu3vc"]
+[gd_scene load_steps=29 format=3 uid="uid://dvs5xihv8rprt"]
 
-[ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_fopa0"]
-[ext_resource type="Texture2D" uid="uid://xdx41d4uvasg" path="res://assets/Backgrounds/Offices/dayversion.png" id="1_xklic"]
-[ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="2_mqucq"]
-[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="3_ugo4v"]
-[ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_xyope"]
-[ext_resource type="Texture2D" uid="uid://dod7n5l61dvft" path="res://assets/sprites/npc/boss/boss.png" id="4_1vrt3"]
-[ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="4_lvti4"]
-[ext_resource type="Texture2D" uid="uid://i1pho8ehesyh" path="res://assets/Backgrounds/Chapter1/boxclosed.png" id="5_f7hfv"]
-[ext_resource type="Texture2D" uid="uid://b2gy4845h7owr" path="res://assets/Backgrounds/Chapter1/boxopen.png" id="6_m7kef"]
-[ext_resource type="Script" path="res://Scripts/door_area.gd" id="8_4fb63"]
-[ext_resource type="Script" path="res://Scripts/blackout.gd" id="9_je3an"]
-[ext_resource type="FontFile" uid="uid://bsblej0iv5c7j" path="res://assets/Fonts/Main/American Typewriter Bold.ttf" id="9_y44q1"]
-[ext_resource type="Script" path="res://Scripts/SpawnPoint.gd" id="10_h1bie"]
-[ext_resource type="PackedScene" uid="uid://b8gic8c2g2gpk" path="res://Scenes/fade_layer.tscn" id="14_xpomm"]
+[ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_ad5iv"]
+[ext_resource type="Texture2D" uid="uid://xdx41d4uvasg" path="res://assets/Backgrounds/Offices/dayversion.png" id="2_4gto8"]
+[ext_resource type="Texture2D" uid="uid://i1pho8ehesyh" path="res://assets/Backgrounds/Chapter1/boxclosed.png" id="3_4x2kx"]
+[ext_resource type="Texture2D" uid="uid://b2gy4845h7owr" path="res://assets/Backgrounds/Chapter1/boxopen.png" id="4_pd51k"]
+[ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="5_auynf"]
+[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="6_gr0xb"]
+[ext_resource type="Texture2D" uid="uid://dod7n5l61dvft" path="res://assets/sprites/npc/boss/boss.png" id="7_xx1g0"]
+[ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="8_urwdt"]
+[ext_resource type="Script" path="res://Scripts/door_area.gd" id="9_uewi6"]
+[ext_resource type="FontFile" uid="uid://bsblej0iv5c7j" path="res://assets/Fonts/Main/American Typewriter Bold.ttf" id="10_vjsnj"]
+[ext_resource type="Script" path="res://Scripts/SpawnPoint.gd" id="11_xfoap"]
+[ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="12_os606"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmov8"]
-atlas = ExtResource("4_1vrt3")
+atlas = ExtResource("7_xx1g0")
 region = Rect2(0, 0, 433, 483)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_21bd4"]
-atlas = ExtResource("4_1vrt3")
+atlas = ExtResource("7_xx1g0")
 region = Rect2(433, 0, 433, 483)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2f7ju"]
-atlas = ExtResource("4_1vrt3")
+atlas = ExtResource("7_xx1g0")
 region = Rect2(866, 0, 433, 483)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5o1vt"]
-atlas = ExtResource("4_1vrt3")
+atlas = ExtResource("7_xx1g0")
 region = Rect2(1299, 0, 433, 483)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8eft3"]
-atlas = ExtResource("4_1vrt3")
+atlas = ExtResource("7_xx1g0")
 region = Rect2(1732, 0, 433, 483)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6fibi"]
-atlas = ExtResource("4_1vrt3")
+atlas = ExtResource("7_xx1g0")
 region = Rect2(2165, 0, 433, 483)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_biitp"]
@@ -147,57 +145,58 @@ _data = {
 }
 
 [node name="Office_Case1" type="Node2D"]
-script = ExtResource("1_fopa0")
+script = ExtResource("1_ad5iv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.997965, 1)
-texture = ExtResource("1_xklic")
+texture = ExtResource("2_4gto8")
 centered = false
 
 [node name="Sprites" type="Node" parent="."]
 
 [node name="boxclosed2" type="Sprite2D" parent="Sprites"]
 position = Vector2(353, 406)
-texture = ExtResource("5_f7hfv")
+texture = ExtResource("3_4x2kx")
 
 [node name="boxclosed6" type="Sprite2D" parent="Sprites"]
 position = Vector2(1594, 428)
-texture = ExtResource("5_f7hfv")
+texture = ExtResource("3_4x2kx")
 
 [node name="boxclosed" type="Sprite2D" parent="Sprites"]
 position = Vector2(259, 416)
-texture = ExtResource("5_f7hfv")
+texture = ExtResource("3_4x2kx")
 
 [node name="boxclosed4" type="Sprite2D" parent="Sprites"]
 position = Vector2(1256.5, 653)
-texture = ExtResource("5_f7hfv")
+texture = ExtResource("3_4x2kx")
 
 [node name="boxclosed5" type="Sprite2D" parent="Sprites"]
 position = Vector2(1162.5, 663)
-texture = ExtResource("5_f7hfv")
+texture = ExtResource("3_4x2kx")
 
 [node name="boxclosed3" type="Sprite2D" parent="Sprites"]
 position = Vector2(279, 328)
-texture = ExtResource("5_f7hfv")
+texture = ExtResource("3_4x2kx")
 
 [node name="boxopen" type="Sprite2D" parent="Sprites"]
 position = Vector2(1199, 552)
-texture = ExtResource("6_m7kef")
+texture = ExtResource("4_pd51k")
 
 [node name="boxopen2" type="Sprite2D" parent="Sprites"]
 position = Vector2(335.5, 823)
-texture = ExtResource("6_m7kef")
+texture = ExtResource("4_pd51k")
 
-[node name="Player" parent="." instance=ExtResource("2_mqucq")]
+[node name="Player" parent="." instance=ExtResource("5_auynf")]
 position = Vector2(1488, 550)
 scale = Vector2(0.5, 0.5)
 
-[node name="NPC" parent="." instance=ExtResource("3_ugo4v")]
+[node name="NPC" parent="." instance=ExtResource("6_gr0xb")]
 position = Vector2(947, 1429)
 
 [node name="Sprite2D" parent="NPC" index="0"]
+visible = false
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_1vrt3")
+texture = ExtResource("7_xx1g0")
 
 [node name="AnimatedSprite2D" parent="NPC" index="1"]
 visible = false
@@ -338,7 +337,7 @@ shape = SubResource("RectangleShape2D_vgkpj")
 
 [node name="Interactables" type="Node" parent="."]
 
-[node name="Boxes2" parent="Interactables" instance=ExtResource("3_xyope")]
+[node name="Boxes2" parent="Interactables" instance=ExtResource("8_urwdt")]
 position = Vector2(367, 360)
 rotation = -0.00169
 scale = Vector2(11.9682, 11.7393)
@@ -351,7 +350,7 @@ scale = Vector2(0.147237, 0.147237)
 position = Vector2(-0.0836965, 0.0850415)
 shape = SubResource("RectangleShape2D_nueae")
 
-[node name="Boxes3" parent="Interactables" instance=ExtResource("3_xyope")]
+[node name="Boxes3" parent="Interactables" instance=ExtResource("8_urwdt")]
 position = Vector2(1625, 400)
 rotation = -0.00169
 scale = Vector2(11.9682, 11.7393)
@@ -364,7 +363,7 @@ scale = Vector2(0.147237, 0.147237)
 position = Vector2(-0.0836965, 0.0850415)
 shape = SubResource("RectangleShape2D_nueae")
 
-[node name="Boxes4" parent="Interactables" instance=ExtResource("3_xyope")]
+[node name="Boxes4" parent="Interactables" instance=ExtResource("8_urwdt")]
 position = Vector2(356, 847)
 rotation = -0.00169
 scale = Vector2(11.9682, 9.13937)
@@ -377,7 +376,7 @@ scale = Vector2(0.147237, 0.147237)
 position = Vector2(-0.0836965, 0.0850415)
 shape = SubResource("RectangleShape2D_nueae")
 
-[node name="PhotoFrame" parent="Interactables" instance=ExtResource("3_xyope")]
+[node name="PhotoFrame" parent="Interactables" instance=ExtResource("8_urwdt")]
 position = Vector2(42.0001, 540)
 scale = Vector2(28.5648, 6.06972)
 dialog_key = "mcInteractables.photoFrame"
@@ -389,7 +388,7 @@ scale = Vector2(0.147237, 0.147237)
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
-[node name="Boxes" parent="Interactables" instance=ExtResource("3_xyope")]
+[node name="Boxes" parent="Interactables" instance=ExtResource("8_urwdt")]
 position = Vector2(1198, 726)
 scale = Vector2(15.6934, -16.5228)
 dialog_key = "mcInteractables.boxes"
@@ -401,41 +400,23 @@ scale = Vector2(0.147237, 0.147237)
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
-[node name="Boxes5" parent="Interactables" instance=ExtResource("3_xyope")]
-position = Vector2(908, 1108)
-scale = Vector2(27.8017, -14.1195)
-
-[node name="Sprite2D" parent="Interactables/Boxes5" index="0"]
-scale = Vector2(0.147237, 0.147237)
-
-[node name="CollisionShape2D" parent="Interactables/Boxes5" index="1"]
-position = Vector2(1.5, 7.5)
-shape = SubResource("RectangleShape2D_nueae")
-
 [node name="Boss" type="Area2D" parent="Interactables"]
 position = Vector2(947, 982)
 scale = Vector2(27.3806, 8.23125)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Boss"]
-scale = Vector2(1.02264, 0.488738)
 shape = SubResource("RectangleShape2D_nxw0m")
 
-[node name="BossDialogue" type="Area2D" parent="Interactables/Boss"]
-process_mode = 3
-position = Vector2(-0.766968, -12.7563)
+[node name="BossDialogue" parent="Interactables/Boss" instance=ExtResource("8_urwdt")]
+visible = false
+position = Vector2(21.7347, 38.0155)
 scale = Vector2(0.541011, 1.70962)
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("9_je3an")
-npc_path = NodePath("../../../NPC")
 dialog_key = "bossWeek1.bossOffice"
-x = 740
-y = 740
 
-[node name="Sprite2D" type="Sprite2D" parent="Interactables/Boss/BossDialogue"]
+[node name="Sprite2D" parent="Interactables/Boss/BossDialogue" index="0"]
 scale = Vector2(0.147237, 0.147237)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Boss/BossDialogue"]
+[node name="CollisionShape2D" parent="Interactables/Boss/BossDialogue" index="1"]
 position = Vector2(1.5, 7.5)
 shape = SubResource("RectangleShape2D_nueae")
 
@@ -453,8 +434,8 @@ position = Vector2(364, 268)
 scale = Vector2(11.685, 12.034)
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("8_4fb63")
-target_scene = "res://Scenes/Week1/floor_1_case_1.tscn"
+script = ExtResource("9_uewi6")
+target_scene = "res://Scenes/Week1/floor_1_case_1_lunch.tscn"
 exit_spawn_id = "mc_office"
 
 [node name="Sprite2D" type="Sprite2D" parent="Interactables/MCDoor/Area2D"]
@@ -475,17 +456,17 @@ offset_top = 53.9305
 offset_right = 131.646
 offset_bottom = 109.931
 scale = Vector2(0.22697, 0.22697)
-theme_override_fonts/font = ExtResource("9_y44q1")
+theme_override_fonts/font = ExtResource("10_vjsnj")
 theme_override_font_sizes/font_size = 45
 text = "Floor 1
 "
 
 [node name="Marker2D" type="Marker2D" parent="Interactables/MCDoor/Area2D" groups=["spawn_points"]]
 position = Vector2(49.893, 65.398)
-script = ExtResource("10_h1bie")
+script = ExtResource("11_xfoap")
 spawn_id = "mc_office"
 
-[node name="DialogPlayer" parent="." instance=ExtResource("4_lvti4")]
+[node name="DialogPlayer" parent="." instance=ExtResource("12_os606")]
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
 [node name="PlayerChoice" parent="DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
@@ -504,10 +485,6 @@ offset_right = 1875.0
 offset_bottom = 1062.0
 color = Color(0, 0, 0, 1)
 
-[node name="FadeLayer" parent="." instance=ExtResource("14_xpomm")]
-
-[connection signal="area_entered" from="Interactables/Boss/BossDialogue" to="Interactables/Boss/BossDialogue" method="_on_area_entered"]
-[connection signal="area_exited" from="Interactables/Boss/BossDialogue" to="Interactables/Boss/BossDialogue" method="_on_area_exited"]
 [connection signal="area_entered" from="Interactables/MCDoor/Area2D" to="Interactables/MCDoor/Area2D" method="_on_area_entered"]
 [connection signal="area_exited" from="Interactables/MCDoor/Area2D" to="Interactables/MCDoor/Area2D" method="_on_area_exited"]
 
@@ -518,5 +495,5 @@ color = Color(0, 0, 0, 1)
 [editable path="Interactables/Boxes4"]
 [editable path="Interactables/PhotoFrame"]
 [editable path="Interactables/Boxes"]
-[editable path="Interactables/Boxes5"]
+[editable path="Interactables/Boss/BossDialogue"]
 [editable path="DialogPlayer"]

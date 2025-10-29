@@ -160,7 +160,7 @@ scale = Vector2(11.685, 12.034)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("8_ceeqn")
-target_scene = "res://Scenes/Week1/office_case_1.tscn"
+target_scene = "res://Scenes/Week1/office_case_1_prelunch.tscn"
 exit_spawn_id = "mc_office"
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor1_Case1/Doors/MCDoor/Area2D"]
@@ -201,7 +201,7 @@ shape = SubResource("RectangleShape2D_xuvah")
 position = Vector2(0, -6)
 
 [node name="Area2D" parent="Floor1_Case1/Doors/SonnyDoor" index="0"]
-target_scene = "res://Scenes/Week1/sonny_office_case_1.tscn"
+target_scene = "res://Scenes/Week1/sonny_office_case_1_lunch.tscn"
 exit_spawn_id = "sonny_office"
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Doors/SonnyDoor/Area2D" index="1"]
@@ -230,7 +230,7 @@ shape = SubResource("RectangleShape2D_xuvah")
 [node name="FranzDoor" parent="Floor1_Case1/Doors" instance=ExtResource("10_1x7lp")]
 
 [node name="Area2D" parent="Floor1_Case1/Doors/FranzDoor" index="0"]
-target_scene = "res://Scenes/Week1/franz_office_case_1.tscn"
+target_scene = "res://Scenes/Week1/franz_office_case_1_lunch.tscn"
 exit_spawn_id = "franz_office"
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Doors/FranzDoor/Area2D" index="1"]

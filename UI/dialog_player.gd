@@ -15,28 +15,55 @@ var in_progress = false
 @onready var choice_list = $Test
 @onready var btn = []
 
+
+@export var story_key: String = "main"
+const SAVE_DIR := "user://"
+func _save_path() -> String:
+	return "%sink_state_%s.json" % [SAVE_DIR, story_key]
+
+func _save_ink() -> void:
+	if ink_story == null: return
+	var json := ""
+	if ink_story.has_method("save_state_to_json"):
+		json = ink_story.save_state_to_json()
+	elif ink_story.has_method("state_to_json"):
+		json = ink_story.state_to_json()
+	var f := FileAccess.open(_save_path(), FileAccess.WRITE)
+	if f: f.store_string(json)
+
+func _load_ink() -> void:
+	if not FileAccess.file_exists(_save_path()): return
+	var f := FileAccess.open(_save_path(), FileAccess.READ)
+	if not f: return
+	var json := f.get_as_text()
+	if json == "": return
+	# Most Godot-Ink builds expose load_state_from_json with this name:
+	ink_story.load_state_from_json(json)
+
+
 func _ready():
-	print("Script loaded, has continue_story:", self.has_method("continue_story"))
 	background.visible = false
 	choicebackground.visible = false
 	choice_list.visible = false
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	#choice_list.pause_mode = Node.PROCESS_MODE_ALWAYS
-	#background.pause_mode = Node.PROCESS_MODE_ALWAYS
 
 	var file := FileAccess.open(scene_text_file, FileAccess.READ)
 	if file:
 		var json_text := file.get_as_text()
-		ink_story = InkStory.new(json_text)
-		print("Ink story loaded!")
+		InkStore.ensure_story(json_text)
+		ink_story = InkStore.story
+		print("Ink story loaded via InkStore!")
 	else:
 		push_error("Failed to open Ink file: %s" % scene_text_file)
 
+	SignalBus.connect("display_dialog", Callable(self, "on_display_dialog"))
+	await get_tree().process_frame
+
 
 	##scene_text = JSON.parse_string(FileAccess.open(scene_text_file, FileAccess.READ).get_as_text())
-	SignalBus.connect("display_dialog", Callable(self, "on_display_dialog"))
+	#SignalBus.connect("display_dialog", Callable(self, "on_display_dialog"))
 
-	await get_tree().process_frame
+	#await get_tree().process_frame
 	print("choice_list =", choice_list, " class=", choice_list and choice_list.get_class())
  
 
@@ -49,6 +76,7 @@ func continue_story():
 
 	if ink_story.can_continue: 
 		text_label.text = ink_story.continue_story() 
+		InkStore.save_state()
 	else: 
 		if ink_story.current_choices.size() > 0: 
 			show_choices() 
@@ -122,6 +150,7 @@ func show_choices():
 func _on_choice_pressed(ink_idx: int) -> void:
 	#which branch we chose, then advance again
 	ink_story.choose_choice_index(ink_idx)
+	InkStore.save_state()
 	continue_story()
 
 
@@ -131,6 +160,7 @@ func finish():
 	choicebackground.visible = false
 	in_progress = false
 	get_tree().paused = false
+	SignalBus.emit_signal("dialogue_closed")
 
 func on_display_dialog(dialog_key: String):
 	if in_progress:
@@ -154,6 +184,10 @@ func get_nested_value(data: Dictionary, keys: Array) -> Variant:
 			return []
 	return current
 
+
+func _notification(what):
+	if what == NOTIFICATION_PREDELETE or what == NOTIFICATION_WM_CLOSE_REQUEST:
+		InkStore.save_state()
 
 func _clear_choices():
 	for c in choice_list.get_children():
