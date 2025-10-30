@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ues7joap3anw"]
+
+[ext_resource type="AudioStream" uid="uid://cjl7ghtlv3qh2" path="res://assets/audio/Detective Department_Regular(Phase1).wav" id="1_uf0qi"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_uf0qi")
+autoplay = true
