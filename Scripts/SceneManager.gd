@@ -3,7 +3,16 @@ extends Node
 @onready var transition = $FadeIn
 
 func _ready() -> void:
+
+	if InkStore.story == null:
+		var f := FileAccess.open("res://dialogue/main.json", FileAccess.READ)
+		if f:
+			InkStore.ensure_story(f.get_as_text())
+
+	InkStore.set_ink_var("mc", Global.player_name)
+  
 	transition.play("fade_in")
+  
 	var spawn_id := GameStates.consume_next_spawn_id()
 	if spawn_id == "":
 		return

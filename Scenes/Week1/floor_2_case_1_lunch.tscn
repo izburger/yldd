@@ -455,14 +455,14 @@ debug_color = Color(0.752699, 0.342259, 0.773717, 0.42)
 [node name="DialogPlayer" parent="Floor2_Case1" instance=ExtResource("8_mxy8w")]
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
+[node name="PlayerChoice" parent="Floor2_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
+visible = false
+
 [node name="Sprites" type="Node" parent="Floor2_Case1/DialogPlayer"]
 
 [node name="Couch" type="Sprite2D" parent="Floor2_Case1/DialogPlayer/Sprites"]
 position = Vector2(1668, 797)
 texture = ExtResource("7_3ckep")
-
-[node name="PlayerChoice" parent="Floor2_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
-visible = false
 
 [node name="FadeLayer" parent="Floor2_Case1" instance=ExtResource("17_mp3w2")]
 

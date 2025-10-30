@@ -378,14 +378,14 @@ shape = SubResource("RectangleShape2D_r62oy")
 [node name="DialogPlayer" parent="." instance=ExtResource("7_kvb3u")]
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
+[node name="PlayerChoice" parent="DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
+visible = false
+
 [node name="Sprites" type="Node" parent="DialogPlayer"]
 
 [node name="Couch" type="Sprite2D" parent="DialogPlayer/Sprites"]
 position = Vector2(1668, 797)
 texture = ExtResource("6_v633v")
-
-[node name="PlayerChoice" parent="DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
-visible = false
 
 [connection signal="area_entered" from="Doors/BossDoor/Area2D" to="Doors/BossDoor/Area2D" method="_on_area_entered"]
 [connection signal="area_exited" from="Doors/BossDoor/Area2D" to="Doors/BossDoor/Area2D" method="_on_area_exited"]
