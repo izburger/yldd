@@ -120,11 +120,13 @@ func show_choices():
 	await _clear_choices()
 	choice_list.visible = true 
 
-	print("choices = ", ink_story.current_choices.size())
-	for i in ink_story.current_choices.size():
+	var count := ink_story.current_choices.size()
+	print("choices = ", count)
+
+	for i in range(count):
 		var ch = ink_story.current_choices[i]
-		var idx := int(ch.index)
 		print(" row i=", i, "  ch.index=", ch.index, "  text='", ch.text, "'")
+
 		var b  = Button.new()
 		b.text = ch.text
 		b.focus_mode = Control.FOCUS_ALL
@@ -134,10 +136,12 @@ func show_choices():
 		b.mouse_filter = Control.MOUSE_FILTER_STOP
 
 		
-		b.pressed.connect(Callable(self, "_on_choice_pressed").bind(idx))
-
+		b.pressed.connect(Callable(self, "_on_choice_pressed").bind(i))
 
 		choice_list.add_child(b)
+
+	choice_list.queue_sort()
+	await get_tree().process_frame
 
 
 
@@ -179,9 +183,9 @@ func show_choices():
 #	ink_story.choose_choice_index(index)
 #	continue_story()
 
-func _on_choice_pressed(ink_idx: int) -> void:
+func _on_choice_pressed(choice_pos: int) -> void:
 	#which branch we chose, then advance again
-	ink_story.choose_choice_index(ink_idx)
+	ink_story.choose_choice_index(choice_pos)
 	InkStore.save_state()
 	continue_story()
 
@@ -224,3 +228,18 @@ func _notification(what):
 func _clear_choices():
 	for c in choice_list.get_children():
 		c.queue_free()
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		var p: Vector2 = Vector2((event as InputEventMouseButton).position)
+		print("Click at:", p, "  list rect:", (choice_list as Control).get_global_rect())
+		var hit: Control = null
+		for child in choice_list.get_children():
+			var c := child as Control
+			if c:
+				var r := c.get_global_rect()
+				print(c.name, " rect:", r, " contains? ", r.has_point(p))
+				if r.has_point(p):
+					hit = c
+		print("Manual hit -> ", hit)
