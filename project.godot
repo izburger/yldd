@@ -22,6 +22,7 @@ __InkRuntime="*res://addons/inkgd/ink_runtime.gd"
 Global="*res://Scripts/Global.gd"
 GameStates="*res://Globals/GameState.gd"
 InkStore="*res://Globals/InkStore.gd"
+GlobalAudioStreamPlayer="*res://Scenes/audio_stream_player.tscn"
 
 [display]
 
