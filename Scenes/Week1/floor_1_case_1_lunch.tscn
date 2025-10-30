@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b2k86sqk54aik"]
+[gd_scene load_steps=29 format=3 uid="uid://b2k86sqk54aik"]
 
 [ext_resource type="Texture2D" uid="uid://dc274hkaxccif" path="res://assets/Backgrounds/Floors/Floor1/floor1.png" id="1_exlds"]
 [ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_h0ewt"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="9_ep0pm"]
 [ext_resource type="PackedScene" uid="uid://c6thavrbrmx3" path="res://Scenes/door_2d.tscn" id="10_1x7lp"]
 [ext_resource type="Script" path="res://Scripts/SpawnPoint.gd" id="11_uela6"]
+[ext_resource type="Script" path="res://Scripts/forced_dialog_teleport.gd" id="15_5oun5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dieq7"]
 size = Vector2(15.6746, 30.2066)
@@ -472,12 +473,20 @@ shape = SubResource("RectangleShape2D_mifym")
 [node name="ForcedDialogue" parent="Floor1_Case1/Interactables" instance=ExtResource("8_0oss5")]
 position = Vector2(1197, 757)
 scale = Vector2(3.28, 3.24)
+script = ExtResource("15_5oun5")
 dialog_key = "friendsWeek1.friendsLunch"
+target_scene = null
+spawn_id = null
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Interactables/ForcedDialogue" index="1"]
 position = Vector2(14, 4)
 scale = Vector2(7.44, 1)
 shape = SubResource("RectangleShape2D_w05bj")
+
+[node name="Marker2D" type="Marker2D" parent="Floor1_Case1/Interactables/ForcedDialogue" groups=["spawn_points"]]
+position = Vector2(65.0406, 5.81685)
+script = ExtResource("11_uela6")
+spawn_id = "franz_office"
 
 [node name="Exit" parent="Floor1_Case1/Interactables" instance=ExtResource("7_dukss")]
 position = Vector2(-30, 865)
