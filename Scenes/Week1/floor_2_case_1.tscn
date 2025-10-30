@@ -81,12 +81,6 @@ debug_color = Color(0.894487, 0.000214664, 0.781049, 0.42)
 position = Vector2(1667, 329)
 scale = Vector2(0.5, 0.5)
 
-[node name="Sprites" type="Node" parent="."]
-
-[node name="Couch" type="Sprite2D" parent="Sprites"]
-position = Vector2(1668, 797)
-texture = ExtResource("6_v633v")
-
 [node name="Doors" type="Node" parent="."]
 
 [node name="Boss" type="StaticBody2D" parent="Doors"]
@@ -383,6 +377,12 @@ shape = SubResource("RectangleShape2D_r62oy")
 
 [node name="DialogPlayer" parent="." instance=ExtResource("7_kvb3u")]
 scene_text_file = "res://Assets/Ink/Main.ink.json"
+
+[node name="Sprites" type="Node" parent="DialogPlayer"]
+
+[node name="Couch" type="Sprite2D" parent="DialogPlayer/Sprites"]
+position = Vector2(1668, 797)
+texture = ExtResource("6_v633v")
 
 [node name="PlayerChoice" parent="DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
 visible = false
