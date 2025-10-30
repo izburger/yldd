@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://50bh5qbafkq4"]
 
-[ext_resource type="Texture2D" uid="uid://cd4tpnsv4qonk" path="res://Assets/Backgrounds/Offices/office.png" id="1_4itq3"]
-[ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://Assets/Sprites/player/player.tscn" id="2_24o2b"]
-[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://Assets/Sprites/npc/npc.tscn" id="3_bbkuc"]
-[ext_resource type="Texture2D" uid="uid://dod7n5l61dvft" path="res://Assets/Sprites/npc/boss/boss.png" id="4_38f11"]
+[ext_resource type="Texture2D" uid="uid://cd4tpnsv4qonk" path="res://assets/Backgrounds/Offices/office.png" id="1_4itq3"]
+[ext_resource type="PackedScene" uid="uid://cdyvf6l8gho7r" path="res://assets/sprites/player/player.tscn" id="2_24o2b"]
+[ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="3_bbkuc"]
+[ext_resource type="Texture2D" uid="uid://dod7n5l61dvft" path="res://assets/sprites/npc/boss/boss.png" id="4_38f11"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="5_jn8v7"]
 [ext_resource type="PackedScene" uid="uid://hm4sct6i8l81" path="res://UI/dialog_player.tscn" id="6_nhn8k"]
 
@@ -185,9 +185,6 @@ scene_text_file = "res://Assets/Ink/Main.ink.json"
 [node name="PlayerChoice" parent="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
 visible = false
 
-[node name="Button" parent="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice/HBoxContainer/MarginContainer" index="2"]
-visible = false
-
 [connection signal="area_entered" from="Office_Case1/Interactables/RoomLeave" to="Office_Case1/Player" method="_on_room_leave_area_entered"]
 
 [editable path="Office_Case1/NPC"]
@@ -198,4 +195,3 @@ visible = false
 [editable path="Office_Case1/Interactables/Boxes"]
 [editable path="Office_Case1/Interactables/Boss/BossDialogue"]
 [editable path="Office_Case1/DialogPlayer"]
-[editable path="Office_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3/PlayerChoice"]

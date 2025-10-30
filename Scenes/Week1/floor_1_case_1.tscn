@@ -1,13 +1,14 @@
-[gd_scene load_steps=28 format=3 uid="uid://b4nnxhu0kneq8"]
+[gd_scene load_steps=29 format=3 uid="uid://b4nnxhu0kneq8"]
 
 [ext_resource type="Texture2D" uid="uid://dc274hkaxccif" path="res://assets/Backgrounds/Floors/Floor1/floor1.png" id="1_1aqm4"]
 [ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_p4wb6"]
-[ext_resource type="Texture2D" uid="uid://cqwaymerg03bn" path="res://assets/sprites/player/test1.png" id="3_25kmd"]
 [ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="3_o2mcs"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_xkmp7"]
 [ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="4_0t21d"]
 [ext_resource type="Texture2D" uid="uid://ciie2mardiso1" path="res://assets/sprites/npc/cat/Cat.png" id="4_1vspd"]
+[ext_resource type="Texture2D" uid="uid://cmethiv7ixcjw" path="res://assets/sprites/npc/waitingroom/marinaspritesheet.png" id="4_4hd5d"]
 [ext_resource type="Texture2D" uid="uid://cejlybrffouom" path="res://assets/sprites/npc/reilly/reiliyspritesheet.png" id="4_tk858"]
+[ext_resource type="Texture2D" uid="uid://bu5xwwqenoo4s" path="res://assets/sprites/npc/waitingroom/oliverspritesheet.png" id="5_wakfe"]
 [ext_resource type="PackedScene" uid="uid://c7iuh8ppjmke0" path="res://Scenes/forced_dialogue.tscn" id="6_6ur2a"]
 [ext_resource type="PackedScene" uid="uid://c6thavrbrmx3" path="res://Scenes/door_2d.tscn" id="7_nkag0"]
 [ext_resource type="Script" path="res://Scripts/door_area.gd" id="8_c57iy"]
@@ -58,7 +59,8 @@ centered = false
 position = Vector2(871, 796)
 
 [node name="Sprite2D" parent="Marina" index="0"]
-texture = ExtResource("3_25kmd")
+texture = ExtResource("4_4hd5d")
+hframes = 2
 
 [node name="CollisionShape2D" parent="Marina" index="2"]
 visible = true
@@ -78,7 +80,8 @@ debug_color = Color(0.84907, 0.253096, 0.692025, 0.42)
 position = Vector2(387, 798)
 
 [node name="Sprite2D" parent="Oliver" index="0"]
-texture = ExtResource("3_25kmd")
+texture = ExtResource("5_wakfe")
+hframes = 2
 
 [node name="CollisionShape2D" parent="Oliver" index="2"]
 visible = true

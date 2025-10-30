@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://dc274hkaxccif" path="res://assets/Backgrounds/Floors/Floor1/floor1.png" id="1_hkadw"]
 [ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_x2cas"]
 [ext_resource type="PackedScene" uid="uid://bhb2hdn3pgipp" path="res://assets/sprites/npc/npc.tscn" id="3_dcnbp"]
-[ext_resource type="Texture2D" uid="uid://cqwaymerg03bn" path="res://assets/sprites/player/test1.png" id="3_ffviy"]
 [ext_resource type="PackedScene" uid="uid://c5e4amjqyslq4" path="res://Scenes/dialog_area.tscn" id="3_guhx5"]
 [ext_resource type="Texture2D" uid="uid://cejlybrffouom" path="res://assets/sprites/npc/reilly/reiliyspritesheet.png" id="4_frs42"]
+[ext_resource type="Texture2D" uid="uid://bo0mtn716ylg5" path="res://assets/sprites/npc/waitingroom/charlesspritesheet.png" id="4_yue1c"]
 [ext_resource type="Texture2D" uid="uid://ciie2mardiso1" path="res://assets/sprites/npc/cat/Cat.png" id="5_edrir"]
 [ext_resource type="PackedScene" uid="uid://c21h8rdpnhpu8" path="res://Scenes/player.tscn" id="6_pkfgb"]
 [ext_resource type="Script" path="res://Scripts/door_area.gd" id="7_vpcva"]
@@ -56,7 +56,8 @@ centered = false
 position = Vector2(871, 725)
 
 [node name="Sprite2D" parent="Floor1_Case1/Charles" index="0"]
-texture = ExtResource("3_ffviy")
+texture = ExtResource("4_yue1c")
+hframes = 2
 
 [node name="CollisionShape2D" parent="Floor1_Case1/Charles" index="2"]
 visible = true
@@ -457,7 +458,7 @@ shape = SubResource("RectangleShape2D_iyfyv")
 [node name="Exit" parent="Floor1_Case1/Interactables" instance=ExtResource("3_guhx5")]
 position = Vector2(-30, 865)
 scale = Vector2(9.22264, 15.5852)
-dialog_key = "leavingTimew1"
+dialog_key = "friendsWeek1.friendsLeaving"
 
 [node name="Sprite2D" parent="Floor1_Case1/Interactables/Exit" index="0"]
 scale = Vector2(0.147237, 0.147237)
