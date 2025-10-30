@@ -1,12 +1,60 @@
-[gd_scene load_steps=6 format=3 uid="uid://kx8ywkfpm3ad"]
+[gd_scene load_steps=9 format=3 uid="uid://kx8ywkfpm3ad"]
 
 [ext_resource type="Texture2D" uid="uid://bfnoxcgc3wy6w" path="res://assets/background2.png" id="1_a6mw3"]
-[ext_resource type="Script" path="res://Scripts/scene_before_main.gd" id="1_a7kuv"]
+[ext_resource type="Script" uid="uid://bh5f3e1c0rodx" path="res://Scripts/scene_before_main.gd" id="1_a7kuv"]
 [ext_resource type="ButtonGroup" uid="uid://brt1w7v4v4o46" path="res://assets/ButtonResource/button_group_betryal.tres" id="2_a6mw3"]
 [ext_resource type="FontFile" uid="uid://chfs0odslc5jb" path="res://assets/STAMPWRITER-KIT.ttf" id="3_0fo6i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7kuv"]
 bg_color = Color(0.254902, 0.121569, 0.0588235, 0.4)
+
+[sub_resource type="Animation" id="Animation_t6sxh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeIn/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_08y0g"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeIn/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeIn/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s05um"]
+_data = {
+&"RESET": SubResource("Animation_t6sxh"),
+&"fade_in": SubResource("Animation_08y0g")
+}
 
 [node name="what if?!" type="Node2D"]
 script = ExtResource("1_a7kuv")
@@ -19,9 +67,9 @@ texture = ExtResource("1_a6mw3")
 [node name="Betryal" type="HBoxContainer" parent="TextureRect"]
 layout_mode = 0
 offset_left = 559.0
-offset_top = 570.0
+offset_top = 456.0
 offset_right = 1331.0
-offset_bottom = 656.0
+offset_bottom = 542.0
 
 [node name="Button" type="Button" parent="TextureRect/Betryal"]
 layout_mode = 2
@@ -48,9 +96,9 @@ text = "  Nothing  "
 [node name="Button4" type="Button" parent="TextureRect"]
 layout_mode = 2
 offset_left = 671.0
-offset_top = 689.0
-offset_right = 1204.0
-offset_bottom = 775.0
+offset_top = 575.0
+offset_right = 1230.0
+offset_bottom = 661.0
 theme_override_font_sizes/font_size = 50
 toggle_mode = true
 button_group = ExtResource("2_a6mw3")
@@ -59,9 +107,9 @@ text = " They wont betray me. "
 [node name="Label" type="Label" parent="TextureRect"]
 layout_mode = 2
 offset_left = 449.0
-offset_top = 499.0
+offset_top = 385.0
 offset_right = 1442.0
-offset_bottom = 552.0
+offset_bottom = 438.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_0fo6i")
 theme_override_font_sizes/font_size = 50
@@ -84,6 +132,18 @@ theme_override_fonts/font = ExtResource("3_0fo6i")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_a7kuv")
 text = "CONFIRM"
+
+[node name="FadeIn" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_s05um")
+}
+
+[node name="ColorRect" type="ColorRect" parent="FadeIn"]
+self_modulate = Color(0, 0, 0, 0)
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [connection signal="toggled" from="TextureRect/Betryal/Button" to="." method="_on_button_toggled"]
 [connection signal="toggled" from="TextureRect/Betryal/Button2" to="." method="_on_button_2_toggled"]

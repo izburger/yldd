@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://bmes7ut085qpf"]
 
-[ext_resource type="Script" path="res://Scripts/badge_scene.gd" id="1_v6gy2"]
+[ext_resource type="Script" uid="uid://cnsvhtp1uo4c2" path="res://Scripts/badge_scene.gd" id="1_v6gy2"]
+[ext_resource type="Texture2D" uid="uid://bfnoxcgc3wy6w" path="res://assets/background2.png" id="2_li45y"]
 [ext_resource type="Texture2D" uid="uid://bc2aaria5qnph" path="res://assets/colour palet.png" id="2_ooj67"]
-[ext_resource type="Texture2D" uid="uid://hc8uv6puwy4v" path="res://assets/background-char.png" id="2_s17b3"]
 [ext_resource type="FontFile" uid="uid://chfs0odslc5jb" path="res://assets/STAMPWRITER-KIT.ttf" id="3_6j46q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gcvj"]
@@ -55,8 +55,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2lmbb"]
 _data = {
-"RESET": SubResource("Animation_68aow"),
-"fade_out_daniel": SubResource("Animation_8cfh7")
+&"RESET": SubResource("Animation_68aow"),
+&"fade_out_daniel": SubResource("Animation_8cfh7")
 }
 
 [sub_resource type="Animation" id="Animation_bts7m"]
@@ -91,8 +91,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l3tq1"]
 _data = {
-"RESET": SubResource("Animation_bts7m"),
-"text": SubResource("Animation_feo3d")
+&"RESET": SubResource("Animation_bts7m"),
+&"text": SubResource("Animation_feo3d")
 }
 
 [node name="badge scene" type="Node2D"]
@@ -101,7 +101,7 @@ script = ExtResource("1_v6gy2")
 [node name="TextureRect2" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1280.0
-texture = ExtResource("2_s17b3")
+texture = ExtResource("2_li45y")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -34.0
@@ -115,14 +115,15 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -374.154
-offset_top = 286.154
-offset_right = 376.846
-offset_bottom = 355.154
+offset_left = -409.154
+offset_top = 306.154
+offset_right = 411.846
+offset_bottom = 415.154
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_6j46q")
 theme_override_font_sizes/font_size = 50
-text = "**BADGE SHOULD BE HERE**"
+text = "what NAME is engraved on 
+          her badge?"
 
 [node name="TextEdit" type="TextEdit" parent="TextureRect"]
 layout_mode = 1
@@ -131,10 +132,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -265.038
-offset_top = -130.462
-offset_right = 232.962
-offset_bottom = -30.4621
+offset_left = -257.231
+offset_top = -38.923
+offset_right = 240.769
+offset_bottom = 61.0769
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 60
@@ -147,10 +148,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -130.308
-offset_top = 61.0769
-offset_right = 70.6923
-offset_bottom = 161.077
+offset_left = 499.692
+offset_top = 266.462
+offset_right = 700.693
+offset_bottom = 366.462
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_6j46q")
@@ -164,7 +165,7 @@ texture = ExtResource("2_ooj67")
 
 [node name="FadeOut" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_2lmbb")
+&"": SubResource("AnimationLibrary_2lmbb")
 }
 
 [node name="ColorRect" type="ColorRect" parent="FadeOut"]
@@ -177,17 +178,18 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_l3tq1")
+&"": SubResource("AnimationLibrary_l3tq1")
 }
 
 [node name="Label" type="Label" parent="AnimationPlayer"]
-offset_left = 550.0
-offset_top = 400.0
-offset_right = 1243.0
-offset_bottom = 498.0
+offset_left = 581.0
+offset_top = 465.0
+offset_right = 1274.0
+offset_bottom = 563.0
 theme_override_fonts/font = ExtResource("3_6j46q")
 theme_override_font_sizes/font_size = 50
-text = "random text fkdslfjsks"
+text = "What would you like to 
+             see?"
 visible_characters = 0
 visible_ratio = 0.0
 metadata/_edit_use_anchors_ = true

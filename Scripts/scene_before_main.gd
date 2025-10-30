@@ -1,6 +1,9 @@
 extends Node2D
 
+@onready var transition = $FadeIn
 
+func _ready():
+	transition.play("fade_in")
 
 func _on_button_toggled(toggled_on: bool) -> void:
 	Global.your_betryal = "Sadness"
@@ -23,4 +26,4 @@ func _on_button_4_toggled(toggled_on: bool) -> void:
 
 
 func _on_confirm_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/main.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Week1/office_case_1.tscn")

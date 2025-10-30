@@ -1,7 +1,9 @@
 extends Node
 @onready var player: Node2D = $Player
+@onready var transition = $FadeIn
 
 func _ready() -> void:
+	transition.play("fade_in")
 	var spawn_id := GameStates.consume_next_spawn_id()
 	if spawn_id == "":
 		return
