@@ -373,7 +373,7 @@ texture = ExtResource("13_0pk8g")
 hframes = 9
 
 [node name="ColourPalet" type="Sprite2D" parent="."]
-position = Vector2(-430, 289)
+position = Vector2(-587, 1022)
 texture = ExtResource("14_7xfm5")
 
 [connection signal="pressed" from="creatorscreen/ColorRect/body/ColourButton" to="skeleton/body" method="_on_colour_button_pressed"]
