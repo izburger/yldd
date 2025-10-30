@@ -1,6 +1,6 @@
 extends Node
 @onready var player: Node2D = $Player
-@onready var transition = $FadeIn
+#@onready var transition = $FadeIn
 
 func _ready() -> void:
 
@@ -11,7 +11,7 @@ func _ready() -> void:
 
 	InkStore.set_ink_var("mc", Global.player_name)
   
-	transition.play("fade_in")
+	#transition.play("fade_in")
   
 	var spawn_id := GameStates.consume_next_spawn_id()
 	if spawn_id == "":
