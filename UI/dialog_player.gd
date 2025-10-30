@@ -16,6 +16,37 @@ var in_progress = false
 @onready var btn = []
 
 
+@export_node_path("CanvasItem") var couch_path: NodePath
+@onready var couch := $Sprites/Couch
+
+func _bind_ink_hooks() -> void:
+	if ink_story == null: 
+		return
+	ink_story.observe_variable("removecouch", self, "_on_ink_var_changed")
+	_immediate_check_remove_couch()
+
+func _on_ink_var_changed(var_name: String, value: Variant) -> void:
+	if var_name == "removecouch" and bool(value):
+		var couch := get_node_or_null("Sprites/Couch")
+		if couch:
+			couch.visible = false
+
+
+func _get_ink_var_safely(name: String) -> Variant:
+	var vs := ink_story.variables_state
+	if vs == null:
+		return null
+	if vs.has_method("get_variable"):
+		return vs.get_variable(name)
+	if vs.has_method("get"):
+		return vs.get(name)
+	return null
+
+func _immediate_check_remove_couch() -> void:
+	var val: Variant = _get_ink_var_safely("remove_couch")
+	if val != null and bool(val):
+		_on_ink_var_changed("removecouch", val)
+
 @export var story_key: String = "main"
 const SAVE_DIR := "user://"
 func _save_path() -> String:
@@ -37,7 +68,6 @@ func _load_ink() -> void:
 	if not f: return
 	var json := f.get_as_text()
 	if json == "": return
-	# Most Godot-Ink builds expose load_state_from_json with this name:
 	ink_story.load_state_from_json(json)
 
 
@@ -52,6 +82,8 @@ func _ready():
 		var json_text := file.get_as_text()
 		InkStore.ensure_story(json_text)
 		ink_story = InkStore.story
+		_bind_ink_hooks()
+		_load_ink()
 		print("Ink story loaded via InkStore!")
 	else:
 		push_error("Failed to open Ink file: %s" % scene_text_file)

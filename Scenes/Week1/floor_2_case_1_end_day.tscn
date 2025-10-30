@@ -44,6 +44,7 @@ position = Vector2(1384, 953)
 [node name="Sprite2D" parent="Floor2_Case1/Boss" index="0"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_u01wo")
+frame = 6
 
 [node name="CollisionShape2D" parent="Floor2_Case1/Boss" index="2"]
 visible = true
@@ -357,6 +358,7 @@ position = Vector2(0.28634, 9.53674e-07)
 shape = SubResource("RectangleShape2D_kl21w")
 
 [node name="DialogPlayer" parent="Floor2_Case1" instance=ExtResource("6_gnej0")]
+visible = false
 scene_text_file = "res://Assets/Ink/Main.ink.json"
 
 [node name="PlayerChoice" parent="Floor2_Case1/DialogPlayer/ChoiceContainer/VBoxContainer3" index="0"]
