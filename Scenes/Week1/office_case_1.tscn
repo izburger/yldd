@@ -436,7 +436,8 @@ y = 740
 scale = Vector2(0.147237, 0.147237)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Boss/BossDialogue"]
-position = Vector2(1.5, 7.5)
+position = Vector2(0.540064, 8.95378)
+scale = Vector2(1.9073, 1)
 shape = SubResource("RectangleShape2D_nueae")
 
 [node name="RoomLeave" type="Area2D" parent="Interactables"]

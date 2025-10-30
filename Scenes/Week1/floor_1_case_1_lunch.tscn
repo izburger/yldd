@@ -447,9 +447,9 @@ shape = SubResource("RectangleShape2D_sct6a")
 [node name="Interactables" type="Node" parent="Floor1_Case1"]
 
 [node name="InteractionZone" parent="Floor1_Case1/Interactables" instance=ExtResource("7_dukss")]
-position = Vector2(1229, 651)
+position = Vector2(1229, 698)
 rotation = -1.58872
-scale = Vector2(13.9693, 19.3259)
+scale = Vector2(17.2567, 19.3259)
 
 [node name="Sprite2D" parent="Floor1_Case1/Interactables/InteractionZone" index="0"]
 scale = Vector2(0.147237, 0.147237)
@@ -472,7 +472,7 @@ shape = SubResource("RectangleShape2D_mifym")
 
 [node name="ForcedDialogue" parent="Floor1_Case1/Interactables" instance=ExtResource("8_0oss5")]
 position = Vector2(1197, 757)
-scale = Vector2(3.28, 3.24)
+scale = Vector2(3.73995, 6.83457)
 script = ExtResource("15_5oun5")
 dialog_key = "friendsWeek1.friendsLunch"
 target_scene = null

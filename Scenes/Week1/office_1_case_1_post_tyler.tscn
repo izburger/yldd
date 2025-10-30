@@ -165,8 +165,9 @@ shape = SubResource("RectangleShape2D_v7p5y")
 dialog_key = "friendsWeek1.friendsOptions"
 
 [node name="CollisionShape2D" parent="Office_Case1/Lucie/DialogAreaBox" index="1"]
-position = Vector2(-686, -361)
-scale = Vector2(21.9884, 21.371)
+position = Vector2(-737, -413)
+rotation = 0.651649
+scale = Vector2(14.3484, 21.371)
 shape = SubResource("CapsuleShape2D_enrxv")
 debug_color = Color(0.84907, 0.253096, 0.692025, 0.42)
 
