@@ -73,8 +73,8 @@ shape = SubResource("RectangleShape2D_vv7my")
 [node name="DialogAreaBox" parent="Floor2_Case1/Reilly" instance=ExtResource("6_yp88a")]
 position = Vector2(611, 875)
 script = ExtResource("5_3sdbl")
-dialog_key = "friendsWeek1.friendsArrive"
 npc_path = NodePath("..")
+dialog_key = "friendsWeek1.friendsArrive"
 x = 1389
 y = 326
 
