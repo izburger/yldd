@@ -9,27 +9,18 @@
 [node name="BackButtonMarginContainer" type="MarginContainer"]
 offset_right = 64.0
 offset_bottom = 64.0
-theme_override_constants/margin_right = 75
-theme_override_constants/margin_top = 75
 theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 75
 theme_override_constants/margin_bottom = 75
 script = ExtResource("5")
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 75.0
-offset_top = 75.0
-offset_right = 139.0
-offset_bottom = 139.0
+layout_mode = 2
 texture_normal = ExtResource("2")
 texture_pressed = ExtResource("3")
 texture_hover = ExtResource("4")
 texture_disabled = ExtResource("1")
 texture_focused = ExtResource("2")
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="pressed" from="TextureButton" to="." method="_switch_to_main"]
